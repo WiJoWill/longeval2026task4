@@ -1,0 +1,9 @@
+PyYAML>=6.0
+pytest>=8.0
+
+# Optional LLM generation.
+openai>=1.0
+
+# Optional dense/scientific evidence ranking.
+sentence-transformers>=2.7
+torch>=2.0

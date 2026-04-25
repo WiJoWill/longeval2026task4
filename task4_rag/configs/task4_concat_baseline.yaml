@@ -1,0 +1,45 @@
+data:
+  queries_path: data/task4_longeval_rag-query_docids.jsonl
+  candidates_path:
+  documents_path: data/snapshot3/longeval_sci_test-09-11_2026_fulltext/documents
+  citation_graph_path: data/longeval-sci-2026-citation-network.csv
+  doc_text_fields: fullText|abstract|title
+  candidate_limit:
+  max_queries:
+
+run:
+  team_id: our_team
+  run_id: concat_baseline
+  type: automatic
+  mode: concat_baseline
+
+preprocess:
+  passage_max_words: 140
+  passage_stride_sentences: 1
+
+retrieval:
+  method: bm25
+  top_k_passages: 10
+  preselect_k: 10
+  per_doc_limit: 2
+  rrf_k: 60
+  enable_query_expansion: false
+  enable_prf: false
+  prf_top_passages: 0
+  query_variant_limit: 1
+  rerank_top_n: 10
+  enable_rerank: false
+  title_boost: 0.0
+  temporal_boost: 0.0
+  citation_graph_boost: 0.0
+  hybrid_alpha: 0.25
+  dense_model:
+  reranker_model:
+
+generation:
+  provider: none
+  model:
+  temperature: 0.0
+  max_answer_sentences: 5
+  temporal_templates: false
+  prompts_dir: task4_rag/prompts

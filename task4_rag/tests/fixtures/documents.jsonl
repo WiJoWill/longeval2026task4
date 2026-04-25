@@ -1,0 +1,2 @@
+{"doc_id":"doc_a","title":"Citation grounded generation","text":"Citation-aware retrieval augmented generation requires each answer sentence to be linked to supporting evidence. Atomic answer sentences reduce ambiguity in attribution.","year":"2023"}
+{"doc_id":"doc_b","title":"Noisy evidence selection","text":"Evidence selection before generation can reduce noisy context in scientific question answering. Later systems often combine lexical retrieval with dense scientific embeddings.","year":"2025"}

@@ -1,0 +1,19 @@
+Narrative ID: {narrative_id}
+Narrative: {narrative}
+
+Maximum answer sentences: {max_answer_sentences}
+
+Evidence passages are provided as JSON. Each passage has a reference_index field that points into the final references list. Cite only those integer reference_index values.
+
+Evidence:
+{evidence_json}
+
+Instructions:
+- Answer only from the evidence above.
+- Prefer concise scientific wording.
+- Use one factual claim per answer sentence.
+- Prefer 2-5 short evidence-grounded sentences over a long paragraph.
+- Do not merge conflicting temporal evidence into a single unsupported claim.
+- When the narrative implies earlier vs later evidence, keep those time distinctions explicit.
+- If there is not enough evidence, return an empty answer list or a brief sentence explaining that no supported answer can be generated with no citations.
+- Return valid JSON only.
