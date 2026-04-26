@@ -1,0 +1,80 @@
+﻿[
+    {
+        "method":  "raw_generated_responses",
+        "context_relevance":  0.256,
+        "context_precision":  0.523,
+        "faithfulness":  0.833,
+        "answer_relevance":  1.0,
+        "unsupported_rate":  0.167,
+        "noise_robustness":  0.523,
+        "integration_coverage":  0.255,
+        "integration_proxy":  1.0,
+        "numeric_support":  0.764,
+        "high_risk_rate":  0.255
+    },
+    {
+        "method":  "generated_responses_repaired_v1",
+        "context_relevance":  0.256,
+        "context_precision":  0.523,
+        "faithfulness":  1.0,
+        "answer_relevance":  0.047,
+        "unsupported_rate":  0.0,
+        "noise_robustness":  0.460,
+        "integration_coverage":  0.255,
+        "integration_proxy":  1.0,
+        "numeric_support":  0.553,
+        "high_risk_rate":  0.447
+    },
+    {
+        "method":  "concat_baseline",
+        "context_relevance":  0.279,
+        "context_precision":  0.608,
+        "faithfulness":  0.982,
+        "answer_relevance":  0.098,
+        "unsupported_rate":  0.0,
+        "noise_robustness":  0.660,
+        "integration_coverage":  0.255,
+        "integration_proxy":  0.583,
+        "numeric_support":  0.489,
+        "high_risk_rate":  0.511
+    },
+    {
+        "method":  "single_query_bm25_v1",
+        "context_relevance":  0.539,
+        "context_precision":  0.955,
+        "faithfulness":  0.937,
+        "answer_relevance":  0.420,
+        "unsupported_rate":  0.0,
+        "noise_robustness":  0.963,
+        "integration_coverage":  0.255,
+        "integration_proxy":  1.0,
+        "numeric_support":  0.853,
+        "high_risk_rate":  0.191
+    },
+    {
+        "method":  "rrf_no_rerank_v1",
+        "context_relevance":  0.558,
+        "context_precision":  0.970,
+        "faithfulness":  0.942,
+        "answer_relevance":  0.397,
+        "unsupported_rate":  0.0,
+        "noise_robustness":  0.963,
+        "integration_coverage":  0.255,
+        "integration_proxy":  1.0,
+        "numeric_support":  0.905,
+        "high_risk_rate":  0.128
+    },
+    {
+        "method":  "caes_rag_rrf_v1",
+        "context_relevance":  0.558,
+        "context_precision":  0.970,
+        "faithfulness":  0.942,
+        "answer_relevance":  0.392,
+        "unsupported_rate":  0.0,
+        "noise_robustness":  0.963,
+        "integration_coverage":  0.255,
+        "integration_proxy":  1.0,
+        "numeric_support":  0.879,
+        "high_risk_rate":  0.149
+    }
+]

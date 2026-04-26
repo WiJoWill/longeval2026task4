@@ -1,0 +1,1613 @@
+{
+  "run_path": "data/generated-responses.jsonl",
+  "query_path": "data/task4_longeval_rag-query_docids.jsonl",
+  "documents_path": "data/snapshot3/longeval_sci_test-09-11_2026_fulltext/documents",
+  "metric_type": "reference_free_rag_proxy",
+  "notes": [
+    "These are diagnostic proxies, not official judged Task 4 labels.",
+    "Context relevance and answer relevance use keyword overlap.",
+    "Faithfulness estimates whether answer terms are supported by cited documents.",
+    "RGB/RECALL-style scores adapt robustness ideas to this candidate-constrained task."
+  ],
+  "quality_scores": {
+    "context_relevance": 0.2556624758220503,
+    "context_precision_proxy": 0.523404255319149,
+    "answer_faithfulness_proxy": 0.8333333333333335,
+    "answer_relevance_proxy": 1.0,
+    "unsupported_answer_item_rate": 0.16666666666666677
+  },
+  "rgb_like_abilities": {
+    "noise_robustness_proxy": 0.523404255319149,
+    "negative_rejection_coverage": 0.0,
+    "negative_rejection_success_rate": 0.0,
+    "information_integration_coverage": 0.2553191489361702,
+    "information_integration_proxy": 1.0
+  },
+  "recall_like_counterfactual_risk": {
+    "numeric_claim_support_rate": 0.7640232108317215,
+    "counterfactual_risk_proxy": 0.23597678916827852,
+    "high_risk_record_rate": 0.2553191489361702
+  },
+  "per_record_sample": [
+    {
+      "query_id": "aa42e210a361571ff4d1fad892b75d15",
+      "context_relevance": 0.23636363636363641,
+      "context_precision_proxy": 0.5,
+      "answer_faithfulness_proxy": 0.8333333333333334,
+      "answer_relevance_proxy": 1.0,
+      "unsupported_answer_item_rate": 0.16666666666666666,
+      "noise_robustness_proxy": 0.5,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": true,
+      "information_integration_proxy": 5.0,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 10,
+      "num_cited_references": 10,
+      "num_relevant_references": 5,
+      "num_noisy_cited_references": 5,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "275699672",
+          "context_relevance": 0.09090909090909091,
+          "title": "Learning and Attentional Difficulties, Ethnicity and Attainment in UK Higher Education: A Study Across 12 Academic Years"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "275699915",
+          "context_relevance": 0.0,
+          "title": "Who drops out of exposure therapy? A machine learning mega-analysis of PTSD patients"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "122371639",
+          "context_relevance": 0.6363636363636364,
+          "title": "Applying Deep Learning in User Equipment Measurable KPIs to Avoid Unnecessary NR RACH Procedures"
+        },
+        {
+          "reference_index": 3,
+          "doc_id": "173704007",
+          "context_relevance": 0.09090909090909091,
+          "title": "Social dynamics interfere with learning how to manage resources"
+        },
+        {
+          "reference_index": 4,
+          "doc_id": "157915138",
+          "context_relevance": 0.09090909090909091,
+          "title": "PEVuln: a benchmark dataset for using machine learning to detect vulnerabilities in PE malware"
+        },
+        {
+          "reference_index": 5,
+          "doc_id": "163088229",
+          "context_relevance": 0.36363636363636365,
+          "title": "C$^{3}$Bench: A Comprehensive Classical Chinese Understanding Benchmark\n  for Large Language Models"
+        },
+        {
+          "reference_index": 6,
+          "doc_id": "148414038",
+          "context_relevance": 0.36363636363636365,
+          "title": "Analysis of a Federated Learning Framework for Heterogeneous Medical Image Data: Privacy and Performance Perspective"
+        },
+        {
+          "reference_index": 7,
+          "doc_id": "268301",
+          "context_relevance": 0.36363636363636365,
+          "title": "Distance language learners and learner support: beliefs, difficulties and use of strategies"
+        },
+        {
+          "reference_index": 8,
+          "doc_id": "303362068",
+          "context_relevance": 0.09090909090909091,
+          "title": "Adaptive Multi-Agent Reinforcement Learning with Graph Neural Networks for Dynamic Optimization in Sports Buildings"
+        },
+        {
+          "reference_index": 9,
+          "doc_id": "129069349",
+          "context_relevance": 0.2727272727272727,
+          "title": "Optimizing Data Throughput Performance in 5G Non-Standalone Networks Using Deep Learning"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "I will next answer How can a device avoid futile access attempts while still selecting connectivity for best throughput?.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Therefore, we have to consider the following aspects.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Learning and Attentional Difficulties, Ethnicity and Attainment in UK Higher Education: A Study Across 12 Academic Years",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "Who drops out of exposure therapy? A machine learning mega-analysis of PTSD patients",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Applying Deep Learning in User Equipment Measurable KPIs to Avoid Unnecessary NR RACH Procedures",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Social dynamics interfere with learning how to manage resources",
+          "citations": [
+            3
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "PEVuln: a benchmark dataset for using machine learning to detect vulnerabilities in PE malware",
+          "citations": [
+            4
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "C$^{3}$Bench: A Comprehensive Classical Chinese Understanding Benchmark for Large Language Models",
+          "citations": [
+            5
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "Analysis of a Federated Learning Framework for Heterogeneous Medical Image Data: Privacy and Performance Perspective",
+          "citations": [
+            6
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Distance language learners and learner support: beliefs, difficulties and use of strategies",
+          "citations": [
+            7
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        }
+      ]
+    },
+    {
+      "query_id": "46395a3cf66a9f6a75c89354410d1493",
+      "context_relevance": 0.15555555555555556,
+      "context_precision_proxy": 0.3,
+      "answer_faithfulness_proxy": 0.8333333333333334,
+      "answer_relevance_proxy": 1.0,
+      "unsupported_answer_item_rate": 0.16666666666666666,
+      "noise_robustness_proxy": 0.30000000000000004,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 10,
+      "num_cited_references": 10,
+      "num_relevant_references": 3,
+      "num_noisy_cited_references": 7,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "290464296",
+          "context_relevance": 0.2222222222222222,
+          "title": "Burden of End-Stage Kidney Disease by Type 2 Diabetes Mellitus Status in South Korea: A Nationwide Epidemiologic Study"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "293060390",
+          "context_relevance": 0.0,
+          "title": "Oxytocin and social cognition in patients with schizophrenia: comparison with healthy siblings and healthy controls"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "283174876",
+          "context_relevance": 0.0,
+          "title": "Genetically distinct Hajj and South American-related strains of serogroup W Neisseria meningitidis causing invasive meningococcal disease in Ontario, Canada, January 1, 2015 to June 30, 2024"
+        },
+        {
+          "reference_index": 3,
+          "doc_id": "276607117",
+          "context_relevance": 0.0,
+          "title": "The predictive values of sarcopenia screening tools in preoperative elderly patients with colorectal cancer: applying the diagnostic criteria of EWGSOP2 and AWGS2019"
+        },
+        {
+          "reference_index": 4,
+          "doc_id": "314940773",
+          "context_relevance": 0.1111111111111111,
+          "title": "EVALUATION OF ANTICANCER AND ANTIOXIDANT EFFECTS OF CHONDRUS CRISPUS ETHANOL EXTRACT AND DOCETAXEL COMBINATION ON COLON CANCER CELLS"
+        },
+        {
+          "reference_index": 5,
+          "doc_id": "163825760",
+          "context_relevance": 0.1111111111111111,
+          "title": "Chasing nodes, saving lives?:Lymph node metastases in cervical cancer"
+        },
+        {
+          "reference_index": 6,
+          "doc_id": "293062882",
+          "context_relevance": 0.0,
+          "title": "The long-term results of temporary urethral stent placement for the treatment of recurrent bulbar urethral stricture disease"
+        },
+        {
+          "reference_index": 7,
+          "doc_id": "148874812",
+          "context_relevance": 0.5555555555555556,
+          "title": "Insecticide use and breast cancer risk among farmers\u2019 wives in the agricultural health study"
+        },
+        {
+          "reference_index": 8,
+          "doc_id": "148874898",
+          "context_relevance": 0.5555555555555556,
+          "title": "Herbicide, fumigant, and fungicide use and breast cancer risk among farmers' wives"
+        },
+        {
+          "reference_index": 9,
+          "doc_id": "302845152",
+          "context_relevance": 0.0,
+          "title": "Balancing Costs and Clinical Outcomes: A Cost-Effectiveness Study of PICC Types Across Chinese Healthcare Settings"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "I will next answer How should pesticide class\u2013specific findings shape prevention priorities for farm households?.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Therefore, we have to consider the following aspects.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Burden of End-Stage Kidney Disease by Type 2 Diabetes Mellitus Status in South Korea: A Nationwide Epidemiologic Study",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "Oxytocin and social cognition in patients with schizophrenia: comparison with healthy siblings and healthy controls",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Genetically distinct Hajj and South American-related strains of serogroup W Neisseria meningitidis causing invasive meningococcal disease in Ontario, Canada, January 1, 2015 to June 30, 2024",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "The predictive values of sarcopenia screening tools in preoperative elderly patients with colorectal cancer: applying the diagnostic criteria of EWGSOP2 and AWGS2019",
+          "citations": [
+            3
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "EVALUATION OF ANTICANCER AND ANTIOXIDANT EFFECTS OF CHONDRUS CRISPUS ETHANOL EXTRACT AND DOCETAXEL COMBINATION ON COLON CANCER CELLS",
+          "citations": [
+            4
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Chasing nodes, saving lives?:Lymph node metastases in cervical cancer",
+          "citations": [
+            5
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "The long-term results of temporary urethral stent placement for the treatment of recurrent bulbar urethral stricture disease",
+          "citations": [
+            6
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Insecticide use and breast cancer risk among farmers\u2019 wives in the agricultural health study",
+          "citations": [
+            7
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        }
+      ]
+    },
+    {
+      "query_id": "5f07a7f0a83de807eee3213560a3467c",
+      "context_relevance": 0.29999999999999993,
+      "context_precision_proxy": 0.7,
+      "answer_faithfulness_proxy": 0.8333333333333334,
+      "answer_relevance_proxy": 1.0,
+      "unsupported_answer_item_rate": 0.16666666666666666,
+      "noise_robustness_proxy": 0.7,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 10,
+      "num_cited_references": 10,
+      "num_relevant_references": 7,
+      "num_noisy_cited_references": 3,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "156685367",
+          "context_relevance": 0.36363636363636365,
+          "title": "Learning MDL logic programs from noisy data"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "303260254",
+          "context_relevance": 0.36363636363636365,
+          "title": "Ensemble Value Functions for Efficient Exploration in Multi-Agent Reinforcement Learning"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "291415237",
+          "context_relevance": 0.0,
+          "title": "Dual-Stream Contrastive Latent Learning Generative Adversarial Network for Brain Image Synthesis and Tumor Classification"
+        },
+        {
+          "reference_index": 3,
+          "doc_id": "293226721",
+          "context_relevance": 0.36363636363636365,
+          "title": "Developing a Modified Volleyball-Based Learning Model to Improve Students\u2019 Engagement in Physical Education"
+        },
+        {
+          "reference_index": 4,
+          "doc_id": "488153",
+          "context_relevance": 0.2727272727272727,
+          "title": "An Investigation of Rule Induction Based Prediction Systems"
+        },
+        {
+          "reference_index": 5,
+          "doc_id": "943350",
+          "context_relevance": 0.6363636363636364,
+          "title": "Gradient-based Reinforcement Planning in Policy-Search Methods"
+        },
+        {
+          "reference_index": 6,
+          "doc_id": "291191098",
+          "context_relevance": 0.09090909090909091,
+          "title": "INNOVATIVE LEARNING STRATEGIES THROUGH EMOTIONAL APPROACHES ENHANCE THE LEARNING INTEREST OF SDN BALEDONO 2 STUDENTS"
+        },
+        {
+          "reference_index": 7,
+          "doc_id": "303189774",
+          "context_relevance": 0.09090909090909091,
+          "title": "Multi-class pneumonia detection using fine-tuned vision transformer model"
+        },
+        {
+          "reference_index": 8,
+          "doc_id": "191678069",
+          "context_relevance": 0.18181818181818182,
+          "title": "Digital humanities and integrative learning"
+        },
+        {
+          "reference_index": 9,
+          "doc_id": "649560",
+          "context_relevance": 0.6363636363636364,
+          "title": "Feature Reinforcement Learning: Part I: Unstructured MDPs"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "I will next answer What tradeoff arises when applying exact gradient updates on induced finite-state models?.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Therefore, we have to consider the following aspects.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Learning MDL logic programs from noisy data",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Ensemble Value Functions for Efficient Exploration in Multi-Agent Reinforcement Learning",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Dual-Stream Contrastive Latent Learning Generative Adversarial Network for Brain Image Synthesis and Tumor Classification",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Developing a Modified Volleyball-Based Learning Model to Improve Students\u2019 Engagement in Physical Education",
+          "citations": [
+            3
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "An Investigation of Rule Induction Based Prediction Systems",
+          "citations": [
+            4
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Gradient-based Reinforcement Planning in Policy-Search Methods",
+          "citations": [
+            5
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "INNOVATIVE LEARNING STRATEGIES THROUGH EMOTIONAL APPROACHES ENHANCE THE LEARNING INTEREST OF SDN BALEDONO 2 STUDENTS",
+          "citations": [
+            6
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "Multi-class pneumonia detection using fine-tuned vision transformer model",
+          "citations": [
+            7
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        }
+      ]
+    },
+    {
+      "query_id": "804711f54939af9622c3c7614da85298",
+      "context_relevance": 0.18888888888888888,
+      "context_precision_proxy": 0.4,
+      "answer_faithfulness_proxy": 0.8333333333333334,
+      "answer_relevance_proxy": 1.0,
+      "unsupported_answer_item_rate": 0.16666666666666666,
+      "noise_robustness_proxy": 0.4,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 10,
+      "num_cited_references": 10,
+      "num_relevant_references": 4,
+      "num_noisy_cited_references": 6,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "309224898",
+          "context_relevance": 0.4444444444444444,
+          "title": "Agreement between the Amsterdam Neuropsychological Tasks and the Cambridge Neuropsychological Test Automated Battery in theassessment of PKU patients and healthy controls"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "299770278",
+          "context_relevance": 0.0,
+          "title": "Evaluating the Anti-Cancer Effects of Black Maitake Mushroom Extract"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "308409429",
+          "context_relevance": 0.0,
+          "title": "Sertraline treatment prevents motor dysfunction in a Huntington's disease mouse model and functional decline in patients"
+        },
+        {
+          "reference_index": 3,
+          "doc_id": "292908773",
+          "context_relevance": 0.0,
+          "title": "Presence of brain metastasis differentially impacts long-term survival after first-line therapy in melanoma depending on BRAF mutation status"
+        },
+        {
+          "reference_index": 4,
+          "doc_id": "302872214",
+          "context_relevance": 0.0,
+          "title": "Perspective: Making Treatment Decisions for Crohn&rsquo;s Disease in 2025&mdash;Key Considerations"
+        },
+        {
+          "reference_index": 5,
+          "doc_id": "301221566",
+          "context_relevance": 0.0,
+          "title": "MAGNETIC RESONANCE IMAGING ROLE IN QUANTIFICATION OF LIVER FAT IN DIABETIC PATIENTS IN  A TERTIARY HEALTH CENTRE"
+        },
+        {
+          "reference_index": 6,
+          "doc_id": "295893100",
+          "context_relevance": 0.5555555555555556,
+          "title": "Is Disease Stability an Attainable Chronic Obstructive Pulmonary Disease Treatment Goal?"
+        },
+        {
+          "reference_index": 7,
+          "doc_id": "276814397",
+          "context_relevance": 0.1111111111111111,
+          "title": "Onset of End-Stage Atrophic Age-Related Macular Degeneration as an Endpoint \u2013 A Delphi Study: Classification of Atrophy Meetings Report 7"
+        },
+        {
+          "reference_index": 8,
+          "doc_id": "299281809",
+          "context_relevance": 0.4444444444444444,
+          "title": "The efficacy of finerenone on hierarchical composite endpoint analysed using win statistics in patients with heart failure and mildly reduced or preserved ejection fraction: A prespecified analysis of FINEARTS \u2010 HF"
+        },
+        {
+          "reference_index": 9,
+          "doc_id": "309223238",
+          "context_relevance": 0.3333333333333333,
+          "title": "Efficacy and Safety of Finerenone in Heart Failure With Preserved Ejection Fraction:A FINE-HEART Analysis"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "I will next answer How well do trial-specific early composite benefits predict broader pooled-event reductions?.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Therefore, we have to consider the following aspects.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Agreement between the Amsterdam Neuropsychological Tasks and the Cambridge Neuropsychological Test Automated Battery in theassessment of PKU patients and healthy controls",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Evaluating the Anti-Cancer Effects of Black Maitake Mushroom Extract",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Sertraline treatment prevents motor dysfunction in a Huntington's disease mouse model and functional decline in patients",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Presence of brain metastasis differentially impacts long-term survival after first-line therapy in melanoma depending on BRAF mutation status",
+          "citations": [
+            3
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Perspective: Making Treatment Decisions for Crohn&rsquo;s Disease in 2025&mdash;Key Considerations",
+          "citations": [
+            4
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "MAGNETIC RESONANCE IMAGING ROLE IN QUANTIFICATION OF LIVER FAT IN DIABETIC PATIENTS IN A TERTIARY HEALTH CENTRE",
+          "citations": [
+            5
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Is Disease Stability an Attainable Chronic Obstructive Pulmonary Disease Treatment Goal?",
+          "citations": [
+            6
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Onset of End-Stage Atrophic Age-Related Macular Degeneration as an Endpoint \u2013 A Delphi Study: Classification of Atrophy Meetings Report 7",
+          "citations": [
+            7
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        }
+      ]
+    },
+    {
+      "query_id": "c3d5d202f8ab3d130a90684fd7308f64",
+      "context_relevance": 0.25999999999999995,
+      "context_precision_proxy": 0.6,
+      "answer_faithfulness_proxy": 0.8333333333333334,
+      "answer_relevance_proxy": 1.0,
+      "unsupported_answer_item_rate": 0.16666666666666666,
+      "noise_robustness_proxy": 0.6,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 10,
+      "num_cited_references": 10,
+      "num_relevant_references": 6,
+      "num_noisy_cited_references": 4,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "293025457",
+          "context_relevance": 0.0,
+          "title": "Relationship of psoriatic arthritis with nail and scalp involvement in Turkish psoriasis patients: Multicentered cross-sectional study"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "296429828",
+          "context_relevance": 0.3,
+          "title": "Barriers and facilitators to accessing healthcare for early diagnosis of prostate cancer for black men\u2014a qualitative exploration in North-East England and Scotland"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "305621459",
+          "context_relevance": 0.3,
+          "title": "The Effects of Antipsychotic Dose Reduction on Movement Disorders and Cardiometabolic Indices in Patients Remitted from a First Episode of Psychosis"
+        },
+        {
+          "reference_index": 3,
+          "doc_id": "11741532",
+          "context_relevance": 0.0,
+          "title": "Inflammatory Potential of the Diet and Incidence of Crohn\u2019s Disease and Ulcerative Colitis in the EPIC-Spain Cohort"
+        },
+        {
+          "reference_index": 4,
+          "doc_id": "310836719",
+          "context_relevance": 0.2,
+          "title": "Chronic kidney disease classification according to different formulas and impact on adverse outcomes in patients with atrial fibrillation:A report from a prospective observational European registry"
+        },
+        {
+          "reference_index": 5,
+          "doc_id": "291593866",
+          "context_relevance": 0.0,
+          "title": "Effects of contact with a dog on prefrontal brain activity in patients in a minimally conscious state"
+        },
+        {
+          "reference_index": 6,
+          "doc_id": "42898226",
+          "context_relevance": 0.1,
+          "title": "Ispd peritonitis tecommendations: 2016 update on prevention and treatment"
+        },
+        {
+          "reference_index": 7,
+          "doc_id": "69040022",
+          "context_relevance": 0.4,
+          "title": "Circulating biomarkers predictive of tumor response to cancer immunotherapy"
+        },
+        {
+          "reference_index": 8,
+          "doc_id": "298663728",
+          "context_relevance": 0.6,
+          "title": "Lung function and skin fibrosis changes as predictors of survival in SSc-associated interstitial lung disease: a EUSTAR study"
+        },
+        {
+          "reference_index": 9,
+          "doc_id": "298663733",
+          "context_relevance": 0.7,
+          "title": "Recommendations for the local management of digital ulcers in systemic sclerosis: A report from the World Scleroderma Foundation (WSF) 'Ad hoc committee'"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "I will next answer Does healing fingertip ischemic lesions affect long-term survival in systemic sclerosis?.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Therefore, we have to consider the following aspects.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Relationship of psoriatic arthritis with nail and scalp involvement in Turkish psoriasis patients: Multicentered cross-sectional study",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Barriers and facilitators to accessing healthcare for early diagnosis of prostate cancer for black men\u2014a qualitative exploration in North-East England and Scotland",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "The Effects of Antipsychotic Dose Reduction on Movement Disorders and Cardiometabolic Indices in Patients Remitted from a First Episode of Psychosis",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Inflammatory Potential of the Diet and Incidence of Crohn\u2019s Disease and Ulcerative Colitis in the EPIC-Spain Cohort",
+          "citations": [
+            3
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Chronic kidney disease classification according to different formulas and impact on adverse outcomes in patients with atrial fibrillation:A report from a prospective observational European registry",
+          "citations": [
+            4
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Effects of contact with a dog on prefrontal brain activity in patients in a minimally conscious state",
+          "citations": [
+            5
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Ispd peritonitis tecommendations: 2016 update on prevention and treatment",
+          "citations": [
+            6
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "Circulating biomarkers predictive of tumor response to cancer immunotherapy",
+          "citations": [
+            7
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        }
+      ]
+    },
+    {
+      "query_id": "5ef548b174d925e873f8b5f138d6d8af",
+      "context_relevance": 0.19999999999999998,
+      "context_precision_proxy": 0.4,
+      "answer_faithfulness_proxy": 0.8333333333333334,
+      "answer_relevance_proxy": 1.0,
+      "unsupported_answer_item_rate": 0.16666666666666666,
+      "noise_robustness_proxy": 0.4,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 10,
+      "num_cited_references": 10,
+      "num_relevant_references": 4,
+      "num_noisy_cited_references": 6,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "5126893",
+          "context_relevance": 0.45454545454545453,
+          "title": "Halogen and <sup>129</sup>-I systematics in gas hydrate fields at the northern Cascadia margin (IODP Expedition 311): insights from numerical modeling"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "42822844",
+          "context_relevance": 0.09090909090909091,
+          "title": "Long-term atmospheric inorganic nitrogen deposition in West African savanna over 16 year period (Lamto, C\u00f4te d\u2019Ivoire)"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "304600535",
+          "context_relevance": 0.09090909090909091,
+          "title": "RAID: Root cause Anomaly Identification and Diagnosis"
+        },
+        {
+          "reference_index": 3,
+          "doc_id": "192180353",
+          "context_relevance": 0.45454545454545453,
+          "title": "Enhancement of curcumin bioaccessibility: An assessment of possible synergistic effect of \u03b3-cyclodextrin metal\u2013organic frameworks with micelles"
+        },
+        {
+          "reference_index": 4,
+          "doc_id": "2055996",
+          "context_relevance": 0.09090909090909091,
+          "title": "Maxillaria?"
+        },
+        {
+          "reference_index": 5,
+          "doc_id": "7353417",
+          "context_relevance": 0.0,
+          "title": "Population genetics of a marine bivalve, Pinctada maxima, throughout the Indo-Australian Archipelago shows differentiation and decreased diversity at range limits"
+        },
+        {
+          "reference_index": 6,
+          "doc_id": "301843073",
+          "context_relevance": 0.45454545454545453,
+          "title": "Bioaccessibility and Absorption  of Curcumin: A Look into  \u03b3-Cyclodextrin Metal-Organic  Frameworks"
+        },
+        {
+          "reference_index": 7,
+          "doc_id": "309263613",
+          "context_relevance": 0.2727272727272727,
+          "title": "Does heightened subjective sexual arousal lower pain in women if disgust is minimized?"
+        },
+        {
+          "reference_index": 8,
+          "doc_id": "304783474",
+          "context_relevance": 0.09090909090909091,
+          "title": "An underdog story: Re-emergence of a polar instability at high pressure in KNbO3"
+        },
+        {
+          "reference_index": 9,
+          "doc_id": "304578973",
+          "context_relevance": 0.0,
+          "title": "Failure Mechanisms of GaN HEMTs in Single Event Destructive Short-Circuit at Different VDS Voltage Levels"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "I will next answer What tradeoff arises when combining surfactant-rich fluids with acid-sensitive porous carriers?.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Therefore, we have to consider the following aspects.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Halogen and <sup>129</sup>-I systematics in gas hydrate fields at the northern Cascadia margin (IODP Expedition 311): insights from numerical modeling",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "Long-term atmospheric inorganic nitrogen deposition in West African savanna over 16 year period (Lamto, C\u00f4te d\u2019Ivoire)",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "RAID: Root cause Anomaly Identification and Diagnosis",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Enhancement of curcumin bioaccessibility: An assessment of possible synergistic effect of \u03b3-cyclodextrin metal\u2013organic frameworks with micelles",
+          "citations": [
+            3
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Maxillaria?",
+          "citations": [
+            4
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Population genetics of a marine bivalve, Pinctada maxima, throughout the Indo-Australian Archipelago shows differentiation and decreased diversity at range limits",
+          "citations": [
+            5
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Bioaccessibility and Absorption of Curcumin: A Look into \u03b3-Cyclodextrin Metal-Organic Frameworks",
+          "citations": [
+            6
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Does heightened subjective sexual arousal lower pain in women if disgust is minimized?",
+          "citations": [
+            7
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        }
+      ]
+    },
+    {
+      "query_id": "d3c2d232f0a39dae1f18c762ccdb1eab",
+      "context_relevance": 0.19090909090909092,
+      "context_precision_proxy": 0.5,
+      "answer_faithfulness_proxy": 0.8333333333333334,
+      "answer_relevance_proxy": 1.0,
+      "unsupported_answer_item_rate": 0.16666666666666666,
+      "noise_robustness_proxy": 0.5,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 10,
+      "num_cited_references": 10,
+      "num_relevant_references": 5,
+      "num_noisy_cited_references": 5,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "286409073",
+          "context_relevance": 0.0,
+          "title": "Supplementary Table from Chromatin Remodeling Induced by ARID1A Loss in Lung Cancer Promotes Glycolysis and Confers JQ1 Vulnerability"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "305780079",
+          "context_relevance": 0.0,
+          "title": "Systemic fungal infections"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "310709873",
+          "context_relevance": 0.7272727272727273,
+          "title": "Pathophysiological Significance of Urea in Glomerular Filtration Dysregulation in Hepatorenal Syndrome: An Integrative Review"
+        },
+        {
+          "reference_index": 3,
+          "doc_id": "303472055",
+          "context_relevance": 0.18181818181818182,
+          "title": "Impact of assessment-to-treatment interval and metastatic biopsy site on the predictive value of PD-L1 expression at the 1\u202f% cut-off level in melanoma"
+        },
+        {
+          "reference_index": 4,
+          "doc_id": "310709958",
+          "context_relevance": 0.6363636363636364,
+          "title": "Pathophysiological Role of Sodium in Acute Kidney Injury and Chronic Kidney Disease: A Narrative Review"
+        },
+        {
+          "reference_index": 5,
+          "doc_id": "303786266",
+          "context_relevance": 0.0,
+          "title": "Risk Factors of Subtalar Arthroereisis for Progressive Collapsing Foot Deformity: A Retrospective Analysis of 236 Cases"
+        },
+        {
+          "reference_index": 6,
+          "doc_id": "286389061",
+          "context_relevance": 0.0,
+          "title": "Supplementary Table S1 from Impact of Emergent Circulating Tumor DNA <i>RAS</i> Mutation in Panitumumab-Treated Chemoresistant Metastatic Colorectal Cancer"
+        },
+        {
+          "reference_index": 7,
+          "doc_id": "302741917",
+          "context_relevance": 0.18181818181818182,
+          "title": "Developing CGMap: Characterizing Continuous Glucose Monitoring Data in Patients with Type 2 Diabetes"
+        },
+        {
+          "reference_index": 8,
+          "doc_id": "304902806",
+          "context_relevance": 0.0,
+          "title": "Long-term safety and efficacy of anti\u2013GM-CSF otilimab in patients with rheumatoid arthritis: long-term extension of three Phase 3 randomised trials (contRAst X)"
+        },
+        {
+          "reference_index": 9,
+          "doc_id": "295966810",
+          "context_relevance": 0.18181818181818182,
+          "title": "Treatment-resistant depression: New insights into the etiopathogenesis and the role of esketamine in treatment"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "I will next answer Which monitoring strategy balances solute correction to reduce inflammation without harming filtration?.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Therefore, we have to consider the following aspects.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Supplementary Table from Chromatin Remodeling Induced by ARID1A Loss in Lung Cancer Promotes Glycolysis and Confers JQ1 Vulnerability",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Systemic fungal infections",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Pathophysiological Significance of Urea in Glomerular Filtration Dysregulation in Hepatorenal Syndrome: An Integrative Review",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Impact of assessment-to-treatment interval and metastatic biopsy site on the predictive value of PD-L1 expression at the 1 % cut-off level in melanoma",
+          "citations": [
+            3
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "Pathophysiological Role of Sodium in Acute Kidney Injury and Chronic Kidney Disease: A Narrative Review",
+          "citations": [
+            4
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Risk Factors of Subtalar Arthroereisis for Progressive Collapsing Foot Deformity: A Retrospective Analysis of 236 Cases",
+          "citations": [
+            5
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "Supplementary Table S1 from Impact of Emergent Circulating Tumor DNA <i>RAS</i> Mutation in Panitumumab-Treated Chemoresistant Metastatic Colorectal Cancer",
+          "citations": [
+            6
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Developing CGMap: Characterizing Continuous Glucose Monitoring Data in Patients with Type 2 Diabetes",
+          "citations": [
+            7
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        }
+      ]
+    },
+    {
+      "query_id": "533ebe54d99e8c5e2feea55299c0f3ef",
+      "context_relevance": 0.2928571428571428,
+      "context_precision_proxy": 0.5,
+      "answer_faithfulness_proxy": 0.8333333333333334,
+      "answer_relevance_proxy": 1.0,
+      "unsupported_answer_item_rate": 0.16666666666666666,
+      "noise_robustness_proxy": 0.5,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 10,
+      "num_cited_references": 10,
+      "num_relevant_references": 5,
+      "num_noisy_cited_references": 5,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "313162270",
+          "context_relevance": 0.0,
+          "title": "Vepdegestrant, a PROTAC Estrogen Receptor Degrader, in Advanced Breast Cancer."
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "292434535",
+          "context_relevance": 0.07142857142857142,
+          "title": "The Dammarane Triterpenoids from Aglaia eximia Miq. and Their Cytotoxic Activity Against P388 Murine Leukemia Cell"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "309218608",
+          "context_relevance": 0.42857142857142855,
+          "title": "Arrhythmogenic Cardiomyopathy:Towards Genotype Based Diagnoses and Management"
+        },
+        {
+          "reference_index": 3,
+          "doc_id": "305689915",
+          "context_relevance": 0.5714285714285714,
+          "title": "Efficacy of liposomal irinotecan + 5-FU/LV vs. S-1 in gemcitabine-refractory metastatic pancreatic cancer: a real-world study using inverse probability of treatment weighting"
+        },
+        {
+          "reference_index": 4,
+          "doc_id": "314496423",
+          "context_relevance": 0.6428571428571429,
+          "title": "Impact of prior chemotherapy on nanoliposomal irinotecan with fluorouracil and folinic acid for unresectable pancreatic cancer: a retrospective analysis of data from the multicenter NAPOLEON-2 study"
+        },
+        {
+          "reference_index": 5,
+          "doc_id": "305925380",
+          "context_relevance": 0.07142857142857142,
+          "title": "The effect of molecular weight of hyaluronic acid on corneal cell viability"
+        },
+        {
+          "reference_index": 6,
+          "doc_id": "174654360",
+          "context_relevance": 0.07142857142857142,
+          "title": "Global burden of major chronic liver diseases in 2021"
+        },
+        {
+          "reference_index": 7,
+          "doc_id": "308388715",
+          "context_relevance": 0.42857142857142855,
+          "title": "Hypoplastic Left Heart Syndrome Practice Variation Across 31 Centres From 20 European Countries. An AEPC Imaging Working Group Study"
+        },
+        {
+          "reference_index": 8,
+          "doc_id": "295897456",
+          "context_relevance": 0.5,
+          "title": "Update on pediatric liver transplantation in Europe 2022: An ELITA-ESPGHAN report"
+        },
+        {
+          "reference_index": 9,
+          "doc_id": "296454980",
+          "context_relevance": 0.14285714285714285,
+          "title": "The Use of Patient-Reported Outcomes Measurement Information System (PROMIS) in Patients with Lung Cancer: A Scoping Review Protocol"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "I will next answer Which prior-treatment feature best identifies patients likely to derive survival benefit from the newer second-line option?.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Therefore, we have to consider the following aspects.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Vepdegestrant, a PROTAC Estrogen Receptor Degrader, in Advanced Breast Cancer.",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "The Dammarane Triterpenoids from Aglaia eximia Miq. and Their Cytotoxic Activity Against P388 Murine Leukemia Cell",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Arrhythmogenic Cardiomyopathy:Towards Genotype Based Diagnoses and Management",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Efficacy of liposomal irinotecan + 5-FU/LV vs. S-1 in gemcitabine-refractory metastatic pancreatic cancer: a real-world study using inverse probability of treatment weighting",
+          "citations": [
+            3
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "Impact of prior chemotherapy on nanoliposomal irinotecan with fluorouracil and folinic acid for unresectable pancreatic cancer: a retrospective analysis of data from the multicenter NAPOLEON-2 study",
+          "citations": [
+            4
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "The effect of molecular weight of hyaluronic acid on corneal cell viability",
+          "citations": [
+            5
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Global burden of major chronic liver diseases in 2021",
+          "citations": [
+            6
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "Hypoplastic Left Heart Syndrome Practice Variation Across 31 Centres From 20 European Countries. An AEPC Imaging Working Group Study",
+          "citations": [
+            7
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        }
+      ]
+    },
+    {
+      "query_id": "785b9784a0ed573bc3e4c38addb767f5",
+      "context_relevance": 0.25,
+      "context_precision_proxy": 0.4,
+      "answer_faithfulness_proxy": 0.8333333333333334,
+      "answer_relevance_proxy": 1.0,
+      "unsupported_answer_item_rate": 0.16666666666666666,
+      "noise_robustness_proxy": 0.4,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": true,
+      "information_integration_proxy": 5.0,
+      "counterfactual_risk_proxy": 1.0,
+      "num_references": 10,
+      "num_cited_references": 10,
+      "num_relevant_references": 4,
+      "num_noisy_cited_references": 6,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "290357553",
+          "context_relevance": 0.0,
+          "title": "Performance anxiety is associated with biases in learning from reward and punishment in skilled individuals"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "276180485",
+          "context_relevance": 0.0,
+          "title": "Service learning in the nursing bachelor thesis: a mixed-methods study"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "298360833",
+          "context_relevance": 0.5,
+          "title": "Adversarial Machine Learning: Methods for Attacks and Defenses"
+        },
+        {
+          "reference_index": 3,
+          "doc_id": "309067398",
+          "context_relevance": 0.0,
+          "title": "Using a pre-trained machine learning model to estimate the 3d-ground reaction forces during rugby scrummaging with instrumented insoles"
+        },
+        {
+          "reference_index": 4,
+          "doc_id": "144855948",
+          "context_relevance": 0.25,
+          "title": "Spectral-DP: Differentially Private Deep Learning through Spectral\n  Perturbation and Filtering"
+        },
+        {
+          "reference_index": 5,
+          "doc_id": "304056309",
+          "context_relevance": 0.125,
+          "title": "Machine learning-based anomaly detection method for digital substation against false data injection"
+        },
+        {
+          "reference_index": 6,
+          "doc_id": "310137828",
+          "context_relevance": 0.0,
+          "title": "Behind the Magic, MERLIM: Multi-Modal Evaluation Benchmark for Large Image-Language Models"
+        },
+        {
+          "reference_index": 7,
+          "doc_id": "295965371",
+          "context_relevance": 0.0,
+          "title": "A personalized learning system based on spatio-temporal processes and task similarity analysis"
+        },
+        {
+          "reference_index": 8,
+          "doc_id": "291799228",
+          "context_relevance": 0.625,
+          "title": "Improving Critical Thinking Skills through a STEAM-Integrated SSCS Learning Model on Static Fluid Concepts"
+        },
+        {
+          "reference_index": 9,
+          "doc_id": "292475149",
+          "context_relevance": 1.0,
+          "title": "Enhancing Critical Thinking in Optics through Project-Based STEAM Learning with Visual Simulations"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "I will next answer How can hands-on projects and simulations be combined to maximize physics critical thinking?.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Therefore, we have to consider the following aspects.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Performance anxiety is associated with biases in learning from reward and punishment in skilled individuals",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Service learning in the nursing bachelor thesis: a mixed-methods study",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Adversarial Machine Learning: Methods for Attacks and Defenses",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Using a pre-trained machine learning model to estimate the 3d-ground reaction forces during rugby scrummaging with instrumented insoles",
+          "citations": [
+            3
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Spectral-DP: Differentially Private Deep Learning through Spectral Perturbation and Filtering",
+          "citations": [
+            4
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Machine learning-based anomaly detection method for digital substation against false data injection",
+          "citations": [
+            5
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Behind the Magic, MERLIM: Multi-Modal Evaluation Benchmark for Large Image-Language Models",
+          "citations": [
+            6
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "A personalized learning system based on spatio-temporal processes and task similarity analysis",
+          "citations": [
+            7
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        }
+      ]
+    },
+    {
+      "query_id": "3490ff75cc1d7cc958eea148ecf9f064",
+      "context_relevance": 0.22999999999999998,
+      "context_precision_proxy": 0.3,
+      "answer_faithfulness_proxy": 0.8333333333333334,
+      "answer_relevance_proxy": 1.0,
+      "unsupported_answer_item_rate": 0.16666666666666666,
+      "noise_robustness_proxy": 0.30000000000000004,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": true,
+      "information_integration_proxy": 5.0,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 10,
+      "num_cited_references": 10,
+      "num_relevant_references": 3,
+      "num_noisy_cited_references": 7,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "299271867",
+          "context_relevance": 0.6,
+          "title": "The influence of fluid resuscitation strategy on outcomes from dengue shock syndrome: a review of the management of 691 children in 7 Southeast Asian hospitals"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "301000195",
+          "context_relevance": 0.1,
+          "title": "Equitable Access To Rehabilitation Services; A Scoping Review"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "302909562",
+          "context_relevance": 0.0,
+          "title": "Study of the Brittle&ndash;Ductile Characteristics and Fracture Propagation Laws of Ultra-Deep Tight Sandy Conglomerate Reservoirs"
+        },
+        {
+          "reference_index": 3,
+          "doc_id": "299809610",
+          "context_relevance": 0.7,
+          "title": "Exploring research and healthcare priorities in maternal health: A qualitative ethnographic study with mothers from ethnic minority backgrounds in the UK"
+        },
+        {
+          "reference_index": 4,
+          "doc_id": "292898621",
+          "context_relevance": 0.0,
+          "title": "The prevalence of intestinal parasites in the province of Izmir, Turkey"
+        },
+        {
+          "reference_index": 5,
+          "doc_id": "303699265",
+          "context_relevance": 0.7,
+          "title": "Disparities in Access to the Northwest Ambulance Service during pregnancy, birth and postpartum period and its association with neonatal and maternal outcomes [DiAAS]: a retrospective cohort study and qualitative framework analysis"
+        },
+        {
+          "reference_index": 6,
+          "doc_id": "291422611",
+          "context_relevance": 0.0,
+          "title": "Presenteeism among Nurses: understanding its determinants through a scoping review"
+        },
+        {
+          "reference_index": 7,
+          "doc_id": "298859410",
+          "context_relevance": 0.1,
+          "title": "Difficulty Adjustment in Cognitive Training Software for Children: a Protocol for a Systematic Review and Meta-Analysis"
+        },
+        {
+          "reference_index": 8,
+          "doc_id": "145190525",
+          "context_relevance": 0.0,
+          "title": "The Navasota Examiner-Review"
+        },
+        {
+          "reference_index": 9,
+          "doc_id": "230082092",
+          "context_relevance": 0.1,
+          "title": "The Occurrence and Meta-Analysis of Investigations on Sarcocystis Infection among Ruminants (Ruminantia) in Mainland China"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "I will next answer How could language and health literacy barriers alter emergency response access and outcomes?.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Therefore, we have to consider the following aspects.",
+          "citations": [],
+          "faithfulness_proxy": 0.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "The influence of fluid resuscitation strategy on outcomes from dengue shock syndrome: a review of the management of 691 children in 7 Southeast Asian hospitals",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "Equitable Access To Rehabilitation Services; A Scoping Review",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Study of the Brittle&ndash;Ductile Characteristics and Fracture Propagation Laws of Ultra-Deep Tight Sandy Conglomerate Reservoirs",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Exploring research and healthcare priorities in maternal health: A qualitative ethnographic study with mothers from ethnic minority backgrounds in the UK",
+          "citations": [
+            3
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "The prevalence of intestinal parasites in the province of Izmir, Turkey",
+          "citations": [
+            4
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Disparities in Access to the Northwest Ambulance Service during pregnancy, birth and postpartum period and its association with neonatal and maternal outcomes [DiAAS]: a retrospective cohort study and qualitative framewo",
+          "citations": [
+            5
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Presenteeism among Nurses: understanding its determinants through a scoping review",
+          "citations": [
+            6
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Difficulty Adjustment in Cognitive Training Software for Children: a Protocol for a Systematic Review and Meta-Analysis",
+          "citations": [
+            7
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        }
+      ]
+    }
+  ]
+}

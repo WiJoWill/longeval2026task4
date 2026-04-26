@@ -52,6 +52,68 @@ From `outputs/reports/caes_rag_rrf_v1_eval.json`:
 - empty citation rate: `0.0`
 - filler answer rate: `0.0147`
 
+## RAG Quality Evaluation
+
+The original evaluator is a structural compliance check. It verifies coverage, JSON validity, candidate-subset compliance, citation indices, and obvious filler. Those checks are necessary, but they do not measure RAG quality by themselves.
+
+The repo now includes a second evaluator inspired by the RAG evaluation framing in the Prompt Engineering Guide, RGB, RECALL, and RAGAS:
+
+- context relevance: whether selected references overlap with the query;
+- answer faithfulness: whether answer sentences are supported by their cited documents;
+- answer relevance: whether generated answers address the query;
+- RGB-like robustness: noise robustness, negative rejection, and information integration proxies;
+- RECALL-like counterfactual risk: whether numeric claims in answers are supported by cited context.
+
+Run it with:
+
+```powershell
+.\.venv\Scripts\python.exe -m task4_rag.src.evaluate_rag_quality `
+  --run outputs/runs/caes_rag_rrf_v1.jsonl `
+  --queries data/task4_longeval_rag-query_docids.jsonl `
+  --documents data/snapshot3/longeval_sci_test-09-11_2026_fulltext/documents `
+  --doc-text-fields "fullText|abstract|title" `
+  --output-report outputs/reports/caes_rag_rrf_v1_rag_quality_eval.json
+```
+
+Current main quality report:
+
+- `outputs/reports/caes_rag_rrf_v1_rag_quality_eval.json`
+
+Current proxy scores:
+
+- context relevance: `0.558`
+- context precision proxy: `0.970`
+- answer faithfulness proxy: `0.942`
+- answer relevance proxy: `0.392`
+- unsupported answer item rate: `0.0`
+- RGB-like noise robustness proxy: `0.963`
+- RGB-like information integration coverage: `0.255`
+- RECALL-like numeric claim support rate: `0.879`
+
+These are diagnostic proxies, not official labels. They are most useful for comparing runs and surfacing suspicious records. In particular, lexical context relevance can overestimate semantic relevance when noisy full-text documents share generic terms with the query.
+
+## Optional LLM Judge
+
+For a human-like qualitative layer, the repo includes an optional LLM-as-judge evaluator:
+
+```powershell
+$env:OPENAI_API_KEY = "<your key>"
+
+.\.venv\Scripts\python.exe -m task4_rag.src.evaluate_llm_quality `
+  --run outputs/runs/caes_rag_rrf_v1.jsonl `
+  --queries data/task4_longeval_rag-query_docids.jsonl `
+  --documents data/snapshot3/longeval_sci_test-09-11_2026_fulltext/documents `
+  --doc-text-fields "fullText|abstract|title" `
+  --provider openai `
+  --model gpt-4o-mini `
+  --max-records 3 `
+  --output-report outputs/reports/caes_rag_rrf_v1_llm_judge_smoke.json
+```
+
+It scores each query on 1-5 dimensions: context relevance, answer relevance, faithfulness, completeness, citation quality, noise robustness, information integration, numeric factuality, and overall quality. It also writes qualitative strengths, weaknesses, failure modes, and a recommended fix per query.
+
+No LLM judge report is currently generated in this workspace because the API keys are not set.
+
 ## Repository Layout
 
 - `data/`: task inputs, candidate mappings, baseline files, and document snapshots.
@@ -115,3 +177,17 @@ Current result: `12 passed`.
 ## Notes And Limitations
 
 The pipeline is structurally valid and candidate-compliant, but semantic quality is still retrieval-limited. Some broad query terms can pull unrelated candidate documents, so the next high-value work is document-level reranking and a small qualitative review set.
+
+The evaluation workflow should now be:
+
+1. validate structure and candidate compliance;
+2. run RAG quality diagnostics;
+3. inspect records with low answer relevance, low noise robustness, or high counterfactual risk;
+4. use a small judged subset to calibrate whether the proxy metrics match human relevance judgments.
+
+Useful references:
+
+- Prompt Engineering Guide RAG evaluation overview: https://www.promptingguide.ai/research/rag#rag-evaluation
+- RGB benchmark: https://arxiv.org/abs/2309.01431
+- RECALL benchmark: https://arxiv.org/abs/2311.08147
+- RAGAS: https://arxiv.org/abs/2309.15217

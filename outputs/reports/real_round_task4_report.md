@@ -43,12 +43,28 @@ Metrics:
 - empty-citation rate: `0.0`
 - filler-answer rate: `0.0147`
 
+RAG quality diagnostics:
+
+- `outputs/reports/caes_rag_rrf_v1_rag_quality_eval.json`
+
+Proxy metrics:
+
+- context relevance: `0.558`
+- context precision proxy: `0.970`
+- answer faithfulness proxy: `0.942`
+- answer relevance proxy: `0.392`
+- unsupported answer item rate: `0.0`
+- RGB-like noise robustness proxy: `0.963`
+- RGB-like information integration coverage: `0.255`
+- RECALL-like numeric claim support rate: `0.879`
+
 Interpretation:
 
 - every output record is structurally valid;
 - every `references` list is a subset of the official candidate document IDs;
 - the run remains compact, using about one third of the 10 candidates per query;
-- the generation pass is stricter than before, so fewer weak sentences are emitted.
+- the generation pass is stricter than before, so fewer weak sentences are emitted;
+- citation faithfulness is high because answers are extractive, but answer relevance is much lower, which better captures the remaining semantic drift problem.
 
 `reference_exact_match_rate` remains `0.0` by design because this system reports only selected evidence rather than all 10 candidate documents.
 
@@ -76,6 +92,8 @@ The repaired baseline is structurally clean, but it keeps all 10 candidate refer
 The stricter generator improved structural grounding and reduced answer verbosity. The main tradeoff is that answer-item counts are lower for some queries because noisy or off-topic sentences are now dropped instead of being forced into the answer.
 
 Qualitative smoke review still shows a retrieval-side weakness: broad query terms such as `class` can pull unrelated candidate documents when those terms appear in titles or full text. The generator can suppress some bad sentences, but it cannot fully repair evidence selection once an unrelated document is ranked into the selected set.
+
+The new quality evaluator makes this clearer than the structural evaluator. Structural metrics say the run is valid and citation-compliant. RAG-quality metrics separate that from answer usefulness: faithfulness-to-cited-context is strong, while answer relevance is only moderate.
 
 So the current state is:
 

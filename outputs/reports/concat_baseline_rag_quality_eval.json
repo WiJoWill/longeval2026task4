@@ -1,0 +1,535 @@
+{
+  "run_path": "outputs/runs/concat_baseline.jsonl",
+  "query_path": "data/task4_longeval_rag-query_docids.jsonl",
+  "documents_path": "data/snapshot3/longeval_sci_test-09-11_2026_fulltext/documents",
+  "metric_type": "reference_free_rag_proxy",
+  "notes": [
+    "These are diagnostic proxies, not official judged Task 4 labels.",
+    "Context relevance and answer relevance use keyword overlap.",
+    "Faithfulness estimates whether answer terms are supported by cited documents.",
+    "RGB/RECALL-style scores adapt robustness ideas to this candidate-constrained task."
+  ],
+  "quality_scores": {
+    "context_relevance": 0.27942264591200755,
+    "context_precision_proxy": 0.6081560283687942,
+    "answer_faithfulness_proxy": 0.9815381202085162,
+    "answer_relevance_proxy": 0.0984357250314697,
+    "unsupported_answer_item_rate": 0.0
+  },
+  "rgb_like_abilities": {
+    "noise_robustness_proxy": 0.6595744680851063,
+    "negative_rejection_coverage": 0.06382978723404255,
+    "negative_rejection_success_rate": 0.0,
+    "information_integration_coverage": 0.2553191489361702,
+    "information_integration_proxy": 0.5833333333333334
+  },
+  "recall_like_counterfactual_risk": {
+    "numeric_claim_support_rate": 0.4893617021276596,
+    "counterfactual_risk_proxy": 0.5106382978723404,
+    "high_risk_record_rate": 0.5106382978723404
+  },
+  "per_record_sample": [
+    {
+      "query_id": "aa42e210a361571ff4d1fad892b75d15",
+      "context_relevance": 0.24242424242424243,
+      "context_precision_proxy": 0.3333333333333333,
+      "answer_faithfulness_proxy": 1.0,
+      "answer_relevance_proxy": 0.2727272727272727,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 1.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": true,
+      "information_integration_proxy": 0.5,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 3,
+      "num_cited_references": 1,
+      "num_relevant_references": 1,
+      "num_noisy_cited_references": 0,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "275699672",
+          "context_relevance": 0.09090909090909091,
+          "title": "Learning and Attentional Difficulties, Ethnicity and Attainment in UK Higher Education: A Study Across 12 Academic Years"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "275699915",
+          "context_relevance": 0.0,
+          "title": "Who drops out of exposure therapy? A machine learning mega-analysis of PTSD patients"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "122371639",
+          "context_relevance": 0.6363636363636364,
+          "title": "Applying Deep Learning in User Equipment Measurable KPIs to Avoid Unnecessary NR RACH Procedures"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "APPLYING DEEP LEARNING IN USER EQUIPMENT MEASURABLE KPIs TO AVOID UNNECESSARY NR RACH PROCEDURES Abstract A user equipment (UE) in a wireless communication network uses a deep learning network model to infer whether a Fi",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "The UE implements the trained deep learning network model to infer whether an NR RACH failure is likely to occur based on the features, such as the measurable 4G/5G KPIs, at the current location so that the UE can avoid ",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "As such, if the UE encounters incorrect or non-optimized configurations for a cell within the network, the UE still attempts to connect with the cell according to the procedures defined in the 3GPP specification.",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        }
+      ]
+    },
+    {
+      "query_id": "46395a3cf66a9f6a75c89354410d1493",
+      "context_relevance": 0.2222222222222222,
+      "context_precision_proxy": 1.0,
+      "answer_faithfulness_proxy": 1.0,
+      "answer_relevance_proxy": 0.0,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 1.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 1,
+      "num_cited_references": 1,
+      "num_relevant_references": 1,
+      "num_noisy_cited_references": 0,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "290464296",
+          "context_relevance": 0.2222222222222222,
+          "title": "Burden of End-Stage Kidney Disease by Type 2 Diabetes Mellitus Status in South Korea: A Nationwide Epidemiologic Study"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "D I A B E T E S & M E T A B O L I S M J O U R N A LBurden of End-Stage Kidney Disease by Type 2 Diabetes Mellitus Status.",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        }
+      ]
+    },
+    {
+      "query_id": "5f07a7f0a83de807eee3213560a3467c",
+      "context_relevance": 0.36363636363636365,
+      "context_precision_proxy": 1.0,
+      "answer_faithfulness_proxy": 1.0,
+      "answer_relevance_proxy": 0.0,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 1.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 1.0,
+      "num_references": 1,
+      "num_cited_references": 1,
+      "num_relevant_references": 1,
+      "num_noisy_cited_references": 0,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "156685367",
+          "context_relevance": 0.36363636363636365,
+          "title": "Learning MDL logic programs from noisy data"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "To overcome this limitation,we introduce an approach that learns minimal descriptionlength programs from noisy data, including recursive pro-grams.",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        }
+      ]
+    },
+    {
+      "query_id": "804711f54939af9622c3c7614da85298",
+      "context_relevance": 0.4444444444444444,
+      "context_precision_proxy": 1.0,
+      "answer_faithfulness_proxy": 1.0,
+      "answer_relevance_proxy": 0.0,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 1.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 1.0,
+      "num_references": 1,
+      "num_cited_references": 1,
+      "num_relevant_references": 1,
+      "num_noisy_cited_references": 0,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "309224898",
+          "context_relevance": 0.4444444444444444,
+          "title": "Agreement between the Amsterdam Neuropsychological Tasks and the Cambridge Neuropsychological Test Automated Battery in theassessment of PKU patients and healthy controls"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "University of GroningenAgreement between the Amsterdam Neuropsychological Tasks and the CambridgeNeuropsychological Test Automated Battery in theassessment of PKU patients and healthycontrolsvan Steenis, Ellis M.; Huijbr",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        }
+      ]
+    },
+    {
+      "query_id": "c3d5d202f8ab3d130a90684fd7308f64",
+      "context_relevance": 0.15,
+      "context_precision_proxy": 0.5,
+      "answer_faithfulness_proxy": 1.0,
+      "answer_relevance_proxy": 0.0,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 0.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 1.0,
+      "num_references": 2,
+      "num_cited_references": 1,
+      "num_relevant_references": 1,
+      "num_noisy_cited_references": 1,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "293025457",
+          "context_relevance": 0.0,
+          "title": "Relationship of psoriatic arthritis with nail and scalp involvement in Turkish psoriasis patients: Multicentered cross-sectional study"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "296429828",
+          "context_relevance": 0.3,
+          "title": "Barriers and facilitators to accessing healthcare for early diagnosis of prostate cancer for black men\u2014a qualitative exploration in North-East England and Scotland"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "Psoriasis is a common multisystem inflammatory disease, and arthritis is an essential component of the disorder, requiring early diagnosis and prompt treatment for successful management.",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        }
+      ]
+    },
+    {
+      "query_id": "5ef548b174d925e873f8b5f138d6d8af",
+      "context_relevance": 0.45454545454545453,
+      "context_precision_proxy": 1.0,
+      "answer_faithfulness_proxy": 0.9584870103647866,
+      "answer_relevance_proxy": 0.2727272727272727,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 1.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 1,
+      "num_cited_references": 1,
+      "num_relevant_references": 1,
+      "num_noisy_cited_references": 0,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "5126893",
+          "context_relevance": 0.45454545454545453,
+          "title": "Halogen and <sup>129</sup>-I systematics in gas hydrate fields at the northern Cascadia margin (IODP Expedition 311): insights from numerical modeling"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "1-3, D-24148 Kiel, Germany [1] We measured halogen concentrations and 129I/I ratios in five drilling sites of Integrated Ocean Drilling Program Expedition 311 (offshore Vancouver Island, Canada) in order to identify pote",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "Iodine is dominated by organic decomposition and transports with fluids in reducing environments and the presence of the cosmogenic radioisotope 129I (T1/2 = 15.7 Ma) allows the age determination of organic sources for i",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 0.9411764705882353,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "A geochemical transport-reaction model was applied to simulate the advection of deeply sourced fluids and the release of iodide, bromide, and ammonia in the host sediments due to organic matter degradation.",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 0.8947368421052632,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "The model results for the Expedition 311 sites indicate that the in situ release of young iodine is relatively minor in comparison to the contribution of migrating fluids, carrying large amounts of old iodine from deep s",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 0.9565217391304348,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "Fluids are released from compaction of porous sediments at shallow levels and from diagenetic reactions such as clay mineral dehydration at great depths [Bekins et al., 1995].",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        }
+      ]
+    },
+    {
+      "query_id": "d3c2d232f0a39dae1f18c762ccdb1eab",
+      "context_relevance": 0.24242424242424243,
+      "context_precision_proxy": 0.3333333333333333,
+      "answer_faithfulness_proxy": 0.98,
+      "answer_relevance_proxy": 0.18181818181818182,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 1.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 3,
+      "num_cited_references": 1,
+      "num_relevant_references": 1,
+      "num_noisy_cited_references": 0,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "286409073",
+          "context_relevance": 0.0,
+          "title": "Supplementary Table from Chromatin Remodeling Induced by ARID1A Loss in Lung Cancer Promotes Glycolysis and Confers JQ1 Vulnerability"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "305780079",
+          "context_relevance": 0.0,
+          "title": "Systemic fungal infections"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "310709873",
+          "context_relevance": 0.7272727272727273,
+          "title": "Pathophysiological Significance of Urea in Glomerular Filtration Dysregulation in Hepatorenal Syndrome: An Integrative Review"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "Pathophysiological Significance of Urea in Glomerular Filtration Dysregulation in Hepatorenal Syndrome: An Integrative Review.",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Elevated urea levels above 35 mmol/L associate with a 3.42-fold increased mortality risk, while reductions exceeding 30% correlate with improved clinical outcomes, emphasizing the need for randomized trials targeting ure",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 0.96,
+          "supported_number_rate": 1.0
+        }
+      ]
+    },
+    {
+      "query_id": "533ebe54d99e8c5e2feea55299c0f3ef",
+      "context_relevance": 0.16666666666666666,
+      "context_precision_proxy": 0.3333333333333333,
+      "answer_faithfulness_proxy": 1.0,
+      "answer_relevance_proxy": 0.0,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 0.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 3,
+      "num_cited_references": 1,
+      "num_relevant_references": 1,
+      "num_noisy_cited_references": 1,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "313162270",
+          "context_relevance": 0.0,
+          "title": "Vepdegestrant, a PROTAC Estrogen Receptor Degrader, in Advanced Breast Cancer."
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "292434535",
+          "context_relevance": 0.07142857142857142,
+          "title": "The Dammarane Triterpenoids from Aglaia eximia Miq. and Their Cytotoxic Activity Against P388 Murine Leukemia Cell"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "309218608",
+          "context_relevance": 0.42857142857142855,
+          "title": "Arrhythmogenic Cardiomyopathy:Towards Genotype Based Diagnoses and Management"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "All four compounds were successfully isolated and identified as, dammar-24-en-3a,20-diol (1), 20S,24S-epoxy-dammar-3a,25-diol (2), (E)-dammar-23-en-3a,20,25-triol (3), and (E)-25-hydroperoxydammar-23-en-3a,20-diol (4), r",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        }
+      ]
+    },
+    {
+      "query_id": "785b9784a0ed573bc3e4c38addb767f5",
+      "context_relevance": 0.16666666666666666,
+      "context_precision_proxy": 0.3333333333333333,
+      "answer_faithfulness_proxy": 1.0,
+      "answer_relevance_proxy": 0.0,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 0.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": true,
+      "information_integration_proxy": 0.5,
+      "counterfactual_risk_proxy": 1.0,
+      "num_references": 3,
+      "num_cited_references": 1,
+      "num_relevant_references": 1,
+      "num_noisy_cited_references": 1,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "290357553",
+          "context_relevance": 0.0,
+          "title": "Performance anxiety is associated with biases in learning from reward and punishment in skilled individuals"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "276180485",
+          "context_relevance": 0.0,
+          "title": "Service learning in the nursing bachelor thesis: a mixed-methods study"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "298360833",
+          "context_relevance": 0.5,
+          "title": "Adversarial Machine Learning: Methods for Attacks and Defenses"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "The Final Degree Project (FDP) is a module that, although intended for the completion of a bachelor thesis (BT), consists of theoretical and clinical teaching.",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        }
+      ]
+    },
+    {
+      "query_id": "3490ff75cc1d7cc958eea148ecf9f064",
+      "context_relevance": 0.6,
+      "context_precision_proxy": 1.0,
+      "answer_faithfulness_proxy": 0.9039705882352941,
+      "answer_relevance_proxy": 0.2,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 1.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": true,
+      "information_integration_proxy": 0.5,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 1,
+      "num_cited_references": 1,
+      "num_relevant_references": 1,
+      "num_noisy_cited_references": 0,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "299271867",
+          "context_relevance": 0.6,
+          "title": "The influence of fluid resuscitation strategy on outcomes from dengue shock syndrome: a review of the management of 691 children in 7 Southeast Asian hospitals"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "Centre for Tropical Medicine and Global Health, Nuffield Department of Medicine, University of Oxford, United Kingdom Corresponding author: Huynh Trung Trieu, MD, PhD Address: Oxford University Clinical Research Unit, Ho",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 0.9375,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "Key questions What is already known on this topic There are few clinical trials on the influence of different fluid management strategies on DSS outcomes.",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 0.8333333333333334,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Global Links Volunteer Programme, Royal College of Paediatrics and Child Health, UK 11.",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "We set out to describe the actual fluid management strategies employed in different settings and to investigate relationships with clinical outcomes.",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 0.8666666666666667,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "What this study adds Incorporating colloids into the initial resuscitation strategy did not provide better outcomes than use of crystalloids alone.",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 0.8823529411764706,
+          "supported_number_rate": 0.0
+        }
+      ]
+    }
+  ]
+}
