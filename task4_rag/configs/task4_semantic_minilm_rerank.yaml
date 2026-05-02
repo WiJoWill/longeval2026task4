@@ -51,4 +51,9 @@ generation:
   temporal_templates: true
   sentence_rerank_model: cross-encoder/ms-marco-MiniLM-L-6-v2
   sentence_rerank_top_n: 24
+  answer_candidate_score_threshold: 0.0
+  answer_candidate_score_margin: 0.35
+  max_selected_answer_candidates: 50
+  multi_doc_synthesis: true
+  max_synthesis_sentences: 2
   prompts_dir: task4_rag/prompts

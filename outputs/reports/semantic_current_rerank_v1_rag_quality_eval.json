@@ -1,0 +1,783 @@
+{
+  "run_path": "outputs/runs/semantic_current_rerank_v1.jsonl",
+  "query_path": ".cache/longeval-sci-2026/task4_longeval_rag-query_docids.jsonl",
+  "documents_path": ".cache/longeval-sci-2026/longeval_sci_test-09-11_2026_fulltext/data/processed/doc_collection_parallel_09032026_parallel_2/snapshot-3/longeval_sci_test-09-11_2026_fulltext/documents",
+  "metric_type": "reference_free_rag_proxy",
+  "notes": [
+    "These are diagnostic proxies, not official judged Task 4 labels.",
+    "Context relevance and answer relevance use keyword overlap.",
+    "Faithfulness estimates whether answer terms are supported by cited documents.",
+    "RGB/RECALL-style scores adapt robustness ideas to this candidate-constrained task."
+  ],
+  "quality_scores": {
+    "context_relevance": 0.5360820719863273,
+    "context_precision_proxy": 0.95,
+    "answer_faithfulness_proxy": 0.9497646668746499,
+    "answer_relevance_proxy": 0.4585843234779405,
+    "unsupported_answer_item_rate": 0.0
+  },
+  "rgb_like_abilities": {
+    "noise_robustness_proxy": 0.9478723404255318,
+    "negative_rejection_coverage": 0.0,
+    "negative_rejection_success_rate": 0.0,
+    "information_integration_coverage": 0.2553191489361702,
+    "information_integration_proxy": 1.0
+  },
+  "recall_like_counterfactual_risk": {
+    "numeric_claim_support_rate": 0.7267477203647417,
+    "counterfactual_risk_proxy": 0.2732522796352584,
+    "high_risk_record_rate": 0.3191489361702128
+  },
+  "per_record_sample": [
+    {
+      "query_id": "aa42e210a361571ff4d1fad892b75d15",
+      "context_relevance": 0.4,
+      "context_precision_proxy": 1.0,
+      "answer_faithfulness_proxy": 0.9606481481481481,
+      "answer_relevance_proxy": 0.45454545454545453,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 1.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": true,
+      "information_integration_proxy": 1.5,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 5,
+      "num_cited_references": 3,
+      "num_relevant_references": 5,
+      "num_noisy_cited_references": 0,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "129069349",
+          "context_relevance": 0.2727272727272727,
+          "title": "Optimizing Data Throughput Performance in 5G Non-Standalone Networks Using Deep Learning"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "122371639",
+          "context_relevance": 0.6363636363636364,
+          "title": "Applying Deep Learning in User Equipment Measurable KPIs to Avoid Unnecessary NR RACH Procedures"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "268301",
+          "context_relevance": 0.36363636363636365,
+          "title": "Distance language learners and learner support: beliefs, difficulties and use of strategies"
+        },
+        {
+          "reference_index": 3,
+          "doc_id": "163088229",
+          "context_relevance": 0.36363636363636365,
+          "title": "C$^{3}$Bench: A Comprehensive Classical Chinese Understanding Benchmark\n  for Large Language Models"
+        },
+        {
+          "reference_index": 4,
+          "doc_id": "148414038",
+          "context_relevance": 0.36363636363636365,
+          "title": "Analysis of a Federated Learning Framework for Heterogeneous Medical Image Data: Privacy and Performance Perspective"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "Background Many mobile networks implement multiple radio access technology (RAT) connectivity, which allows cellular phones and other mobile user equipment (UE) to successively or concurrently connect to different radio ",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 0.9259259259259259,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "4460 [2021] https://www.tdcommons.org/dpubs_series/4460 UE is able to make the best decision to avoid the unnecessary NR RACH procedure.",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "In classification task, the best supervised model can achieve an accuracy of 0.8266,which is 0.2651 higher than the best LLM.",
+          "citations": [
+            3
+          ],
+          "faithfulness_proxy": 0.9166666666666666,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "The UE also records the perceived DL throughput when it connects to a cell with LTE-only connectivity enabled or with EN-DC enabled.",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        }
+      ]
+    },
+    {
+      "query_id": "46395a3cf66a9f6a75c89354410d1493",
+      "context_relevance": 0.33333333333333337,
+      "context_precision_proxy": 0.75,
+      "answer_faithfulness_proxy": 0.9513888888888888,
+      "answer_relevance_proxy": 0.3333333333333333,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 0.6666666666666667,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 4,
+      "num_cited_references": 3,
+      "num_relevant_references": 3,
+      "num_noisy_cited_references": 1,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "148874898",
+          "context_relevance": 0.5555555555555556,
+          "title": "Herbicide, fumigant, and fungicide use and breast cancer risk among farmers' wives"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "148874812",
+          "context_relevance": 0.5555555555555556,
+          "title": "Insecticide use and breast cancer risk among farmers\u2019 wives in the agricultural health study"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "290464296",
+          "context_relevance": 0.2222222222222222,
+          "title": "Burden of End-Stage Kidney Disease by Type 2 Diabetes Mellitus Status in South Korea: A Nationwide Epidemiologic Study"
+        },
+        {
+          "reference_index": 3,
+          "doc_id": "302845152",
+          "context_relevance": 0.0,
+          "title": "Balancing Costs and Clinical Outcomes: A Cost-Effectiveness Study of PICC Types Across Chinese Healthcare Settings"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "In the 5-year follow-up inter-view, they were asked to report the pesticides used on specific crops and animals in the previous growing season and how often (number of hours per day, number of days) during that growing s",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 0.9166666666666666,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "A decision-analytic cost-effectiveness model was developed from a societal perspective, utilizing real-world data concerning PICC-related complications and costs from Class 3A hospitals and community hospital settings in",
+          "citations": [
+            3
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "In ad-dition, our data may provide evidence to support the need for early screening for IFG or diabetes optimal intervention, and prevention strategies for eGFR decline in the general popula-tion.",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 0.8888888888888888,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Prediabetes and cardiovascular disease: pathophysiology and interventions for prevention and risk reduction.",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        }
+      ]
+    },
+    {
+      "query_id": "5f07a7f0a83de807eee3213560a3467c",
+      "context_relevance": 0.5,
+      "context_precision_proxy": 1.0,
+      "answer_faithfulness_proxy": 1.0,
+      "answer_relevance_proxy": 0.36363636363636365,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 1.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 4,
+      "num_cited_references": 3,
+      "num_relevant_references": 4,
+      "num_noisy_cited_references": 0,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "943350",
+          "context_relevance": 0.6363636363636364,
+          "title": "Gradient-based Reinforcement Planning in Policy-Search Methods"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "649560",
+          "context_relevance": 0.6363636363636364,
+          "title": "Feature Reinforcement Learning: Part I: Unstructured MDPs"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "156685367",
+          "context_relevance": 0.36363636363636365,
+          "title": "Learning MDL logic programs from noisy data"
+        },
+        {
+          "reference_index": 3,
+          "doc_id": "293226721",
+          "context_relevance": 0.36363636363636365,
+          "title": "Developing a Modified Volleyball-Based Learning Model to Improve Students\u2019 Engagement in Physical Education"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "To compare them with the exact gradient, we calculated the exact values of z and q by inverting the linear system.",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "I generally 4 omit separating commas if no confusion arises, in particular in indices.",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "If POPPER findsa combination, it sets the combination as the best solution sofar and updates the maximum hypothesis size.",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "We have derived formulas for the exact policy gradient.",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        }
+      ]
+    },
+    {
+      "query_id": "804711f54939af9622c3c7614da85298",
+      "context_relevance": 0.4444444444444444,
+      "context_precision_proxy": 1.0,
+      "answer_faithfulness_proxy": 0.9629120879120879,
+      "answer_relevance_proxy": 0.5555555555555556,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 1.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 4,
+      "num_cited_references": 3,
+      "num_relevant_references": 4,
+      "num_noisy_cited_references": 0,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "299281809",
+          "context_relevance": 0.4444444444444444,
+          "title": "The efficacy of finerenone on hierarchical composite endpoint analysed using win statistics in patients with heart failure and mildly reduced or preserved ejection fraction: A prespecified analysis of FINEARTS \u2010 HF"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "309223238",
+          "context_relevance": 0.3333333333333333,
+          "title": "Efficacy and Safety of Finerenone in Heart Failure With Preserved Ejection Fraction:A FINE-HEART Analysis"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "295893100",
+          "context_relevance": 0.5555555555555556,
+          "title": "Is Disease Stability an Attainable Chronic Obstructive Pulmonary Disease Treatment Goal?"
+        },
+        {
+          "reference_index": 3,
+          "doc_id": "309224898",
+          "context_relevance": 0.4444444444444444,
+          "title": "Agreement between the Amsterdam Neuropsychological Tasks and the Cambridge Neuropsychological Test Automated Battery in theassessment of PKU patients and healthy controls"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "We examined a prespec-ified hierarchical composite endpoint that considered the clinicalimportance of the events in the primary endpoint (ranked in orderof clinical importance: cardiovascular death, HF hospitalization, a",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "However, broader neuropsychological testing, leading to a more detailed profile, is preferred nowadays to capture the deficits in ET-PKU [6].",
+          "citations": [
+            3
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "Benefits of budesonide/glycopyrrolate/formoterol fumarate (BGF)on symptoms and quality of life in patients with COPD in the ETHOStrial.",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 0.9230769230769231,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Rupp, Effects of concurrent phenylalanine levels on sustained attention and calculation speed in patients treated early for phenylketonuria, Eur.",
+          "citations": [
+            3
+          ],
+          "faithfulness_proxy": 0.9285714285714286,
+          "supported_number_rate": 0.0
+        }
+      ]
+    },
+    {
+      "query_id": "c3d5d202f8ab3d130a90684fd7308f64",
+      "context_relevance": 0.6499999999999999,
+      "context_precision_proxy": 1.0,
+      "answer_faithfulness_proxy": 0.9555555555555555,
+      "answer_relevance_proxy": 0.5,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 1.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 1.0,
+      "num_references": 2,
+      "num_cited_references": 2,
+      "num_relevant_references": 2,
+      "num_noisy_cited_references": 0,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "298663733",
+          "context_relevance": 0.7,
+          "title": "Recommendations for the local management of digital ulcers in systemic sclerosis: A report from the World Scleroderma Foundation (WSF) 'Ad hoc committee'"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "298663728",
+          "context_relevance": 0.6,
+          "title": "Lung function and skin fibrosis changes as predictors of survival in SSc-associated interstitial lung disease: a EUSTAR study"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "Vitamin E gel reduces time of healing of digital ulcers in systemic sclerosis.",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 0.8888888888888888,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Short-term progression of interstitial lung disease in sys-temic sclerosis predicts long-term survival in two independent clin-ical trial cohorts.",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 0.9333333333333333,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "9induces a prompt healing of long-lasting indolent digital ulcers in patients with systemic sclerosis.",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Riociguat in patients with early diffuse cutaneous systemic sclerosis (RISE-SSc): open-label, long-term extension of a phase 2b, randomised, placebo-controlled trial.",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        }
+      ]
+    },
+    {
+      "query_id": "5ef548b174d925e873f8b5f138d6d8af",
+      "context_relevance": 0.40909090909090906,
+      "context_precision_proxy": 1.0,
+      "answer_faithfulness_proxy": 0.9581428571428571,
+      "answer_relevance_proxy": 0.5454545454545454,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 1.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 4,
+      "num_cited_references": 4,
+      "num_relevant_references": 4,
+      "num_noisy_cited_references": 0,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "5126893",
+          "context_relevance": 0.45454545454545453,
+          "title": "Halogen and <sup>129</sup>-I systematics in gas hydrate fields at the northern Cascadia margin (IODP Expedition 311): insights from numerical modeling"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "192180353",
+          "context_relevance": 0.45454545454545453,
+          "title": "Enhancement of curcumin bioaccessibility: An assessment of possible synergistic effect of \u03b3-cyclodextrin metal\u2013organic frameworks with micelles"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "301843073",
+          "context_relevance": 0.45454545454545453,
+          "title": "Bioaccessibility and Absorption  of Curcumin: A Look into  \u03b3-Cyclodextrin Metal-Organic  Frameworks"
+        },
+        {
+          "reference_index": 3,
+          "doc_id": "309263613",
+          "context_relevance": 0.2727272727272727,
+          "title": "Does heightened subjective sexual arousal lower pain in women if disgust is minimized?"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "Fluids are released from compaction of porous sediments at shallow levels and from diagenetic reactions such as clay mineral dehydration at great depths [Bekins et al., 1995].",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "In vitro digestion (via the INFOGEST protocol) revealed an 8-fold increase in apparent solubility of curcumin with bile salts and a 53-fold increase when combining bile salts and \u03b3-CD-MOFs, achieving bioaccessibility of ",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 0.9523809523809523,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "For instance, in a previous study, it has been found that in women with high disgust sensitivity, sexual arousal was reduced when they were exposed to sexual body fluids, whereas in women with low disgust sensi-tivity, s",
+          "citations": [
+            3
+          ],
+          "faithfulness_proxy": 0.88,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "Native gastrointestinal mucus: Critical features and techniques for studying interactions with drugs, drug carriers, and bacteria.",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Fluids with low chloride concentrations are commonly associated with clay dehydration or gas hydrate dissociation [Kastner et al., 1991], while fluids in hydrate fields are highly enriched in iodide, a strong indication ",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 0.9583333333333334,
+          "supported_number_rate": 1.0
+        }
+      ]
+    },
+    {
+      "query_id": "d3c2d232f0a39dae1f18c762ccdb1eab",
+      "context_relevance": 0.6818181818181819,
+      "context_precision_proxy": 1.0,
+      "answer_faithfulness_proxy": 0.9583333333333333,
+      "answer_relevance_proxy": 0.18181818181818182,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 1.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 2,
+      "num_cited_references": 2,
+      "num_relevant_references": 2,
+      "num_noisy_cited_references": 0,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "310709873",
+          "context_relevance": 0.7272727272727273,
+          "title": "Pathophysiological Significance of Urea in Glomerular Filtration Dysregulation in Hepatorenal Syndrome: An Integrative Review"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "310709958",
+          "context_relevance": 0.6363636363636364,
+          "title": "Pathophysiological Role of Sodium in Acute Kidney Injury and Chronic Kidney Disease: A Narrative Review"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "The authors recommend:Hourly sodium monitoring during the first 12 hours in severe AKIUse of continuous venovenous hemofiltration with controlled sodium concentration indialysate for severe disturbancesAvoidance of rapid",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "Therapeutic Approaches to Urea Level Correction Conservative Therapy Volume correction is the first step in HRS treatment.",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 0.9166666666666666,
+          "supported_number_rate": 0.0
+        }
+      ]
+    },
+    {
+      "query_id": "533ebe54d99e8c5e2feea55299c0f3ef",
+      "context_relevance": 0.5142857142857142,
+      "context_precision_proxy": 1.0,
+      "answer_faithfulness_proxy": 0.9093822843822844,
+      "answer_relevance_proxy": 0.42857142857142855,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 1.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": false,
+      "information_integration_proxy": null,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 5,
+      "num_cited_references": 4,
+      "num_relevant_references": 5,
+      "num_noisy_cited_references": 0,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "305689915",
+          "context_relevance": 0.5714285714285714,
+          "title": "Efficacy of liposomal irinotecan + 5-FU/LV vs. S-1 in gemcitabine-refractory metastatic pancreatic cancer: a real-world study using inverse probability of treatment weighting"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "314496423",
+          "context_relevance": 0.6428571428571429,
+          "title": "Impact of prior chemotherapy on nanoliposomal irinotecan with fluorouracil and folinic acid for unresectable pancreatic cancer: a retrospective analysis of data from the multicenter NAPOLEON-2 study"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "308388715",
+          "context_relevance": 0.42857142857142855,
+          "title": "Hypoplastic Left Heart Syndrome Practice Variation Across 31 Centres From 20 European Countries. An AEPC Imaging Working Group Study"
+        },
+        {
+          "reference_index": 3,
+          "doc_id": "295897456",
+          "context_relevance": 0.5,
+          "title": "Update on pediatric liver transplantation in Europe 2022: An ELITA-ESPGHAN report"
+        },
+        {
+          "reference_index": 4,
+          "doc_id": "309218608",
+          "context_relevance": 0.42857142857142855,
+          "title": "Arrhythmogenic Cardiomyopathy:Towards Genotype Based Diagnoses and Management"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "Nanoliposomal irinotecan plus fluorouracil and folinic acid as a second-line treatment option in patients with metastatic pancreatic ductal adenocarcinoma: a retrospective cohort study.",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "reported that second-line FOLFIRINOX did not provide any survival benefit over the nal-IRI + 5-FU/LV regimen [32].",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 0.8461538461538461,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "Conversely the use of digoxin [23], has been reported to show a significant benefit in ameliorating transplant-free interstage survival after the stage I procedure.",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 0.875,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "ACM is most oftenassociated with likely pathogenic or pathogenic (LP/P) variantsin genes encoding for desmosomal proteins.",
+          "citations": [
+            4
+          ],
+          "faithfulness_proxy": 0.9090909090909091,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Previous studies have questioned how, despite widespread use, ACE-inhibitors [22, 31] have no proven evidence of benefit to Fontan patients.",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 0.9166666666666666,
+          "supported_number_rate": 1.0
+        }
+      ]
+    },
+    {
+      "query_id": "785b9784a0ed573bc3e4c38addb767f5",
+      "context_relevance": 0.8125,
+      "context_precision_proxy": 1.0,
+      "answer_faithfulness_proxy": 0.914141414141414,
+      "answer_relevance_proxy": 0.625,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 1.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": true,
+      "information_integration_proxy": 1.0,
+      "counterfactual_risk_proxy": 1.0,
+      "num_references": 2,
+      "num_cited_references": 2,
+      "num_relevant_references": 2,
+      "num_noisy_cited_references": 0,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "292475149",
+          "context_relevance": 1.0,
+          "title": "Enhancing Critical Thinking in Optics through Project-Based STEAM Learning with Visual Simulations"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "291799228",
+          "context_relevance": 0.625,
+          "title": "Improving Critical Thinking Skills through a STEAM-Integrated SSCS Learning Model on Static Fluid Concepts"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "Optics Virtual Laboratory (OVL) Based on Physics Independent Learning (PIL) For Improving Critical Thinking Skill.",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 0.8333333333333334,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "HOTS student worksheet to identification of scientific creativity skill , critical thinking skill and creative thinking skill in physics learning.",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Despite the potential, the combined use of PjBL-STEAM and visual simulations in optics learning remains underexplored.",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 0.9090909090909091,
+          "supported_number_rate": 0.0
+        }
+      ]
+    },
+    {
+      "query_id": "3490ff75cc1d7cc958eea148ecf9f064",
+      "context_relevance": 0.6666666666666666,
+      "context_precision_proxy": 1.0,
+      "answer_faithfulness_proxy": 0.976388888888889,
+      "answer_relevance_proxy": 0.8,
+      "unsupported_answer_item_rate": 0.0,
+      "noise_robustness_proxy": 1.0,
+      "negative_rejection_applicable": false,
+      "negative_rejection_success": false,
+      "information_integration_applicable": true,
+      "information_integration_proxy": 1.5,
+      "counterfactual_risk_proxy": 0.0,
+      "num_references": 3,
+      "num_cited_references": 3,
+      "num_relevant_references": 3,
+      "num_noisy_cited_references": 0,
+      "reference_scores": [
+        {
+          "reference_index": 0,
+          "doc_id": "299809610",
+          "context_relevance": 0.7,
+          "title": "Exploring research and healthcare priorities in maternal health: A qualitative ethnographic study with mothers from ethnic minority backgrounds in the UK"
+        },
+        {
+          "reference_index": 1,
+          "doc_id": "303699265",
+          "context_relevance": 0.7,
+          "title": "Disparities in Access to the Northwest Ambulance Service during pregnancy, birth and postpartum period and its association with neonatal and maternal outcomes [DiAAS]: a retrospective cohort study and qualitative framework analysis"
+        },
+        {
+          "reference_index": 2,
+          "doc_id": "299271867",
+          "context_relevance": 0.6,
+          "title": "The influence of fluid resuscitation strategy on outcomes from dengue shock syndrome: a review of the management of 691 children in 7 Southeast Asian hospitals"
+        }
+      ],
+      "answer_item_scores": [
+        {
+          "text": "These included: 1) Communication barriers such as language difficulties, understanding each other and health literacy; 2) Emotional and psychological support, highlighting a need for further research.",
+          "citations": [
+            0
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "BMC Pregnancy and Childbirth (2025) 25:1109 highlight how such factors may influence access to emer-gency care and, consequently, health outcomes.",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 0.9375,
+          "supported_number_rate": 1.0
+        },
+        {
+          "text": "In a retrospective study like this uncertainty must remain about the link between patient severity and the fluid regimen chosen by the treating clinician, and about how this linkage could affect the outcomes of interest.",
+          "citations": [
+            2
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "This will help to address timely access to the most appropriate services, reducing risk factors for adverse maternity and neonatal outcomes and associated impact upon the emergency services.",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 1.0,
+          "supported_number_rate": 0.0
+        },
+        {
+          "text": "Findings will be used to inform local and national interventions for at risk populations who access ambulance services during pregnancy, birth, and early postpartum.",
+          "citations": [
+            1
+          ],
+          "faithfulness_proxy": 0.9444444444444444,
+          "supported_number_rate": 0.0
+        }
+      ]
+    }
+  ]
+}

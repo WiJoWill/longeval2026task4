@@ -114,6 +114,48 @@ It scores each query on 1-5 dimensions: context relevance, answer relevance, fai
 
 No LLM judge report is currently generated in this workspace because the API keys are not set.
 
+## Optional OpenAI Answer Generation
+
+Store the API key in an untracked repo-local file:
+
+```powershell
+Copy-Item .env.example .env.local
+# edit .env.local and set OPENAI_API_KEY
+```
+
+The OpenAI generator uses the same retrieval/chunking/sentence-rerank pipeline as each config, then sends only the selected sentence-level evidence to the model. It does not send full documents. Run the 10 configured retrieval variants with OpenAI generation:
+
+```powershell
+.\task4_rag\scripts\run_openai_llm_experiments.ps1
+```
+
+For a smoke test:
+
+```powershell
+.\task4_rag\scripts\run_openai_llm_experiments.ps1 -MaxQueries 1
+```
+
+For lower-cost asynchronous generation, prepare OpenAI Batch input without submitting it:
+
+```powershell
+.\task4_rag\scripts\prepare_openai_llm_batch.ps1
+```
+
+This writes `outputs/batch_inputs/all_experiments_requests.jsonl` plus one `*_state.json` file per experiment. The request file contains only selected sentence-level evidence with `evidence_id` values; timestamps and full documents are not sent to the LLM. Inspect these files before submitting:
+
+```powershell
+Get-Content outputs/batch_inputs/all_experiments_requests.jsonl -First 1
+```
+
+When ready to submit and reconstruct final run JSONL files:
+
+```powershell
+python -m task4_rag.src.apply_batch `
+  --requests-file outputs/batch_inputs/all_experiments_requests.jsonl `
+  --state-dir outputs/batch_inputs `
+  --output-dir outputs/openai_batch_runs
+```
+
 ## Repository Layout
 
 - `data/`: task inputs, candidate mappings, baseline files, and document snapshots.

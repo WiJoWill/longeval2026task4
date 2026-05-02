@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import sys
 from collections.abc import Sequence
+from functools import lru_cache
 from math import sqrt
 import re
 from dataclasses import dataclass
@@ -279,14 +280,19 @@ def _chunks_to_passages(document: Document, chunks: Sequence[Sequence[str]]) -> 
 
 
 def _encode_sentences(sentences: Sequence[str], model_name: str) -> list[list[float]]:
+    model = _sentence_transformer(model_name)
+    raw_embeddings = model.encode(list(sentences), normalize_embeddings=True)
+    return [_as_vector(embedding) for embedding in raw_embeddings]
+
+
+@lru_cache(maxsize=4)
+def _sentence_transformer(model_name: str) -> object:
     try:
         from sentence_transformers import SentenceTransformer  # type: ignore
     except ImportError as exc:
         raise RuntimeError("sentence-transformers is not installed") from exc
 
-    model = SentenceTransformer(model_name)
-    raw_embeddings = model.encode(list(sentences), normalize_embeddings=True)
-    return [_as_vector(embedding) for embedding in raw_embeddings]
+    return SentenceTransformer(model_name)
 
 
 def _as_vector(value: object) -> list[float]:
