@@ -47,3 +47,40 @@ def test_answer_selector_prefers_one_strong_sentence_per_document_before_filling
         "Doc two connectivity claim.",
         "Doc one second throughput claim.",
     ]
+
+
+def test_sentence_reranker_reorders_filtered_candidates(monkeypatch):
+    generator = AnswerGenerator(
+        GenerationConfig(
+            max_answer_sentences=3,
+            sentence_rerank_model="mock-cross-encoder",
+            sentence_rerank_top_n=3,
+        )
+    )
+    passages = [
+        Passage(
+            passage_id="d1::p0",
+            doc_id="d1",
+            title="wireless throughput selection",
+            text=(
+                "Wireless throughput selection uses a weak baseline for connectivity decisions. "
+                "Wireless throughput selection predicts blocked links for connectivity decisions."
+            ),
+        )
+    ]
+
+    def fake_scores(query_text, sentence_texts):
+        assert "avoid futile access" in query_text
+        assert len(sentence_texts) == 2
+        return [0.1, 0.9]
+
+    monkeypatch.setattr(generator, "_score_with_sentence_reranker", fake_scores)
+
+    candidates = generator._sentence_candidates(
+        query_text="How can wireless throughput selection avoid futile access in connectivity decisions?",
+        references=["d1"],
+        passages=passages,
+    )
+
+    assert candidates[0]["text"] == "Wireless throughput selection predicts blocked links for connectivity decisions."
+    assert candidates[0]["cross_encoder_score"] == 0.9

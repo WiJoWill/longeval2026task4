@@ -14,8 +14,15 @@ run:
   mode: hybrid_evidence_rag_v1
 
 preprocess:
+  chunk_mode: rule
   passage_max_words: 140
   passage_stride_sentences: 1
+  semantic_chunk_model:
+  semantic_merge_threshold: 0.72
+  topic_shift_model:
+  topic_shift_boundary_threshold: 0.18
+  min_sentences_per_chunk: 1
+  max_sentences_per_chunk:
 
 retrieval:
   method: rrf
@@ -42,4 +49,6 @@ generation:
   temperature: 0.0
   max_answer_sentences: 5
   temporal_templates: true
+  sentence_rerank_model:
+  sentence_rerank_top_n: 24
   prompts_dir: task4_rag/prompts

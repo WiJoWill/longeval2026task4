@@ -84,6 +84,8 @@ def main(argv: list[str] | None = None) -> int:
             temperature=float(config["generation"].get("temperature", 0.0)),
             prompts_dir=config["generation"].get("prompts_dir"),
             temporal_templates=bool(config["generation"].get("temporal_templates", True)),
+            sentence_rerank_model=str(config["generation"].get("sentence_rerank_model") or ""),
+            sentence_rerank_top_n=_optional_int(config["generation"].get("sentence_rerank_top_n")) or 24,
         )
     )
 
@@ -93,6 +95,13 @@ def main(argv: list[str] | None = None) -> int:
             instance.documents,
             max_words=int(config["preprocess"].get("passage_max_words", 140)),
             stride_sentences=int(config["preprocess"].get("passage_stride_sentences", 1)),
+            chunk_mode=str(config["preprocess"].get("chunk_mode", "rule")),
+            semantic_chunk_model=config["preprocess"].get("semantic_chunk_model"),
+            semantic_merge_threshold=float(config["preprocess"].get("semantic_merge_threshold", 0.72)),
+            topic_shift_model=config["preprocess"].get("topic_shift_model"),
+            topic_shift_boundary_threshold=float(config["preprocess"].get("topic_shift_boundary_threshold", 0.18)),
+            min_sentences_per_chunk=int(config["preprocess"].get("min_sentences_per_chunk", 1)),
+            max_sentences_per_chunk=_optional_int(config["preprocess"].get("max_sentences_per_chunk")),
         )
         if mode == "concat_baseline":
             record = generator.generate_concat_baseline(
@@ -231,6 +240,12 @@ def _parse_doc_text_fields(value: Any) -> list[str] | None:
     if isinstance(value, str):
         return [part.strip() for part in value.split("|") if part.strip()]
     return [str(value)]
+
+
+def _optional_int(value: Any) -> int | None:
+    if value in (None, ""):
+        return None
+    return int(value)
 
 
 if __name__ == "__main__":

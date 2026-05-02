@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Sequence
@@ -60,6 +61,8 @@ class GenerationConfig:
     temperature: float = 0.0
     prompts_dir: str | Path | None = None
     temporal_templates: bool = True
+    sentence_rerank_model: str = ""
+    sentence_rerank_top_n: int = 24
 
 
 class AnswerGenerator:
@@ -67,6 +70,8 @@ class AnswerGenerator:
 
     def __init__(self, config: GenerationConfig) -> None:
         self.config = config
+        self._sentence_reranker: Any | None = None
+        self._sentence_reranker_failed = False
 
     def generate_from_evidence(self, query: Query, evidence: Sequence[ScoredPassage]) -> dict[str, Any]:
         """Generate a full TREC RAG record from ranked evidence passages."""
@@ -185,20 +190,75 @@ class AnswerGenerator:
                 if signature in seen:
                     continue
                 seen.add(signature)
-                score = self._sentence_score(text, query_terms, title_terms, sentence_rank)
-                score += max(0.0, 0.15 - 0.03 * passage_rank)
-                score += max(0.0, 0.08 - 0.03 * sentence_rank)
+                heuristic_score = self._sentence_score(text, query_terms, title_terms, sentence_rank)
+                heuristic_score += max(0.0, 0.15 - 0.03 * passage_rank)
+                heuristic_score += max(0.0, 0.08 - 0.03 * sentence_rank)
                 scored.append(
                     {
                         "text": text,
                         "citations": [citation_index],
-                        "score": score,
+                        "score": heuristic_score,
+                        "heuristic_score": heuristic_score,
                         "doc_id": passage.doc_id,
                         "timestamp": passage.timestamp,
                         "sentence_rank": sentence_rank,
                     }
                 )
-        return sorted(scored, key=lambda item: item["score"], reverse=True)
+        scored = sorted(scored, key=lambda item: item["score"], reverse=True)
+        return self._rerank_sentence_candidates(query_text, scored)
+
+    def _rerank_sentence_candidates(
+        self,
+        query_text: str,
+        candidates: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        if not candidates or not self.config.sentence_rerank_model or self._sentence_reranker_failed:
+            return candidates
+
+        top_n = self.config.sentence_rerank_top_n
+        candidates_to_score = candidates if top_n <= 0 else candidates[:top_n]
+        try:
+            scores = self._score_with_sentence_reranker(
+                query_text=query_text,
+                sentence_texts=[candidate["text"] for candidate in candidates_to_score],
+            )
+        except Exception as exc:
+            self._sentence_reranker_failed = True
+            print(f"Warning: sentence reranker unavailable; using heuristic sentence ranking: {exc}", file=sys.stderr)
+            return candidates
+        if len(scores) != len(candidates_to_score):
+            self._sentence_reranker_failed = True
+            print(
+                "Warning: sentence reranker returned an unexpected number of scores; "
+                "using heuristic sentence ranking.",
+                file=sys.stderr,
+            )
+            return candidates
+
+        reranked: list[dict[str, Any]] = []
+        for candidate, score in zip(candidates_to_score, scores):
+            updated = dict(candidate)
+            updated["cross_encoder_score"] = float(score)
+            updated["score"] = float(score)
+            reranked.append(updated)
+        reranked.sort(key=lambda item: item["score"], reverse=True)
+        return reranked + candidates[len(candidates_to_score) :]
+
+    def _score_with_sentence_reranker(self, query_text: str, sentence_texts: Sequence[str]) -> list[float]:
+        if self._sentence_reranker is None:
+            try:
+                from sentence_transformers import CrossEncoder  # type: ignore
+            except ImportError as exc:
+                raise RuntimeError("sentence-transformers is not installed") from exc
+            self._sentence_reranker = CrossEncoder(self.config.sentence_rerank_model)
+
+        pairs = [(query_text, sentence_text) for sentence_text in sentence_texts]
+        raw_scores = self._sentence_reranker.predict(pairs)
+        if hasattr(raw_scores, "tolist"):
+            raw_scores = raw_scores.tolist()
+        if isinstance(raw_scores, (int, float)):
+            raw_scores = [raw_scores]
+        return [float(score) for score in raw_scores]
 
     def _temporal_answer_candidates(
         self,
