@@ -66,7 +66,10 @@ class GenerationConfig:
     sentence_rerank_top_n: int = 24
     answer_candidate_score_threshold: float = 0.0
     answer_candidate_score_margin: float = 0.35
-    max_selected_answer_candidates: int = 50
+    answer_candidate_min_score: float = -10.0
+    answer_candidate_drop_ratio: float = 0.35
+    answer_candidate_drop_delta: float = 3.0
+    max_selected_answer_candidates: int = 10
     multi_doc_synthesis: bool = True
     max_synthesis_sentences: int = 2
 
@@ -234,17 +237,7 @@ class AnswerGenerator:
         if not candidates:
             return []
         max_candidates = max(1, self.config.max_selected_answer_candidates)
-        selected = candidates[:max_candidates]
-        if self.config.answer_candidate_score_threshold > 0.0:
-            selected = [
-                candidate for candidate in selected if candidate["score"] >= self.config.answer_candidate_score_threshold
-            ]
-        if self.config.answer_candidate_score_margin > 0.0 and selected:
-            top_score = selected[0]["score"]
-            selected = [
-                candidate for candidate in selected if candidate["score"] >= top_score - self.config.answer_candidate_score_margin
-            ]
-        return selected or candidates[:1]
+        return candidates[:max_candidates]
 
     def _rerank_sentence_candidates(
         self,
@@ -454,8 +447,6 @@ class AnswerGenerator:
         query_overlap = _term_overlap_count(query_terms, text_terms)
         title_overlap = len(title_terms & text_terms)
         temporal_overlap = bool(temporal_query and (TEMPORAL_SENTENCE_TERMS & text_terms))
-        if query_terms and query_overlap == 0 and not temporal_overlap:
-            return False
         return True
 
     def _sentence_score(self, text: str, query_terms: set[str], title_terms: set[str], sentence_rank: int) -> float:
@@ -492,9 +483,13 @@ class AnswerGenerator:
           request: one line for the batch input JSONL
           state:   everything needed in phase 2 to map evidence_ids back to citations
         """
-        sentence_candidates = self._select_answer_sentence_candidates(
-            self._sentence_candidates(query.text, references, passages)
-        )
+        if self.config.mode == "llm_all_docs":
+            # Pass every passage as-is — no sentence extraction, no scoring, no cap.
+            sentence_candidates = _passages_as_candidates(references, passages)
+        else:
+            sentence_candidates = self._select_answer_sentence_candidates(
+                self._sentence_candidates(query.text, references, passages)
+            )
         system_prompt, user_template = self._load_prompts()
         user_prompt = user_template.format(
             narrative_id=query.query_id,
@@ -628,6 +623,21 @@ def _evidence_payload(references: list[str], passages: Sequence[Passage]) -> lis
     return payload
 
 
+def _passages_as_candidates(references: list[str], passages: Sequence[Passage]) -> list[dict[str, Any]]:
+    """Convert passages directly to candidate dicts for llm_all_docs mode (no sentence extraction)."""
+    candidates: list[dict[str, Any]] = []
+    for passage in passages:
+        if passage.doc_id not in references:
+            continue
+        citation_index = references.index(passage.doc_id)
+        candidates.append({
+            "text": normalize_text(passage.text),
+            "citations": [citation_index],
+            "doc_id": passage.doc_id,
+        })
+    return candidates
+
+
 def _sentence_evidence_payload(sentence_candidates: Sequence[dict[str, Any]]) -> list[dict[str, Any]]:
     payload: list[dict[str, Any]] = []
     for evidence_id, candidate in enumerate(sentence_candidates):
@@ -637,6 +647,7 @@ def _sentence_evidence_payload(sentence_candidates: Sequence[dict[str, Any]]) ->
         payload.append(
             {
                 "evidence_id": evidence_id,
+                "doc_id": candidate.get("doc_id", ""),
                 "text": normalize_text(str(candidate.get("text", ""))),
             }
         )

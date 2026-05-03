@@ -16,3 +16,23 @@ Counts are sentence-level evidence candidates included in each OpenAI Batch prom
 | `rule_minilm_openai_llm_v1` | 47 | 1.06 | 1.0 | 0 | 2 | 1 | 42 | 47 | 0 |
 
 Main observation: MiniLM sentence-rerank variants pass too few evidence sentences to the LLM; their medians are 1.
+
+
+## Why `concat_baseline_openai_llm_v1` Can Have Zero Evidence
+
+`concat_baseline_openai_llm_v1` does not perform query-aware retrieval ranking. It applies rule chunking, then takes the first `top_k` chunks from the candidate documents. Those chunks are often document headers, copyright/license text, abstracts for unrelated candidate docs, or otherwise weakly related text.
+
+After chunk selection, the generator still applies sentence-level hard filtering before sending evidence to the LLM. A sentence must pass filters such as OCR/artifact checks, boilerplate checks, length constraints, and basic query-term overlap. If none of the selected chunks contain a sentence that passes these filters, the LLM receives zero sentence-level evidence.
+
+Concrete example:
+
+- Query id: `46395a3cf66a9f6a75c89354410d1493`
+- Query: `How should pesticide class-specific findings shape prevention priorities for farm households?`
+- `concat_baseline` selected doc: `290464296`
+- Selected doc title: `Burden of End-Stage Kidney Disease by Type 2 Diabetes Mellitus Status in South Korea`
+- Query terms included: `prevention`, `households`, `specific`, `priorities`, `shape`, `class`, `farm`, `pesticide`, `findings`
+- The selected early chunks are about diabetes, kidney disease, article metadata, and copyright text.
+- The inspected candidate sentences had no overlap with the query terms, so they were filtered out.
+- Result: `sentence_candidates = 0`, so the LLM had no usable evidence for this query.
+
+This explains why `concat_baseline_openai_llm_v1` has many zero-evidence cases: it can have chunks, but still no usable sentence evidence after filtering.

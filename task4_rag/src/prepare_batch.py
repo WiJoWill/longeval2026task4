@@ -28,6 +28,7 @@ from .run_task4 import (
     _load_local_env,
     _optional_int,
     _parse_doc_text_fields,
+    _parse_per_doc_limit,
     apply_cli_overrides,
     load_config,
 )
@@ -45,6 +46,8 @@ EXPERIMENTS = [
     {"config": "task4_rag/configs/task4_semantic_minilm_rerank.yaml",  "run_id": "semantic_minilm_openai_llm_v1"},
     {"config": "task4_rag/configs/task4_topic_shift_minilm_rerank.yaml", "run_id": "topic_shift_minilm_openai_llm_v1"},
     {"config": "task4_rag/configs/task4_default.yaml",                 "run_id": "default_openai_llm_v1"},
+    # Gold answer generation: all passages from all docs, no retrieval filtering.
+    {"config": "task4_rag/configs/task4_gold_llm_all_docs.yaml",      "run_id": "gold_llm_all_docs_v1"},
 ]
 
 
@@ -60,7 +63,12 @@ def main(argv: list[str] | None = None) -> int:
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    first_config = _apply_data_overrides(load_config(EXPERIMENTS[0]["config"]), args)
+    only = set(args.only) if args.only else set()
+    active_experiments = [e for e in EXPERIMENTS if not only or e["run_id"] in only]
+    if not active_experiments:
+        print("Error: no experiments selected", file=sys.stderr)
+        return 1
+    first_config = _apply_data_overrides(load_config(active_experiments[0]["config"]), args)
     instances = load_task(
         queries_path=first_config["data"]["queries_path"],
         documents_path=first_config["data"]["documents_path"],
@@ -74,7 +82,7 @@ def main(argv: list[str] | None = None) -> int:
     all_requests: list[dict[str, Any]] = []
     passage_cache: dict[tuple[Any, ...], list[Any]] = {}
 
-    for exp in EXPERIMENTS:
+    for exp in active_experiments:
         run_id = exp["run_id"]
         print(f"\n{'='*60}")
         print(f"Preparing batch for: {run_id}")
@@ -125,7 +133,7 @@ def _prepare_one_experiment(
         method=config["retrieval"]["method"],
         dense_model=config["retrieval"].get("dense_model"),
         hybrid_alpha=float(config["retrieval"].get("hybrid_alpha", 0.25)),
-        per_doc_limit=int(config["retrieval"].get("per_doc_limit", 2)),
+        per_doc_limit=_parse_per_doc_limit(config["retrieval"].get("per_doc_limit")),
         rrf_k=int(config["retrieval"].get("rrf_k", 60)),
         enable_query_expansion=bool(config["retrieval"].get("enable_query_expansion", True)),
         enable_prf=bool(config["retrieval"].get("enable_prf", True)),
@@ -157,6 +165,9 @@ def _prepare_one_experiment(
             sentence_rerank_top_n=_optional_int(config["generation"].get("sentence_rerank_top_n")) or 24,
             answer_candidate_score_threshold=float(config["generation"].get("answer_candidate_score_threshold", 0.0)),
             answer_candidate_score_margin=float(config["generation"].get("answer_candidate_score_margin", 0.35)),
+            answer_candidate_min_score=float(config["generation"].get("answer_candidate_min_score", -10.0)),
+            answer_candidate_drop_ratio=float(config["generation"].get("answer_candidate_drop_ratio", 0.35)),
+            answer_candidate_drop_delta=float(config["generation"].get("answer_candidate_drop_delta", 3.0)),
             max_selected_answer_candidates=_optional_int(config["generation"].get("max_selected_answer_candidates")) or 50,
             multi_doc_synthesis=bool(config["generation"].get("multi_doc_synthesis", True)),
             max_synthesis_sentences=_optional_int(config["generation"].get("max_synthesis_sentences")) or 2,
@@ -275,6 +286,10 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--candidates", help="Override candidates path for all experiments")
     parser.add_argument("--max-queries", type=int, help="Limit number of queries per experiment (for testing)")
     parser.add_argument("--output-dir", default="outputs/batch_inputs", help="Directory for output files (default: outputs/batch_inputs)")
+    parser.add_argument(
+        "--only", nargs="+", metavar="RUN_ID",
+        help="Run only the experiments with these run_ids (e.g. --only gold_llm_all_docs_v1)",
+    )
     return parser
 
 

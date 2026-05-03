@@ -70,7 +70,7 @@ class EvidenceRanker:
         method: str = "rrf",
         dense_model: str | None = None,
         hybrid_alpha: float = 0.25,
-        per_doc_limit: int = 2,
+        per_doc_limit: int | None = None,
         rrf_k: int = 60,
         enable_query_expansion: bool = True,
         enable_prf: bool = True,
@@ -214,7 +214,7 @@ class EvidenceRanker:
         for item in ranked:
             doc_id = item.passage.doc_id
             normalized_text = " ".join(tokenize(item.passage.text)[:40])
-            if counts_by_doc[doc_id] >= self.per_doc_limit or normalized_text in seen_text:
+            if (self.per_doc_limit is not None and counts_by_doc[doc_id] >= self.per_doc_limit) or normalized_text in seen_text:
                 continue
             selected.append(item)
             counts_by_doc[doc_id] += 1

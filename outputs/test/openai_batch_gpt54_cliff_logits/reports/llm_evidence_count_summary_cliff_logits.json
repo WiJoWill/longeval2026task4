@@ -1,0 +1,126 @@
+{
+  "summary": [
+    {
+      "model": "single_query_bm25_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 7.72,
+      "median": 8.0,
+      "min": 2,
+      "max": 17,
+      "zero": 0,
+      "one": 0,
+      "lt3": 3,
+      "ge10": 13
+    },
+    {
+      "model": "caes_rag_rrf_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 6.98,
+      "median": 7.0,
+      "min": 0,
+      "max": 16,
+      "zero": 1,
+      "one": 0,
+      "lt3": 3,
+      "ge10": 10
+    },
+    {
+      "model": "default_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 6.98,
+      "median": 7.0,
+      "min": 0,
+      "max": 16,
+      "zero": 1,
+      "one": 0,
+      "lt3": 3,
+      "ge10": 10
+    },
+    {
+      "model": "rrf_no_rerank_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 6.98,
+      "median": 6.0,
+      "min": 0,
+      "max": 17,
+      "zero": 1,
+      "one": 1,
+      "lt3": 4,
+      "ge10": 12
+    },
+    {
+      "model": "semantic_current_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 4.68,
+      "median": 5.0,
+      "min": 1,
+      "max": 9,
+      "zero": 0,
+      "one": 1,
+      "lt3": 5,
+      "ge10": 0
+    },
+    {
+      "model": "topic_shift_current_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 4.47,
+      "median": 4.0,
+      "min": 1,
+      "max": 10,
+      "zero": 0,
+      "one": 3,
+      "lt3": 6,
+      "ge10": 1
+    },
+    {
+      "model": "rule_minilm_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 2.6,
+      "median": 2.0,
+      "min": 0,
+      "max": 10,
+      "zero": 3,
+      "one": 17,
+      "lt3": 29,
+      "ge10": 1
+    },
+    {
+      "model": "concat_baseline_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 2.13,
+      "median": 1.0,
+      "min": 0,
+      "max": 11,
+      "zero": 13,
+      "one": 13,
+      "lt3": 32,
+      "ge10": 1
+    },
+    {
+      "model": "semantic_minilm_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 1.98,
+      "median": 2.0,
+      "min": 0,
+      "max": 7,
+      "zero": 3,
+      "one": 20,
+      "lt3": 35,
+      "ge10": 0
+    },
+    {
+      "model": "topic_shift_minilm_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 1.89,
+      "median": 1.0,
+      "min": 0,
+      "max": 7,
+      "zero": 4,
+      "one": 20,
+      "lt3": 36,
+      "ge10": 0
+    }
+  ],
+  "baseline_dir": "outputs/test/openai_batch_gpt54/inputs",
+  "new_dir": "outputs/test/openai_batch_gpt54_cliff_logits/inputs"
+}

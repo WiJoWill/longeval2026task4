@@ -145,14 +145,8 @@ def test_multi_doc_synthesis_can_be_disabled():
     assert all(len(item["citations"]) == 1 for item in answer)
 
 
-def test_answer_candidate_selector_uses_score_threshold_and_limit():
-    generator = AnswerGenerator(
-        GenerationConfig(
-            answer_candidate_score_threshold=0.55,
-            answer_candidate_score_margin=0.0,
-            max_selected_answer_candidates=3,
-        )
-    )
+def test_answer_candidate_selector_takes_top_n_after_rerank():
+    generator = AnswerGenerator(GenerationConfig(max_selected_answer_candidates=3))
     candidates = [
         {"text": "A", "score": 0.9},
         {"text": "B", "score": 0.6},
@@ -162,44 +156,20 @@ def test_answer_candidate_selector_uses_score_threshold_and_limit():
 
     selected = generator._select_answer_sentence_candidates(candidates)
 
-    assert [item["text"] for item in selected] == ["A", "B"]
+    assert [item["text"] for item in selected] == ["A", "B", "C"]
 
 
-def test_answer_candidate_selector_uses_top_score_margin():
-    generator = AnswerGenerator(
-        GenerationConfig(
-            answer_candidate_score_threshold=0.0,
-            answer_candidate_score_margin=0.2,
-            max_selected_answer_candidates=50,
-        )
-    )
+def test_answer_candidate_selector_does_not_apply_score_cutoff():
+    generator = AnswerGenerator(GenerationConfig(max_selected_answer_candidates=10))
     candidates = [
         {"text": "A", "score": 0.9},
-        {"text": "B", "score": 0.75},
-        {"text": "C", "score": 0.65},
+        {"text": "B", "score": 0.05},
+        {"text": "C", "score": -9.0},
     ]
 
     selected = generator._select_answer_sentence_candidates(candidates)
 
-    assert [item["text"] for item in selected] == ["A", "B"]
-
-
-def test_answer_candidate_selector_keeps_top_one_when_filter_is_too_strict():
-    generator = AnswerGenerator(
-        GenerationConfig(
-            answer_candidate_score_threshold=2.0,
-            answer_candidate_score_margin=0.0,
-            max_selected_answer_candidates=50,
-        )
-    )
-    candidates = [
-        {"text": "A", "score": 0.9},
-        {"text": "B", "score": 0.8},
-    ]
-
-    selected = generator._select_answer_sentence_candidates(candidates)
-
-    assert [item["text"] for item in selected] == ["A"]
+    assert [item["text"] for item in selected] == ["A", "B", "C"]
 
 
 def test_openai_generation_uses_sentence_evidence_and_preserves_multi_citations(monkeypatch):
@@ -261,4 +231,4 @@ def test_openai_generation_uses_sentence_evidence_and_preserves_multi_citations(
     assert '"evidence_id"' in captured["user_prompt"]
     assert '"evidence_id": 0' in captured["user_prompt"]
     assert '"evidence_id": 1' in captured["user_prompt"]
-    assert "whole passage sentence should not be sent" not in captured["user_prompt"]
+    assert '"doc_id": "d1"' in captured["user_prompt"]

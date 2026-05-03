@@ -59,7 +59,7 @@ def main(argv: list[str] | None = None) -> int:
         method=config["retrieval"]["method"],
         dense_model=config["retrieval"].get("dense_model"),
         hybrid_alpha=float(config["retrieval"].get("hybrid_alpha", 0.25)),
-        per_doc_limit=int(config["retrieval"].get("per_doc_limit", 2)),
+        per_doc_limit=_parse_per_doc_limit(config["retrieval"].get("per_doc_limit")),
         rrf_k=int(config["retrieval"].get("rrf_k", 60)),
         enable_query_expansion=bool(config["retrieval"].get("enable_query_expansion", True)),
         enable_prf=bool(config["retrieval"].get("enable_prf", True)),
@@ -90,6 +90,9 @@ def main(argv: list[str] | None = None) -> int:
             sentence_rerank_top_n=_optional_int(config["generation"].get("sentence_rerank_top_n")) or 24,
             answer_candidate_score_threshold=float(config["generation"].get("answer_candidate_score_threshold", 0.0)),
             answer_candidate_score_margin=float(config["generation"].get("answer_candidate_score_margin", 0.35)),
+            answer_candidate_min_score=float(config["generation"].get("answer_candidate_min_score", -10.0)),
+            answer_candidate_drop_ratio=float(config["generation"].get("answer_candidate_drop_ratio", 0.35)),
+            answer_candidate_drop_delta=float(config["generation"].get("answer_candidate_drop_delta", 3.0)),
             max_selected_answer_candidates=_optional_int(config["generation"].get("max_selected_answer_candidates")) or 50,
             multi_doc_synthesis=bool(config["generation"].get("multi_doc_synthesis", True)),
             max_synthesis_sentences=_optional_int(config["generation"].get("max_synthesis_sentences")) or 2,
@@ -261,6 +264,13 @@ def _parse_doc_text_fields(value: Any) -> list[str] | None:
 
 def _optional_int(value: Any) -> int | None:
     if value in (None, ""):
+        return None
+    return int(value)
+
+
+def _parse_per_doc_limit(value: Any) -> int | None:
+    """Return None (no limit) when value is absent, None, empty, or 0."""
+    if value in (None, "", 0, "0"):
         return None
     return int(value)
 

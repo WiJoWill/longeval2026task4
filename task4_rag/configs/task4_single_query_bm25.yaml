@@ -26,9 +26,8 @@ preprocess:
 
 retrieval:
   method: bm25
-  top_k_passages: 10
+  top_k_passages: 20
   preselect_k: 24
-  per_doc_limit: 2
   rrf_k: 60
   enable_query_expansion: false
   enable_prf: false
@@ -52,8 +51,11 @@ generation:
   sentence_rerank_model:
   sentence_rerank_top_n: 24
   answer_candidate_score_threshold: 0.0
-  answer_candidate_score_margin: 0.35
-  max_selected_answer_candidates: 50
+  answer_candidate_score_margin: 0.0
+  answer_candidate_min_score: -10.0
+  answer_candidate_drop_ratio: 0.35
+  answer_candidate_drop_delta: 3.0
+  max_selected_answer_candidates: 10
   multi_doc_synthesis: true
   max_synthesis_sentences: 2
   prompts_dir: task4_rag/prompts
