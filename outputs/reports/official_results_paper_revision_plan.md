@@ -16,20 +16,7 @@ This lets the paper become less about "exploring many pipeline variants" and mor
 
 ## 2. Official Results To Add
 
-Replace or precede the current local-judge Table 4 with an official-results table. Suggested table:
-
-| Method | ROUGE-L | BERTScore | Retrieval precision | Nugget coverage | TFC1 |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| `rule-minilm` | 0.157 | **0.168** | **0.975** | **0.367** | 0.305 |
-| `topic-shift-minilm` | 0.157 | 0.163 | 0.940 | 0.288 | **0.373** |
-| `semantic-minilm` | 0.160 | 0.157 | 0.922 | 0.291 | 0.349 |
-| `topic-shift-current` | **0.167** | 0.156 | 0.929 | 0.292 | 0.215 |
-| `single-query-bm25` | 0.156 | 0.152 | 0.940 | 0.308 | 0.120 |
-| `rrf-no-rerank` | 0.155 | 0.151 | 0.929 | 0.336 | 0.087 |
-| `caes-rag-rrf` | 0.155 | 0.144 | 0.942 | 0.338 | 0.059 |
-| `default` | 0.147 | 0.146 | 0.931 | 0.334 | 0.025 |
-| `official-naive-baseline` | 0.082 | -0.118 | 0.200 | 0.124 | -0.758 |
-
+Precede the current local-judge Table 4 with an official-results table. 
 Important interpretation:
 
 - `rule-minilm` is the best balanced official run: best BERTScore, best retrieval precision, and best nugget coverage.
