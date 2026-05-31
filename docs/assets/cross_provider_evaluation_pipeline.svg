@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820">
+  <defs>
+    <style>
+      .title { font: 700 34px Arial, sans-serif; fill: #14324a; }
+      .subtitle { font: 400 18px Arial, sans-serif; fill: #35546d; }
+      .label { font: 700 20px Arial, sans-serif; fill: #17354d; }
+      .text { font: 400 16px Arial, sans-serif; fill: #22445f; }
+      .small { font: 400 14px Arial, sans-serif; fill: #3e6179; }
+      .box { stroke: #1f4d6b; stroke-width: 2.5; rx: 20; ry: 20; }
+      .arrow { stroke: #1f4d6b; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .dash { stroke-dasharray: 9 7; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1f4d6b"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="820" fill="#f7fbfd"/>
+
+  <text x="700" y="58" text-anchor="middle" class="title">Cross-Provider RAG Evaluation Pipeline</text>
+  <text x="700" y="88" text-anchor="middle" class="subtitle">Reference generation, evidence-aware RAG, independent judging, and document overlap diagnostics</text>
+
+  <rect class="box" x="70" y="135" width="300" height="110" fill="#d9eef7"/>
+  <text x="220" y="175" text-anchor="middle" class="label">Shared Input</text>
+  <text x="220" y="205" text-anchor="middle" class="text">Query + official candidate documents</text>
+  <text x="220" y="228" text-anchor="middle" class="small">Same candidate pool for both branches</text>
+
+  <rect class="box" x="450" y="120" width="360" height="150" fill="#e7f5e8"/>
+  <text x="630" y="160" text-anchor="middle" class="label">Step 1: Reference Answer Generation</text>
+  <text x="630" y="192" text-anchor="middle" class="text">Generate a reference-style answer</text>
+  <text x="630" y="216" text-anchor="middle" class="text">using candidate documents only</text>
+  <text x="630" y="242" text-anchor="middle" class="small">Output: answer text + supporting document IDs</text>
+
+  <rect class="box" x="450" y="340" width="360" height="170" fill="#fff4d8"/>
+  <text x="630" y="380" text-anchor="middle" class="label">Step 2: RAG Answer Generation</text>
+  <text x="630" y="412" text-anchor="middle" class="text">Retrieve and select evidence first,</text>
+  <text x="630" y="436" text-anchor="middle" class="text">then generate the final RAG answer</text>
+  <text x="630" y="462" text-anchor="middle" class="small">Output: answer text + evidence-source document IDs</text>
+  <text x="630" y="485" text-anchor="middle" class="small">Same answer model family as Step 1</text>
+
+  <rect class="box" x="950" y="215" width="350" height="190" fill="#f7dde2"/>
+  <text x="1125" y="255" text-anchor="middle" class="label">Step 3: LLM-as-Judge</text>
+  <text x="1125" y="288" text-anchor="middle" class="text">Compare RAG answer against the</text>
+  <text x="1125" y="312" text-anchor="middle" class="text">reference answer and evidence</text>
+  <text x="1125" y="344" text-anchor="middle" class="text">Primary judgments:</text>
+  <text x="1125" y="370" text-anchor="middle" class="text">Completeness + Correctness</text>
+  <text x="1125" y="395" text-anchor="middle" class="small">Different provider from the generation model</text>
+
+  <rect class="box" x="950" y="500" width="350" height="150" fill="#e8e3fb"/>
+  <text x="1125" y="540" text-anchor="middle" class="label">Step 4: Document-ID Overlap</text>
+  <text x="1125" y="572" text-anchor="middle" class="text">Compare reference supporting docs</text>
+  <text x="1125" y="596" text-anchor="middle" class="text">with RAG evidence-source docs</text>
+  <text x="1125" y="622" text-anchor="middle" class="small">Supplementary retrieval-alignment signal</text>
+
+  <path class="arrow" d="M370 190 L450 190"/>
+  <path class="arrow" d="M370 190 L450 425"/>
+  <path class="arrow" d="M810 195 L950 260"/>
+  <path class="arrow" d="M810 425 L950 360"/>
+  <path class="arrow" d="M810 425 L950 575"/>
+  <path class="arrow dash" d="M810 195 L950 575"/>
+
+  <rect class="box" x="120" y="635" width="690" height="120" fill="#ffffff"/>
+  <text x="465" y="675" text-anchor="middle" class="label">Why cross-provider?</text>
+  <text x="465" y="707" text-anchor="middle" class="text">Using a different company for judging reduces the chance that the judge</text>
+  <text x="465" y="731" text-anchor="middle" class="text">systematically prefers answers that match its own provider's writing style.</text>
+</svg>

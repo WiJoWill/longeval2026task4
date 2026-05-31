@@ -1,0 +1,2987 @@
+{
+  "run_id": "topic_shift_current_openai_llm_v1",
+  "model": "gpt-5.4-mini",
+  "queries": {
+    "topic_shift_current_openai_llm_v1|aa42e210a361571ff4d1fad892b75d15": {
+      "query_id": "aa42e210a361571ff4d1fad892b75d15",
+      "references": [
+        "129069349",
+        "122371639",
+        "268301",
+        "163088229",
+        "148414038"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Background Many mobile networks implement multiple radio access technology (RAT) connectivity, which allows cellular phones and other mobile user equipment (UE) to successively or concurrently connect to different radio access networks (RANs) or a single RAN employing multiple RATs.",
+          "citations": [
+            0
+          ],
+          "score": 0.5125,
+          "heuristic_score": 0.5125,
+          "doc_id": "129069349",
+          "timestamp": "2021-03-15T20:18:04",
+          "sentence_rank": 0
+        },
+        {
+          "text": "4460 [2021] https://www.tdcommons.org/dpubs_series/4460 UE is able to make the best decision to avoid the unnecessary NR RACH procedure.",
+          "citations": [
+            1
+          ],
+          "score": 0.4505194805194805,
+          "heuristic_score": 0.4505194805194805,
+          "doc_id": "122371639",
+          "timestamp": "2021-07-19T20:31:15",
+          "sentence_rank": 0
+        },
+        {
+          "text": "The UE also records the perceived DL throughput when it connects to a cell with LTE-only connectivity enabled or with EN-DC enabled.",
+          "citations": [
+            0
+          ],
+          "score": 0.45035714285714284,
+          "heuristic_score": 0.45035714285714284,
+          "doc_id": "129069349",
+          "timestamp": "2021-03-15T20:18:04",
+          "sentence_rank": 0
+        },
+        {
+          "text": "In classification task, the best supervised model can achieve an accuracy of 0.8266,which is 0.2651 higher than the best LLM.",
+          "citations": [
+            3
+          ],
+          "score": 0.23142857142857143,
+          "heuristic_score": 0.23142857142857143,
+          "doc_id": "163088229",
+          "timestamp": "2024-05-30T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How can a device avoid futile access attempts while still selecting connectivity for best throughput?",
+        "narrative_id": "aa42e210a361571ff4d1fad892b75d15"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|46395a3cf66a9f6a75c89354410d1493": {
+      "query_id": "46395a3cf66a9f6a75c89354410d1493",
+      "references": [
+        "148874898",
+        "148874812",
+        "290464296",
+        "302845152"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "In the 5-year follow-up inter-view, they were asked to report the pesticides used on specific crops and animals in the previous growing season and how often (number of hours per day, number of days) during that growing season they used the pesticide.",
+          "citations": [
+            0
+          ],
+          "score": 0.46,
+          "heuristic_score": 0.46,
+          "doc_id": "148874898",
+          "timestamp": "2020-01-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "A decision-analytic cost-effectiveness model was developed from a societal perspective, utilizing real-world data concerning PICC-related complications and costs from Class 3A hospitals and community hospital settings in China.",
+          "citations": [
+            3
+          ],
+          "score": 0.2942857142857143,
+          "heuristic_score": 0.2942857142857143,
+          "doc_id": "302845152",
+          "timestamp": "2025-09-29T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Prediabetes and cardiovascular disease: pathophysiology and interventions for prevention and risk reduction.",
+          "citations": [
+            2
+          ],
+          "score": 0.24071428571428571,
+          "heuristic_score": 0.24071428571428571,
+          "doc_id": "290464296",
+          "timestamp": "2025-05-01T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How should pesticide class–specific findings shape prevention priorities for farm households?",
+        "narrative_id": "46395a3cf66a9f6a75c89354410d1493"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|5f07a7f0a83de807eee3213560a3467c": {
+      "query_id": "5f07a7f0a83de807eee3213560a3467c",
+      "references": [
+        "943350",
+        "649560",
+        "156685367",
+        "293226721"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "To compare them with the exact gradient, we calculated the exact values of z and q by inverting the linear system.",
+          "citations": [
+            0
+          ],
+          "score": 0.45428571428571424,
+          "heuristic_score": 0.45428571428571424,
+          "doc_id": "943350",
+          "timestamp": "2001-01-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "We have derived formulas for the exact policy gradient.",
+          "citations": [
+            0
+          ],
+          "score": 0.3921428571428571,
+          "heuristic_score": 0.3921428571428571,
+          "doc_id": "943350",
+          "timestamp": "2001-01-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "I generally 4 omit separating commas if no confusion arises, in particular in indices.",
+          "citations": [
+            1
+          ],
+          "score": 0.2664285714285714,
+          "heuristic_score": 0.2664285714285714,
+          "doc_id": "649560",
+          "timestamp": "2009-01-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "If POPPER findsa combination, it sets the combination as the best solution sofar and updates the maximum hypothesis size.",
+          "citations": [
+            2
+          ],
+          "score": 0.2471428571428571,
+          "heuristic_score": 0.2471428571428571,
+          "doc_id": "156685367",
+          "timestamp": "2024-01-01T00:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "What tradeoff arises when applying exact gradient updates on induced finite-state models?",
+        "narrative_id": "5f07a7f0a83de807eee3213560a3467c"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|804711f54939af9622c3c7614da85298": {
+      "query_id": "804711f54939af9622c3c7614da85298",
+      "references": [
+        "299281809",
+        "309223238",
+        "295893100",
+        "309224898"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "We examined a prespec-ified hierarchical composite endpoint that considered the clinicalimportance of the events in the primary endpoint (ranked in orderof clinical importance: cardiovascular death, HF hospitalization, andurgent HF visits), as well as the number of events and time toevents.",
+          "citations": [
+            0
+          ],
+          "score": 0.5049999999999999,
+          "heuristic_score": 0.5049999999999999,
+          "doc_id": "299281809",
+          "timestamp": "2025-04-29T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "However, broader neuropsychological testing, leading to a more detailed profile, is preferred nowadays to capture the deficits in ET-PKU [6].",
+          "citations": [
+            3
+          ],
+          "score": 0.27285714285714285,
+          "heuristic_score": 0.27285714285714285,
+          "doc_id": "309224898",
+          "timestamp": "2025-06-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Rupp, Effects of concurrent phenylalanine levels on sustained attention and calculation speed in patients treated early for phenylketonuria, Eur.",
+          "citations": [
+            3
+          ],
+          "score": 0.24285714285714288,
+          "heuristic_score": 0.24285714285714288,
+          "doc_id": "309224898",
+          "timestamp": "2025-06-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Benefits of budesonide/glycopyrrolate/formoterol fumarate (BGF)on symptoms and quality of life in patients with COPD in the ETHOStrial.",
+          "citations": [
+            2
+          ],
+          "score": 0.2242857142857143,
+          "heuristic_score": 0.2242857142857143,
+          "doc_id": "295893100",
+          "timestamp": "2025-03-01T00:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How well do trial-specific early composite benefits predict broader pooled-event reductions?",
+        "narrative_id": "804711f54939af9622c3c7614da85298"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|c3d5d202f8ab3d130a90684fd7308f64": {
+      "query_id": "c3d5d202f8ab3d130a90684fd7308f64",
+      "references": [
+        "298663733",
+        "298663728"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Vitamin E gel reduces time of healing of digital ulcers in systemic sclerosis.",
+          "citations": [
+            0
+          ],
+          "score": 0.5728571428571428,
+          "heuristic_score": 0.5728571428571428,
+          "doc_id": "298663733",
+          "timestamp": "2025-05-15T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "9induces a prompt healing of long-lasting indolent digital ulcers in patients with systemic sclerosis.",
+          "citations": [
+            0
+          ],
+          "score": 0.5499999999999999,
+          "heuristic_score": 0.5499999999999999,
+          "doc_id": "298663733",
+          "timestamp": "2025-05-15T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Short-term progression of interstitial lung disease in sys-temic sclerosis predicts long-term survival in two independent clin-ical trial cohorts.",
+          "citations": [
+            1
+          ],
+          "score": 0.5307142857142857,
+          "heuristic_score": 0.5307142857142857,
+          "doc_id": "298663728",
+          "timestamp": "2025-06-03T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Riociguat in patients with early diffuse cutaneous systemic sclerosis (RISE-SSc): open-label, long-term extension of a phase 2b, randomised, placebo-controlled trial.",
+          "citations": [
+            1
+          ],
+          "score": 0.45142857142857146,
+          "heuristic_score": 0.45142857142857146,
+          "doc_id": "298663728",
+          "timestamp": "2025-06-03T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Does healing fingertip ischemic lesions affect long-term survival in systemic sclerosis?",
+        "narrative_id": "c3d5d202f8ab3d130a90684fd7308f64"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|5ef548b174d925e873f8b5f138d6d8af": {
+      "query_id": "5ef548b174d925e873f8b5f138d6d8af",
+      "references": [
+        "5126893",
+        "192180353",
+        "301843073",
+        "309263613"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Fluids are released from compaction of porous sediments at shallow levels and from diagenetic reactions such as clay mineral dehydration at great depths [Bekins et al., 1995].",
+          "citations": [
+            0
+          ],
+          "score": 0.4992857142857143,
+          "heuristic_score": 0.4992857142857143,
+          "doc_id": "5126893",
+          "timestamp": "2008-01-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "In vitro digestion (via the INFOGEST protocol) revealed an 8-fold increase in apparent solubility of curcumin with bile salts and a 53-fold increase when combining bile salts and γ-CD-MOFs, achieving bioaccessibility of 2 % and 16 %, respectively.",
+          "citations": [
+            1
+          ],
+          "score": 0.42,
+          "heuristic_score": 0.42,
+          "doc_id": "192180353",
+          "timestamp": "2025-03-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Fluids with low chloride concentrations are commonly associated with clay dehydration or gas hydrate dissociation [Kastner et al., 1991], while fluids in hydrate fields are highly enriched in iodide, a strong indication of organic matter degradation.",
+          "citations": [
+            0
+          ],
+          "score": 0.37500000000000006,
+          "heuristic_score": 0.37500000000000006,
+          "doc_id": "5126893",
+          "timestamp": "2008-01-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "For instance, in a previous study, it has been found that in women with high disgust sensitivity, sexual arousal was reduced when they were exposed to sexual body fluids, whereas in women with low disgust sensi-tivity, sexual arousal was increased [49].",
+          "citations": [
+            3
+          ],
+          "score": 0.35000000000000003,
+          "heuristic_score": 0.35000000000000003,
+          "doc_id": "309263613",
+          "timestamp": "2025-05-20T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Native gastrointestinal mucus: Critical features and techniques for studying interactions with drugs, drug carriers, and bacteria.",
+          "citations": [
+            2
+          ],
+          "score": 0.31357142857142856,
+          "heuristic_score": 0.31357142857142856,
+          "doc_id": "301843073",
+          "timestamp": "2025-09-10T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "CONCLUSIONSThe application of highly porous γ-CD-MOFs in biological and medical applications (i.e., drug release) requires excellent chemical stability, including strong resistance to hydrolysis or structural collapse in physiological environments.",
+          "citations": [
+            2
+          ],
+          "score": 0.3,
+          "heuristic_score": 0.3,
+          "doc_id": "301843073",
+          "timestamp": "2025-09-10T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "What tradeoff arises when combining surfactant-rich fluids with acid-sensitive porous carriers?",
+        "narrative_id": "5ef548b174d925e873f8b5f138d6d8af"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|d3c2d232f0a39dae1f18c762ccdb1eab": {
+      "query_id": "d3c2d232f0a39dae1f18c762ccdb1eab",
+      "references": [
+        "310709873",
+        "310709958"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "The authors recommend:Hourly sodium monitoring during the first 12 hours in severe AKIUse of continuous venovenous hemofiltration with controlled sodium concentration indialysate for severe disturbancesAvoidance of rapid sodium correction (>8 mmol/L/24 h)4.5.3.",
+          "citations": [
+            1
+          ],
+          "score": 0.432,
+          "heuristic_score": 0.432,
+          "doc_id": "310709958",
+          "timestamp": "2025-09-14T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Therapeutic Approaches to Urea Level Correction Conservative Therapy Volume correction is the first step in HRS treatment.",
+          "citations": [
+            0
+          ],
+          "score": 0.28714285714285714,
+          "heuristic_score": 0.28714285714285714,
+          "doc_id": "310709873",
+          "timestamp": "2025-08-24T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Which monitoring strategy balances solute correction to reduce inflammation without harming filtration?",
+        "narrative_id": "d3c2d232f0a39dae1f18c762ccdb1eab"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|533ebe54d99e8c5e2feea55299c0f3ef": {
+      "query_id": "533ebe54d99e8c5e2feea55299c0f3ef",
+      "references": [
+        "305689915",
+        "314496423",
+        "308388715",
+        "295897456",
+        "309218608"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Nanoliposomal irinotecan plus fluorouracil and folinic acid as a second-line treatment option in patients with metastatic pancreatic ductal adenocarcinoma: a retrospective cohort study.",
+          "citations": [
+            1
+          ],
+          "score": 0.5635714285714285,
+          "heuristic_score": 0.5635714285714285,
+          "doc_id": "314496423",
+          "timestamp": "2025-11-18T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "reported that second-line FOLFIRINOX did not provide any survival benefit over the nal-IRI + 5-FU/LV regimen [32].",
+          "citations": [
+            0
+          ],
+          "score": 0.4557142857142857,
+          "heuristic_score": 0.4557142857142857,
+          "doc_id": "305689915",
+          "timestamp": "2025-03-01T00:00:00",
+          "sentence_rank": 1
+        },
+        {
+          "text": "Conversely the use of digoxin [23], has been reported to show a significant benefit in ameliorating transplant-free interstage survival after the stage I procedure.",
+          "citations": [
+            2
+          ],
+          "score": 0.3121428571428571,
+          "heuristic_score": 0.3121428571428571,
+          "doc_id": "308388715",
+          "timestamp": "2025-05-31T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Previous studies have questioned how, despite widespread use, ACE-inhibitors [22, 31] have no proven evidence of benefit to Fontan patients.",
+          "citations": [
+            2
+          ],
+          "score": 0.26785714285714285,
+          "heuristic_score": 0.26785714285714285,
+          "doc_id": "308388715",
+          "timestamp": "2025-05-31T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Which prior-treatment feature best identifies patients likely to derive survival benefit from the newer second-line option?",
+        "narrative_id": "533ebe54d99e8c5e2feea55299c0f3ef"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|785b9784a0ed573bc3e4c38addb767f5": {
+      "query_id": "785b9784a0ed573bc3e4c38addb767f5",
+      "references": [
+        "292475149",
+        "291799228"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Optics Virtual Laboratory (OVL) Based on Physics Independent Learning (PIL) For Improving Critical Thinking Skill.",
+          "citations": [
+            0
+          ],
+          "score": 0.6335714285714286,
+          "heuristic_score": 0.6335714285714286,
+          "doc_id": "292475149",
+          "timestamp": "2025-06-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "A framework utilizing augmented reality to improve critical thinking ability and learning gain of the students in Physics.",
+          "citations": [
+            0
+          ],
+          "score": 0.5942857142857142,
+          "heuristic_score": 0.5942857142857142,
+          "doc_id": "292475149",
+          "timestamp": "2025-06-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Measuring Critical Thinking in Physics: Development and Validation of a Critical Thinking Test in Electricity and Magnetism.",
+          "citations": [
+            1
+          ],
+          "score": 0.5191558441558441,
+          "heuristic_score": 0.5191558441558441,
+          "doc_id": "291799228",
+          "timestamp": "2025-05-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "HOTS student worksheet to identification of scientific creativity skill , critical thinking skill and creative thinking skill in physics learning.",
+          "citations": [
+            1
+          ],
+          "score": 0.5162337662337663,
+          "heuristic_score": 0.5162337662337663,
+          "doc_id": "291799228",
+          "timestamp": "2025-05-01T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How can hands-on projects and simulations be combined to maximize physics critical thinking?",
+        "narrative_id": "785b9784a0ed573bc3e4c38addb767f5"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|3490ff75cc1d7cc958eea148ecf9f064": {
+      "query_id": "3490ff75cc1d7cc958eea148ecf9f064",
+      "references": [
+        "299809610",
+        "303699265",
+        "299271867"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "These included: 1) Communication barriers such as language difficulties, understanding each other and health literacy; 2) Emotional and psychological support, highlighting a need for further research.",
+          "citations": [
+            0
+          ],
+          "score": 0.6072857142857142,
+          "heuristic_score": 0.6072857142857142,
+          "doc_id": "299809610",
+          "timestamp": "2025-09-30T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "BMC Pregnancy and Childbirth (2025) 25:1109 highlight how such factors may influence access to emer-gency care and, consequently, health outcomes.",
+          "citations": [
+            1
+          ],
+          "score": 0.4874285714285715,
+          "heuristic_score": 0.4874285714285715,
+          "doc_id": "303699265",
+          "timestamp": "2025-10-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "This will help to address timely access to the most appropriate services, reducing risk factors for adverse maternity and neonatal outcomes and associated impact upon the emergency services.",
+          "citations": [
+            1
+          ],
+          "score": 0.45671428571428574,
+          "heuristic_score": 0.45671428571428574,
+          "doc_id": "303699265",
+          "timestamp": "2025-10-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "In a retrospective study like this uncertainty must remain about the link between patient severity and the fluid regimen chosen by the treating clinician, and about how this linkage could affect the outcomes of interest.",
+          "citations": [
+            2
+          ],
+          "score": 0.38400000000000006,
+          "heuristic_score": 0.38400000000000006,
+          "doc_id": "299271867",
+          "timestamp": "2025-03-11T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Subsequent management was determined by the response to the initial fluid resuscitation, usually in consultation with senior staff.",
+          "citations": [
+            2
+          ],
+          "score": 0.25771428571428573,
+          "heuristic_score": 0.25771428571428573,
+          "doc_id": "299271867",
+          "timestamp": "2025-03-11T00:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How could language and health literacy barriers alter emergency response access and outcomes?",
+        "narrative_id": "3490ff75cc1d7cc958eea148ecf9f064"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|35ed7fb79fbf9d4499b0d47028fa39d8": {
+      "query_id": "35ed7fb79fbf9d4499b0d47028fa39d8",
+      "references": [
+        "311144544",
+        "311115726",
+        "8058284",
+        "84119928"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "8.The calculated transition pressures were similar to those cal-culated without considering entropic terms (3.7 and 5.3 GPaat 300 K; 4 and 5.4 GPa at 700 K).",
+          "citations": [
+            1
+          ],
+          "score": 0.39019480519480526,
+          "heuristic_score": 0.39019480519480526,
+          "doc_id": "311115726",
+          "timestamp": "2025-10-24T17:14:48",
+          "sentence_rank": 0
+        },
+        {
+          "text": "The upper two panels represent oxides 32 important for the host rock classification, e.g., Fe in olivine and alkali oxides in feldspars.",
+          "citations": [
+            2
+          ],
+          "score": 0.24688311688311687,
+          "heuristic_score": 0.24688311688311687,
+          "doc_id": "8058284",
+          "timestamp": "2014-01-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "We investigated elements important for rock forming minerals (Fe, Mg for olivine and pyroxene, Na, K for feldspar plotted vs Si, all as oxides) and elements important for later fluid rock interaction (Ca, S for sulfates, Cl, Br for evaporation processes, Zn for hydrothermal processes; all as oxides).",
+          "citations": [
+            2
+          ],
+          "score": 0.24545454545454548,
+          "heuristic_score": 0.24545454545454548,
+          "doc_id": "8058284",
+          "timestamp": "2014-01-01T00:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How do stress anisotropy and cation substitution jointly lower transition pressures in inorganic oxides and carbonates?",
+        "narrative_id": "35ed7fb79fbf9d4499b0d47028fa39d8"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|5abb455852405585be851775b2889f50": {
+      "query_id": "5abb455852405585be851775b2889f50",
+      "references": [
+        "308402465",
+        "298284569",
+        "308397681",
+        "301069195",
+        "312239321",
+        "313633948"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Archival tissue was collected for central con-firmation of histology and tumor KRAS testing (Protocol).Study Design and TreatmentThis was an adaptive, four-part, phase II, multicenter, parallel cohort, randomized, open-label trial to evaluate the efficacy and safety of avutometinib alone and in combination with defactinib in patients with recurrent LGSOC (Fig 1).",
+          "citations": [
+            2
+          ],
+          "score": 0.555,
+          "heuristic_score": 0.555,
+          "doc_id": "308397681",
+          "timestamp": "2025-09-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Effects of a novel, brief psychological therapy (ManagingUnusual Sensory Experiences) for hallucinations in first episode psychosis (MUSE FEP): findings from an exploratoryrandomised controlled trial.",
+          "citations": [
+            3
+          ],
+          "score": 0.3707142857142857,
+          "heuristic_score": 0.3707142857142857,
+          "doc_id": "301069195",
+          "timestamp": "2025-09-10T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Effects of SlowMo, a blended digital therapytargeting reasoning, on paranoia among people with psychosis: a randomized clinical trial.",
+          "citations": [
+            3
+          ],
+          "score": 0.3307142857142857,
+          "heuristic_score": 0.3307142857142857,
+          "doc_id": "301069195",
+          "timestamp": "2025-09-10T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "efficacy evaluable population for the avutometinib 3.2 mg BIW 1 defactinib 200 mg BID combination therapy group.",
+          "citations": [
+            2
+          ],
+          "score": 0.2857142857142857,
+          "heuristic_score": 0.2857142857142857,
+          "doc_id": "308397681",
+          "timestamp": "2025-09-01T01:00:00",
+          "sentence_rank": 2
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "What evidence threshold justifies advancing a combination therapy to a randomized confirmatory trial?",
+        "narrative_id": "5abb455852405585be851775b2889f50"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|5b9e5bfa057195e7f937fca05ff3ab83": {
+      "query_id": "5b9e5bfa057195e7f937fca05ff3ab83",
+      "references": [
+        "304469761",
+        "160919574",
+        "302446669",
+        "18715878",
+        "290096049",
+        "146433835"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "The structure of the virtual wellness visit was adapted to best address the quintuple aim of health services to include patient and provider satisfaction, clinical outcomes, health equity, and cost containment.",
+          "citations": [
+            1
+          ],
+          "score": 0.4692857142857143,
+          "heuristic_score": 0.4692857142857143,
+          "doc_id": "160919574",
+          "timestamp": "2024-10-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Measures taken included sociodemographic factors such as marital status or educational level, clinical history, and validated assessments of depressive and anxiety symptoms using the Patient Health Questionnaire (PHQ-9) and Generalised Anxiety Disorder (GAD-7) questionnaire.",
+          "citations": [
+            1
+          ],
+          "score": 0.45,
+          "heuristic_score": 0.45,
+          "doc_id": "160919574",
+          "timestamp": "2024-10-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Clinical review ofuser engagement with mental health smartphone apps: evidence, theory andimprovements.",
+          "citations": [
+            5
+          ],
+          "score": 0.28485714285714286,
+          "heuristic_score": 0.28485714285714286,
+          "doc_id": "146433835",
+          "timestamp": "2023-08-22T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "NatCen Social Research, Food and You Survey Wave 4 (2016): User Guide.",
+          "citations": [
+            3
+          ],
+          "score": 0.27285714285714285,
+          "heuristic_score": 0.27285714285714285,
+          "doc_id": "18715878",
+          "timestamp": "2019-04-29T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Schuit and in accordance with the decision of the Doctorate Board.",
+          "citations": [
+            2
+          ],
+          "score": 0.26571428571428574,
+          "heuristic_score": 0.26571428571428574,
+          "doc_id": "302446669",
+          "timestamp": "2025-09-11T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Details of the sampling method and survey procedures are available in the user guide [21].",
+          "citations": [
+            3
+          ],
+          "score": 0.22000000000000003,
+          "heuristic_score": 0.22000000000000003,
+          "doc_id": "18715878",
+          "timestamp": "2019-04-29T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Early detection and accurate prediction of ARDS can significantly improve patient outcomes.",
+          "citations": [
+            4
+          ],
+          "score": 0.21285714285714286,
+          "heuristic_score": 0.21285714285714286,
+          "doc_id": "290096049",
+          "timestamp": "2025-05-01T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How can real-time patient self-monitoring guide risk-sensitive clinical decision thresholds?",
+        "narrative_id": "5b9e5bfa057195e7f937fca05ff3ab83"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|644e56222501df386be4b404cb2d02b0": {
+      "query_id": "644e56222501df386be4b404cb2d02b0",
+      "references": [
+        "85859423",
+        "172702294",
+        "6820795",
+        "85860809"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Consequently, to shed some light on this matter, the Danish group proposed a new method for identifying different patients profiles, as follows: one profile consists of accurate patients, who are aware of their cognitive abilities and accurately report them; a second group represents a sensitive.",
+          "citations": [
+            1
+          ],
+          "score": 0.432,
+          "heuristic_score": 0.432,
+          "doc_id": "172702294",
+          "timestamp": "2025-04-07T10:29:05",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Comprehending the factors contributing to the discrepancy between objective and subjective cognitive impairment can guide clinical assessment and the treatment of cognitive dysfunction.",
+          "citations": [
+            1
+          ],
+          "score": 0.4058571428571429,
+          "heuristic_score": 0.4058571428571429,
+          "doc_id": "172702294",
+          "timestamp": "2025-04-07T10:29:05",
+          "sentence_rank": 0
+        },
+        {
+          "text": "The benefits of being present: mindfulness and its role in psychological well-being.",
+          "citations": [
+            3
+          ],
+          "score": 0.20985714285714285,
+          "heuristic_score": 0.20985714285714285,
+          "doc_id": "85860809",
+          "timestamp": "2019-07-01T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Can individualized diagnostic profiles guide who benefits most from holistic wellness retreats?",
+        "narrative_id": "644e56222501df386be4b404cb2d02b0"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|1c4bc3e0f4bf5add8b37a379e3910463": {
+      "query_id": "1c4bc3e0f4bf5add8b37a379e3910463",
+      "references": [
+        "309218589",
+        "67747135",
+        "17703290",
+        "4081468"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Perinatal and pregnancy-related mortality hotspot areas and trends over timeThe global spatial autocorrelation analysis revealed that the observed spatial distribution of perinatal and pregnancy-related mortality in each of the four surveys was statistically significantly different from a random spatial distribution, which indicates that they were.",
+          "citations": [
+            0
+          ],
+          "score": 0.4575,
+          "heuristic_score": 0.4575,
+          "doc_id": "309218589",
+          "timestamp": "2025-04-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "The components policy and facilities were also included as health systems conditions and constraints in a 2015 systematic review of mistreatment during childbirth.16The finding that facilities in urban regions performed better on availability of the institutional-level RMC index might be due to the better provision.",
+          "citations": [
+            1
+          ],
+          "score": 0.408,
+          "heuristic_score": 0.408,
+          "doc_id": "67747135",
+          "timestamp": "2020-12-31T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "This might explain why over 70% of midwives reported they were 21 knowledgeable about stress, anxiety and depression however indicated high education needs for the spectrum of PMHPs.",
+          "citations": [
+            2
+          ],
+          "score": 0.39242857142857146,
+          "heuristic_score": 0.39242857142857146,
+          "doc_id": "17703290",
+          "timestamp": "2018-02-14T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Saving Lives, Improving Mothers' Care Lessons learned to inform future maternity care from the UK and Ireland Confidential Enquiries into Maternal Deaths and Morbidity 2013-2015.",
+          "citations": [
+            2
+          ],
+          "score": 0.3121428571428571,
+          "heuristic_score": 0.3121428571428571,
+          "doc_id": "17703290",
+          "timestamp": "2018-02-14T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "The nine remaining items that measured specific aspects of institutional RMC during childbirth were grouped into components (Table 1).",
+          "citations": [
+            1
+          ],
+          "score": 0.20785714285714285,
+          "heuristic_score": 0.20785714285714285,
+          "doc_id": "67747135",
+          "timestamp": "2020-12-31T00:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Why might improving institutional care readiness not equally lower mortality across regions?",
+        "narrative_id": "1c4bc3e0f4bf5add8b37a379e3910463"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|21659a15321024640ba3d71b9d51877f": {
+      "query_id": "21659a15321024640ba3d71b9d51877f",
+      "references": [
+        "8642440",
+        "8643007"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "From Enforcement to Assistance: Evolving Best Practices in Self-Exclusion.",
+          "citations": [
+            1
+          ],
+          "score": 0.27414285714285713,
+          "heuristic_score": 0.27414285714285713,
+          "doc_id": "8643007",
+          "timestamp": "2014-05-01T00:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "What provider policy best mitigates risks from larger bet sizes and bigger payouts?",
+        "narrative_id": "21659a15321024640ba3d71b9d51877f"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|53e7b128b38d074d94828c9a5cdd5b96": {
+      "query_id": "53e7b128b38d074d94828c9a5cdd5b96",
+      "references": [
+        "948180",
+        "875427"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "In language learning tasks, where sub-regularities and (small families of) exceptions typically abound, the latter is detrimental to generalization performance.",
+          "citations": [
+            0
+          ],
+          "score": 0.6254285714285714,
+          "heuristic_score": 0.6254285714285714,
+          "doc_id": "948180",
+          "timestamp": "1998-12-22T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "A salient characteristic of our language learning tasks, shown most clearly in the gs data set but also present in the other data sets, is the presence of a high degree of class polymorphism (high disjunctivity).",
+          "citations": [
+            0
+          ],
+          "score": 0.588,
+          "heuristic_score": 0.588,
+          "doc_id": "948180",
+          "timestamp": "1998-12-22T00:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Which property of preserved examples most aids generalization across diverse language tasks?",
+        "narrative_id": "53e7b128b38d074d94828c9a5cdd5b96"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|0eb2a0f2a29a2fbfc09b4e58c7743f72": {
+      "query_id": "0eb2a0f2a29a2fbfc09b4e58c7743f72",
+      "references": [
+        "8971346",
+        "8967281",
+        "303795040"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Introduction Defects associated with tolerances, called tolerance issues hereafter, are amongst the most common and recurring defects in construction projects (Landin 2010; Talebi et al.",
+          "citations": [
+            1
+          ],
+          "score": 0.5745714285714285,
+          "heuristic_score": 0.5745714285714285,
+          "doc_id": "8967281",
+          "timestamp": "2020-12-11T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "The participants confirmed that the main cause of the occurrence of the identified tolerance problems was due to the poor communication of dimensional and geometric variations between designers and construction trades.",
+          "citations": [
+            0
+          ],
+          "score": 0.4417142857142857,
+          "heuristic_score": 0.4417142857142857,
+          "doc_id": "8971346",
+          "timestamp": "2020-01-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Improvement of Dimensional Tolerance Management in Construction.",
+          "citations": [
+            0
+          ],
+          "score": 0.435,
+          "heuristic_score": 0.435,
+          "doc_id": "8971346",
+          "timestamp": "2020-01-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Keywords: Tolerance issues, tolerance management, quality control, defects, dimensional and geometric variations.",
+          "citations": [
+            1
+          ],
+          "score": 0.409,
+          "heuristic_score": 0.409,
+          "doc_id": "8967281",
+          "timestamp": "2020-12-11T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "While smoothing reduces sensitivity to localvariation, our results in Section SI9 suggest that it is essential for mitigating noise andalignment inaccuracies inherent to comparison of voxel-sized ROIs across subjects andmodalities.",
+          "citations": [
+            2
+          ],
+          "score": 0.35400000000000004,
+          "heuristic_score": 0.35400000000000004,
+          "doc_id": "303795040",
+          "timestamp": "2025-03-04T00:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Which communication improvement most reduces repeated dimensional issues across project phases?",
+        "narrative_id": "0eb2a0f2a29a2fbfc09b4e58c7743f72"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|9af879f2df293898cb7a6cb4de5c4a86": {
+      "query_id": "9af879f2df293898cb7a6cb4de5c4a86",
+      "references": [
+        "303970267",
+        "303970277",
+        "309263613"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "If the particle is too slow, then there will be less than 10 hits in this slicer time window and the particle will not be sliced.",
+          "citations": [
+            1
+          ],
+          "score": 0.43857142857142856,
+          "heuristic_score": 0.43857142857142856,
+          "doc_id": "303970277",
+          "timestamp": "2025-05-01T08:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "I performed some tests to decide the best time window while also varying ADC cuts so that signal events occur.",
+          "citations": [
+            0
+          ],
+          "score": 0.43142857142857144,
+          "heuristic_score": 0.43142857142857144,
+          "doc_id": "303970267",
+          "timestamp": "2025-05-01T08:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Good MC events are events where the simulated track can be detected.",
+          "citations": [
+            1
+          ],
+          "score": 0.2592857142857143,
+          "heuristic_score": 0.2592857142857143,
+          "doc_id": "303970277",
+          "timestamp": "2025-05-01T08:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Hand dominancy--a feature affecting sensitivity to pain.",
+          "citations": [
+            2
+          ],
+          "score": 0.23857142857142855,
+          "heuristic_score": 0.23857142857142855,
+          "doc_id": "309263613",
+          "timestamp": "2025-05-20T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Disgust and contamination sensitivity in vaginismus and dyspareunia.",
+          "citations": [
+            2
+          ],
+          "score": 0.20499999999999996,
+          "heuristic_score": 0.20499999999999996,
+          "doc_id": "309263613",
+          "timestamp": "2025-05-20T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How can hit-grouping window instability be mitigated while preserving sensitivity to extremely slow events?",
+        "narrative_id": "9af879f2df293898cb7a6cb4de5c4a86"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|3fb37f11fe7ce75db465d18b9cc0705c": {
+      "query_id": "3fb37f11fe7ce75db465d18b9cc0705c",
+      "references": [
+        "298307650",
+        "42867564",
+        "289489645",
+        "296709955",
+        "274843921"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "It is expected that the implementation of HOTS-based learning in schools, especially in geography subjects, is currently adjusted to 21st-century learning, namely being able to improve abilities, skills or abilities, and attitudes that students must achieve as a result of the planned learning process.",
+          "citations": [
+            0
+          ],
+          "score": 0.5558181818181818,
+          "heuristic_score": 0.5558181818181818,
+          "doc_id": "298307650",
+          "timestamp": "2025-05-29T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Based Learning is a practical and engaging learning approach involving students in active and creative discussions on real-life events (contextual) through case studies to develop students' reasoning and problem-solving skills.",
+          "citations": [
+            0
+          ],
+          "score": 0.48594805194805196,
+          "heuristic_score": 0.48594805194805196,
+          "doc_id": "298307650",
+          "timestamp": "2025-05-29T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "[30] (and later, [15]) proposed a spatial-domain generalization of CNNs to graphs using local patch operators represented as Gaussian mixture models, showing a significant advantage of such models in generalizing across different graphs.",
+          "citations": [
+            1
+          ],
+          "score": 0.33399999999999996,
+          "heuristic_score": 0.33399999999999996,
+          "doc_id": "42867564",
+          "timestamp": "2018-01-01T00:00:00",
+          "sentence_rank": 3
+        },
+        {
+          "text": "This makes filters learned on one graph generalizable to other graphs.",
+          "citations": [
+            1
+          ],
+          "score": 0.3212857142857143,
+          "heuristic_score": 0.3212857142857143,
+          "doc_id": "42867564",
+          "timestamp": "2018-01-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Pembelajaran Berbasis HOTS (High Order Thinking Skill).",
+          "citations": [
+            2
+          ],
+          "score": 0.282,
+          "heuristic_score": 0.282,
+          "doc_id": "289489645",
+          "timestamp": "2025-05-20T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Berpikir tingkat tinggi pada umumnya disebut dengan High Order Thingking Skills (HOTS).",
+          "citations": [
+            2
+          ],
+          "score": 0.26985714285714285,
+          "heuristic_score": 0.26985714285714285,
+          "doc_id": "289489645",
+          "timestamp": "2025-05-20T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "However, experiments performed initeration 3 do not have this high risk, so they are stopped atloop number 40.",
+          "citations": [
+            3
+          ],
+          "score": 0.2162857142857143,
+          "heuristic_score": 0.2162857142857143,
+          "doc_id": "296709955",
+          "timestamp": "2025-04-01T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How consistent are learning gains from a case-focused instructional approach across different high schools?",
+        "narrative_id": "3fb37f11fe7ce75db465d18b9cc0705c"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|5fcf8eb1af05248be1503e13e8940abf": {
+      "query_id": "5fcf8eb1af05248be1503e13e8940abf",
+      "references": [
+        "310452493",
+        "308388715"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "In non-fenestrated TCPC patients or when the fenestration was closed, most centres (21, 68%) converted to aspirin therapy after the initial post-surgical period.",
+          "citations": [
+            1
+          ],
+          "score": 0.48993506493506495,
+          "heuristic_score": 0.48993506493506495,
+          "doc_id": "308388715",
+          "timestamp": "2025-05-31T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Can patients relapsing after adjuvant anti–PD-1 therapy benefit from intratumoral immune priming?",
+        "narrative_id": "5fcf8eb1af05248be1503e13e8940abf"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|4d7b5816864a9cbbda5736d6b8811ca6": {
+      "query_id": "4d7b5816864a9cbbda5736d6b8811ca6",
+      "references": [
+        "156970125",
+        "85573942",
+        "8052470",
+        "292790232"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "The main idea of this novel methodis to keep local data where it is generated and convey onlylocal models throughout the learning process.",
+          "citations": [
+            0
+          ],
+          "score": 0.4706493506493506,
+          "heuristic_score": 0.4706493506493506,
+          "doc_id": "156970125",
+          "timestamp": "2023-12-07T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Due to privacy issues and communication over, it is impractical for all wireless mobile devices to transmit their local data for training ML models.",
+          "citations": [
+            1
+          ],
+          "score": 0.46636363636363637,
+          "heuristic_score": 0.46636363636363637,
+          "doc_id": "85573942",
+          "timestamp": "2020-04-28T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "The data center integrates the local FL models to generated the global FL model and broadcasts it back to all mobile devices.",
+          "citations": [
+            1
+          ],
+          "score": 0.46064935064935064,
+          "heuristic_score": 0.46064935064935064,
+          "doc_id": "85573942",
+          "timestamp": "2020-04-28T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Of particular relevance to e-learning is national legislation covering: accessibility to those with particular needs, copyright and other intellectual property rights, data protection, privacy and freedom of information.",
+          "citations": [
+            2
+          ],
+          "score": 0.35233766233766234,
+          "heuristic_score": 0.35233766233766234,
+          "doc_id": "8052470",
+          "timestamp": "2016-02-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Integrat-ing these capabilities into manufacturing systems enhancestheir overall performance, robustness, and flexibility.",
+          "citations": [
+            3
+          ],
+          "score": 0.21081168831168834,
+          "heuristic_score": 0.21081168831168834,
+          "doc_id": "292790232",
+          "timestamp": "2025-06-12T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Which structural property from simplified models best improves robustness under heterogeneous local data?",
+        "narrative_id": "4d7b5816864a9cbbda5736d6b8811ca6"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|cca3dd5aa311bc7a728839dd6fa4321b": {
+      "query_id": "cca3dd5aa311bc7a728839dd6fa4321b",
+      "references": [
+        "160108075",
+        "157689160",
+        "301094168",
+        "290295097",
+        "308454267"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Aligned with our pastmixed methods findings, the present analysis shows programme outcomes across individual,interpersonal, and community levels [5] At the individual level, our realist evaluation datashow that Agenda Gap contributed to improved mental health, coping skills, and confidenceamong participants alongside sustained interest and engagement.",
+          "citations": [
+            0
+          ],
+          "score": 0.6545454545454544,
+          "heuristic_score": 0.6545454545454544,
+          "doc_id": "160108075",
+          "timestamp": "2024-06-18T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Beyond theindividual level, mental health promotion programming for youth has been found tostrengthen relationships within peer and family networks, shift community norms and prac-tices, and change social conditions to reduce health and social inequities [5, 12, 13].The theory of positive youth development, which focuses on.",
+          "citations": [
+            0
+          ],
+          "score": 0.5754545454545454,
+          "heuristic_score": 0.5754545454545454,
+          "doc_id": "160108075",
+          "timestamp": "2024-06-18T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Development and initial validationof the short critical consciousness scale (CCS-S).",
+          "citations": [
+            1
+          ],
+          "score": 0.32571428571428573,
+          "heuristic_score": 0.32571428571428573,
+          "doc_id": "157689160",
+          "timestamp": "2023-02-16T00:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "What design choice helps scale short‑term participant benefits into sustained community‑level change?",
+        "narrative_id": "cca3dd5aa311bc7a728839dd6fa4321b"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|8a5dc8caebf3359906b2ccd6264982f2": {
+      "query_id": "8a5dc8caebf3359906b2ccd6264982f2",
+      "references": [
+        "12266191",
+        "300169037",
+        "8005025",
+        "308883324",
+        "305678609"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Debate about themerits andchallenges of switching from Clinical and Laboratory Standards Institute to EUCAST and about theimplications of such a transition for interpretation of routine data in the context of surveillanceis ongoing.23,24To support coverage estimation, it is important that themicrobiological data used are collectedin equivalent ways.",
+          "citations": [
+            0
+          ],
+          "score": 0.5063636363636363,
+          "heuristic_score": 0.5063636363636363,
+          "doc_id": "12266191",
+          "timestamp": "2020-01-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "A nationwide survey showed that the use of symptom checkers was associated with younger age, higher income and female sex [40].",
+          "citations": [
+            1
+          ],
+          "score": 0.40499999999999997,
+          "heuristic_score": 0.40499999999999997,
+          "doc_id": "300169037",
+          "timestamp": "2025-05-23T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Almost half of individuals diagnosed with schizophrenia also present with a substance use disorder, however, little is known about potential molecular mechanisms underlying this comorbidity.",
+          "citations": [
+            3
+          ],
+          "score": 0.2757142857142857,
+          "heuristic_score": 0.2757142857142857,
+          "doc_id": "308883324",
+          "timestamp": "2025-05-11T21:04:15",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Rate of proven rheumatic diseases in a large collective of referrals to an outpatient rheumatology clinic under routine conditions.",
+          "citations": [
+            1
+          ],
+          "score": 0.2542857142857143,
+          "heuristic_score": 0.2542857142857143,
+          "doc_id": "300169037",
+          "timestamp": "2025-05-23T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "However, its properties suggest sustained, supratherapeutic use lends to the peripheral accumulation of fentanyl, leading to prolonged elimination in persons who use drugs.",
+          "citations": [
+            4
+          ],
+          "score": 0.235,
+          "heuristic_score": 0.235,
+          "doc_id": "305678609",
+          "timestamp": "2025-09-10T13:55:24",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "When does higher modeled microbiological coverage justify routine use of a broad-spectrum agent?",
+        "narrative_id": "8a5dc8caebf3359906b2ccd6264982f2"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|5e6ebb6a62cc855b8ec6ae10827af8f1": {
+      "query_id": "5e6ebb6a62cc855b8ec6ae10827af8f1",
+      "references": [
+        "8373299",
+        "301846879",
+        "8375631",
+        "305749693",
+        "172758856"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "285 286 287 These findings, if proven to be a causal relationship, may offer support for a health promotion 288 intervention in the workplace, to reduce sitting and increase time spent in an upright posture.",
+          "citations": [
+            0
+          ],
+          "score": 0.606,
+          "heuristic_score": 0.606,
+          "doc_id": "8373299",
+          "timestamp": "2017-01-31T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Reporting will be informed by the Preferred Reporting Items for Systematic Review and Meta-Analysis Complex Interventions extension statement and checklist.",
+          "citations": [
+            1
+          ],
+          "score": 0.3362857142857143,
+          "heuristic_score": 0.3362857142857143,
+          "doc_id": "301846879",
+          "timestamp": "2025-08-02T12:54:22",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Recent evidence suggests that community-wide active case finding (ACF) can reduce tuberculosis (TB) incidence and prevalence.",
+          "citations": [
+            3
+          ],
+          "score": 0.26914285714285713,
+          "heuristic_score": 0.26914285714285713,
+          "doc_id": "305749693",
+          "timestamp": "2025-07-01T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Can workplace sit–stand interventions reduce abdominal adiposity and improve lipid profiles?",
+        "narrative_id": "5e6ebb6a62cc855b8ec6ae10827af8f1"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|c60f7e99a8623cad87ae6951b6854fff": {
+      "query_id": "c60f7e99a8623cad87ae6951b6854fff",
+      "references": [
+        "879583",
+        "2409902"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "The largest interactions are interestingly obtained on the dxy local orbital, for both the screened and bare cases.",
+          "citations": [
+            1
+          ],
+          "score": 0.42350649350649355,
+          "heuristic_score": 0.42350649350649355,
+          "doc_id": "2409902",
+          "timestamp": "2012-01-01T00:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How do ab initio screened local exchange values alter predicted spin–orbital ordering tendencies?",
+        "narrative_id": "c60f7e99a8623cad87ae6951b6854fff"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|cd8168171beff566fc1609c9dd080cd2": {
+      "query_id": "cd8168171beff566fc1609c9dd080cd2",
+      "references": [
+        "6208063",
+        "6208086"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Program Implementation Issues Sustainability To achieve more sustainable remote mental health programs, these issues need to be considered: Sustainability of employment and funding Begin by investing in relationships with local partners, so that trust is built, and the will to change systems is created.",
+          "citations": [
+            0
+          ],
+          "score": 0.6818181818181818,
+          "heuristic_score": 0.6818181818181818,
+          "doc_id": "6208063",
+          "timestamp": "2008-10-12T02:20:55",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Large Aboriginal Health Worker program employs local Aboriginal Mental Health Workers in 8 remote communities who work closely with GPs and community around mental health and cultural issues.",
+          "citations": [
+            0
+          ],
+          "score": 0.5889610389610389,
+          "heuristic_score": 0.5889610389610389,
+          "doc_id": "6208063",
+          "timestamp": "2008-10-12T02:20:55",
+          "sentence_rank": 0
+        },
+        {
+          "text": "The Divisions themselves employ some of the allied health professionals, others are employed through local area health services or Primary Mental Health Care Australian Resource Centre September 2002 20 local councils with the Division purchasing services from these.",
+          "citations": [
+            1
+          ],
+          "score": 0.5863636363636363,
+          "heuristic_score": 0.5863636363636363,
+          "doc_id": "6208086",
+          "timestamp": "2008-10-12T01:51:59",
+          "sentence_rank": 0
+        },
+        {
+          "text": "On-site mental health workers in primary care: Effects of professional practice.",
+          "citations": [
+            1
+          ],
+          "score": 0.46564935064935065,
+          "heuristic_score": 0.46564935064935065,
+          "doc_id": "6208086",
+          "timestamp": "2008-10-12T01:51:59",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How do local cultural liaisons and on-site professionals interact to improve remote mental healthcare sustainability?",
+        "narrative_id": "cd8168171beff566fc1609c9dd080cd2"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|ef3ddfa96d252a408f89cc5c977464e4": {
+      "query_id": "ef3ddfa96d252a408f89cc5c977464e4",
+      "references": [
+        "297906043",
+        "290539112",
+        "293791884",
+        "5234844",
+        "171840438"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "During the focus groups contextual challenges of settings, current practice (which products/procedures were used) were discussed and barriers/facilitators to change in practice were explored.",
+          "citations": [
+            1
+          ],
+          "score": 0.47214285714285714,
+          "heuristic_score": 0.47214285714285714,
+          "doc_id": "290539112",
+          "timestamp": "2025-05-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Cloud-Based E-Learning Platforms: Evolution and Adoption: The implementation of cloud computing in education started its rapid rise during the early 2000s because education systems needed economical and scalable IT systems beyond their local servers [1].",
+          "citations": [
+            2
+          ],
+          "score": 0.45399999999999996,
+          "heuristic_score": 0.45399999999999996,
+          "doc_id": "293791884",
+          "timestamp": "2025-05-24T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Challenges in Cloud-Based E-Learning: The two options of SaaS and PaaS encounter specific challenges during their adoption stage.",
+          "citations": [
+            2
+          ],
+          "score": 0.2927142857142857,
+          "heuristic_score": 0.2927142857142857,
+          "doc_id": "293791884",
+          "timestamp": "2025-05-24T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Of all anaphylactic reactions taking place in a hospital or medical practice (n = 224), 61.3% were caused by drugs and were most commonly treated by physicians on site (79.1%).",
+          "citations": [
+            3
+          ],
+          "score": 0.26,
+          "heuristic_score": 0.26,
+          "doc_id": "5234844",
+          "timestamp": "2012-01-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Global AIDS Update: Confronting Inequalities Lessons for Pandemic Responses From 40 Years of AIDS.",
+          "citations": [
+            4
+          ],
+          "score": 0.2064285714285714,
+          "heuristic_score": 0.2064285714285714,
+          "doc_id": "171840438",
+          "timestamp": "2025-03-10T00:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Which feature of trial-supported products most aids scalable adoption in understaffed settings?",
+        "narrative_id": "ef3ddfa96d252a408f89cc5c977464e4"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|f40ef0e5ac56c2ae1febd382b3ff319c": {
+      "query_id": "f40ef0e5ac56c2ae1febd382b3ff319c",
+      "references": [
+        "174853439",
+        "300128012",
+        "309689400"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Plaque modification and stabilization after paclitaxel-coated balloon treatment for de novo coronary lesions.",
+          "citations": [
+            0
+          ],
+          "score": 0.36042857142857143,
+          "heuristic_score": 0.36042857142857143,
+          "doc_id": "174853439",
+          "timestamp": "2025-04-02T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Appendix Dshows the resulting best fits for all 25 apertures, and the re-sulting best fit parameters are listed in Table 1.",
+          "citations": [
+            1
+          ],
+          "score": 0.33985714285714286,
+          "heuristic_score": 0.33985714285714286,
+          "doc_id": "300128012",
+          "timestamp": "2025-09-18T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "The best model was fitted topredict 5-year LOCE, including predictors diabetes,target vessel, rotablation, previous CAD, postdilata-tion and differences between the diameter of thepredilatation balloon and the RVD.",
+          "citations": [
+            2
+          ],
+          "score": 0.2862857142857143,
+          "heuristic_score": 0.2862857142857143,
+          "doc_id": "309689400",
+          "timestamp": "2025-04-01T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Which procedural indicator best predicts unfavorable remodeling after balloon-based coronary therapy?",
+        "narrative_id": "f40ef0e5ac56c2ae1febd382b3ff319c"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|9b2923bddc4938bcb6f1cd27169ed2e1": {
+      "query_id": "9b2923bddc4938bcb6f1cd27169ed2e1",
+      "references": [
+        "164017151",
+        "109529590"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "3.8 Regent-Dependent Creativity Metric On the contrary, the Regent-Dependent Creativity metric [31] measures novelty and value through Bayesian Surprise and synergy, a metric that captures the cooperative nature of constituent elements of an artifact.",
+          "citations": [
+            1
+          ],
+          "score": 0.6314285714285713,
+          "heuristic_score": 0.6314285714285713,
+          "doc_id": "109529590",
+          "timestamp": "2021-04-06T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Deep Learning Novelty Explorer (DeLeNoX) [ 168 ] uses a denoising autoencoder to learnow-dimensional representations of the last generated artifacts.",
+          "citations": [
+            0
+          ],
+          "score": 0.5792857142857142,
+          "heuristic_score": 0.5792857142857142,
+          "doc_id": "164017151",
+          "timestamp": "2024-01-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "A fundamental area is the definitionf novel and robust evaluation techniques for both generated and real artifacts.",
+          "citations": [
+            0
+          ],
+          "score": 0.43714285714285717,
+          "heuristic_score": 0.43714285714285717,
+          "doc_id": "164017151",
+          "timestamp": "2024-01-01T00:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Which evaluation metric best captures novelty as realism of generated artifacts increases?",
+        "narrative_id": "9b2923bddc4938bcb6f1cd27169ed2e1"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|a5c587bb204cb34e669e171074b6cf60": {
+      "query_id": "a5c587bb204cb34e669e171074b6cf60",
+      "references": [
+        "297834306",
+        "86293229",
+        "289818884",
+        "148726201",
+        "168585725",
+        "5986785",
+        "309075888"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Treatment strategies were similar across sexes, with benzodiazepines as first-line therapy in over 80% of cases, levetiracetam being the most frequently prescribed second-line treatment, followed by valproate and lacosamide.",
+          "citations": [
+            0
+          ],
+          "score": 0.51,
+          "heuristic_score": 0.51,
+          "doc_id": "297834306",
+          "timestamp": "2025-03-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Subsequently,62 full-text articles were assessed for eligibility, of which26 were excluded due to ineligible population or interven-tion (Figure 1).",
+          "citations": [
+            2
+          ],
+          "score": 0.32785714285714285,
+          "heuristic_score": 0.32785714285714285,
+          "doc_id": "289818884",
+          "timestamp": "2025-04-19T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Most studieswere retrospective, with only a few employing prospec-tive designs, which inherently limit control over bias.",
+          "citations": [
+            2
+          ],
+          "score": 0.28714285714285714,
+          "heuristic_score": 0.28714285714285714,
+          "doc_id": "289818884",
+          "timestamp": "2025-04-19T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Two independent reviewers screened studies based ontitle and abstract, followed by a full-text review to confirm eligibility(H.F.S and D.A.).",
+          "citations": [
+            6
+          ],
+          "score": 0.26,
+          "heuristic_score": 0.26,
+          "doc_id": "309075888",
+          "timestamp": "2025-09-11T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Visual tracking in very preterm infants at 4 mo predicts neurodevelopment at 3 y of age.",
+          "citations": [
+            3
+          ],
+          "score": 0.2385714285714286,
+          "heuristic_score": 0.2385714285714286,
+          "doc_id": "148726201",
+          "timestamp": "2023-01-01T00:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Which feeding pattern most strongly predicts eligibility for biomarker-based treatment?",
+        "narrative_id": "a5c587bb204cb34e669e171074b6cf60"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|4adbf08885051021d6cce7a803506cb3": {
+      "query_id": "4adbf08885051021d6cce7a803506cb3",
+      "references": [
+        "299848381",
+        "293355477"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Trattnig 523 5.3 Informal Settlements and Urban Sustainability Informal settlements have become a prominent feature of South African cities, reflecting both the failures of formal urban planning and the resilience of marginalized communities.",
+          "citations": [
+            0
+          ],
+          "score": 0.7164285714285714,
+          "heuristic_score": 0.7164285714285714,
+          "doc_id": "299848381",
+          "timestamp": "2025-04-16T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "The legacy of apartheid, the prevalence of informal settlements, and the exclusion of the informal sector from formal planning processes all pose significant barriers to sustainability.",
+          "citations": [
+            0
+          ],
+          "score": 0.6814285714285714,
+          "heuristic_score": 0.6814285714285714,
+          "doc_id": "299848381",
+          "timestamp": "2025-04-16T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Specifically, the study highlights the critical need to bridge the disconnect between formal planning mechanisms and informal, community-driven participation practices.",
+          "citations": [
+            1
+          ],
+          "score": 0.5402857142857143,
+          "heuristic_score": 0.5402857142857143,
+          "doc_id": "293355477",
+          "timestamp": "2025-06-19T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "This dominant planning paradigm has been challenged for its inadequacies in supporting participatory engagement, especially in low-income and informal settlements (Mafame & Horn, 2025; Tsoriyo, 2024).",
+          "citations": [
+            1
+          ],
+          "score": 0.5317142857142857,
+          "heuristic_score": 0.5317142857142857,
+          "doc_id": "293355477",
+          "timestamp": "2025-06-19T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How can resident capacity-building accelerate integration of informal settlements into formal planning?",
+        "narrative_id": "4adbf08885051021d6cce7a803506cb3"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|07de8bb1d0c7ff01414217a403530dae": {
+      "query_id": "07de8bb1d0c7ff01414217a403530dae",
+      "references": [
+        "299284069",
+        "126050698",
+        "285973686",
+        "123376603",
+        "295422299"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Age, GH/IGF-1 levels, tumorvolume, T2 hypointensity, and tumor subtype rather thanproliferation and invasion are all reliable predictors of biochemicalresponse to somatostatin analogue therapy in patients withacromegaly: a clinicopathological study.",
+          "citations": [
+            0
+          ],
+          "score": 0.6257142857142857,
+          "heuristic_score": 0.6257142857142857,
+          "doc_id": "299284069",
+          "timestamp": "2025-07-15T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Personalized Treatment of Acromegaly With Pasireotidesomatostatin analogue therapy in acromegaly.",
+          "citations": [
+            1
+          ],
+          "score": 0.5171428571428571,
+          "heuristic_score": 0.5171428571428571,
+          "doc_id": "126050698",
+          "timestamp": "2021-03-16T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "In clinical practice, prerenal azotemia (PRA) is often distinguished from other types of AKI by volume expansion therapy.",
+          "citations": [
+            2
+          ],
+          "score": 0.42928571428571427,
+          "heuristic_score": 0.42928571428571427,
+          "doc_id": "285973686",
+          "timestamp": "2022-06-15T06:00:18",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Each treatment plan should be designed using a single theory, e.g., choice theory, and appropriate therapy approach e.g., reality therapy.",
+          "citations": [
+            3
+          ],
+          "score": 0.2792857142857143,
+          "heuristic_score": 0.2792857142857143,
+          "doc_id": "123376603",
+          "timestamp": "2020-01-01T08:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Which clinical features should prompt using a non-standard somatostatin analogue as initial therapy?",
+        "narrative_id": "07de8bb1d0c7ff01414217a403530dae"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|ae4fa4b3e4ffa37525288e868703a668": {
+      "query_id": "ae4fa4b3e4ffa37525288e868703a668",
+      "references": [
+        "164646806",
+        "297898055",
+        "155996646"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Furthermore, if the predicted class is different to theexpert label, and after inspection of the filtered signal, its STFT and LRPmap, the event is sent back to the expert for re-labelling.",
+          "citations": [
+            0
+          ],
+          "score": 0.5211038961038961,
+          "heuristic_score": 0.5211038961038961,
+          "doc_id": "164646806",
+          "timestamp": "2025-06-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Rockfall has oneevent which has no true positives, with an event start at 2015-07-07 19:32:49.42.To illustrate this dissimilarity between this event and other events in the Rockfall class,we show in Figure 9 seismogram images of the rockfall which has no true positives and analternative event which has a very high sensitivity.",
+          "citations": [
+            1
+          ],
+          "score": 0.5163636363636364,
+          "heuristic_score": 0.5163636363636364,
+          "doc_id": "297898055",
+          "timestamp": "2025-08-06T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "This peak selectionethod allows us to choose the class of the event with the longesturation, as it indicates a higher confidence level in the classificationesult.",
+          "citations": [
+            0
+          ],
+          "score": 0.5049350649350649,
+          "heuristic_score": 0.5049350649350649,
+          "doc_id": "164646806",
+          "timestamp": "2025-06-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "A high sensitivity indicates that the model is good at findingmost of the positive instances of the class, while a low sensitivity suggests that the model ismissing some.rockfall seism quake noise0.00.20.40.60.81.0True Positive RateTPR Class ScoresFigure 8.",
+          "citations": [
+            1
+          ],
+          "score": 0.3709090909090909,
+          "heuristic_score": 0.3709090909090909,
+          "doc_id": "297898055",
+          "timestamp": "2025-08-06T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "An algorithmic approach to reducing unexplained pain disparities in underserved populations.",
+          "citations": [
+            2
+          ],
+          "score": 0.21474025974025973,
+          "heuristic_score": 0.21474025974025973,
+          "doc_id": "155996646",
+          "timestamp": "2024-01-01T00:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "What tradeoff allows reducing expert labels while preserving high recall for a rare event class?",
+        "narrative_id": "ae4fa4b3e4ffa37525288e868703a668"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|a62f9ceb4838c5de23d0028a1ba20d97": {
+      "query_id": "a62f9ceb4838c5de23d0028a1ba20d97",
+      "references": [
+        "303994617",
+        "301432802",
+        "310302792",
+        "292241745"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "In conclusion, the decision of women in the wealthiest wealth index to opt for delivery by caesarean section is influenced by a combination of factors such as fear of harm, concerns about safety, avoidance of labor pain, previous birth ex-periences, and healthcare policies.",
+          "citations": [
+            2
+          ],
+          "score": 0.5275324675324675,
+          "heuristic_score": 0.5275324675324675,
+          "doc_id": "310302792",
+          "timestamp": "2025-10-24T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Our analyses control for multiple key covariates, including participant age and sex assigned at birth, scanner model, in-scanner motion (for connectivity variables), household income-to-needs ratio, parental educational attainment, parent mental health and state-level variables including incarceration rate, Temporary Assistance for Needy Families (TANF) and Medicaid expansion status.",
+          "citations": [
+            0
+          ],
+          "score": 0.4607142857142857,
+          "heuristic_score": 0.4607142857142857,
+          "doc_id": "303994617",
+          "timestamp": "2025-09-30T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "However, multivariate logistic regression revealed that only maternal age, household wealth, and place of delivery remained significant predictors.",
+          "citations": [
+            1
+          ],
+          "score": 0.46,
+          "heuristic_score": 0.46,
+          "doc_id": "301432802",
+          "timestamp": "2025-09-30T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "The primary independent variable was the household wealth index.",
+          "citations": [
+            1
+          ],
+          "score": 0.4342857142857143,
+          "heuristic_score": 0.4342857142857143,
+          "doc_id": "301432802",
+          "timestamp": "2025-09-30T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Current treatment approaches primarilyrely on analgesics and surgical interventions, whichoften carry adverse effects and exhibit limited long-term efficacy.",
+          "citations": [
+            3
+          ],
+          "score": 0.24357142857142855,
+          "heuristic_score": 0.24357142857142855,
+          "doc_id": "292241745",
+          "timestamp": "2025-04-22T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Whileanalgesics and surgical interventions providesymptomatic relief, they often fail to address theunderlying pathology and may lead to adverseeffects.",
+          "citations": [
+            3
+          ],
+          "score": 0.24,
+          "heuristic_score": 0.24,
+          "doc_id": "292241745",
+          "timestamp": "2025-04-22T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How does household wealth influence choosing planned surgical birth?",
+        "narrative_id": "a62f9ceb4838c5de23d0028a1ba20d97"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|867df7f22d5cef910c9c8269e8313ff8": {
+      "query_id": "867df7f22d5cef910c9c8269e8313ff8",
+      "references": [
+        "289811774",
+        "298326630"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "In contrast, families where bothchildren benefitted from the intervention may have applied theirnewly acquired parenting skills equally to both children.",
+          "citations": [
+            1
+          ],
+          "score": 0.5777922077922077,
+          "heuristic_score": 0.5777922077922077,
+          "doc_id": "298326630",
+          "timestamp": "2025-04-16T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Synthesizing individual family level data across trials into oneintegrated data set achieves this, as variance both between andwithin trials can be used to estimate differential program benefits,increasing statistical power and generalizability relative to data froman individual trial (Curran & Hussong, 2009).The present studyThe aims of.",
+          "citations": [
+            1
+          ],
+          "score": 0.4763636363636364,
+          "heuristic_score": 0.4763636363636364,
+          "doc_id": "298326630",
+          "timestamp": "2025-04-16T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Which family profiles predict both children improving when parenting behaviors change?",
+        "narrative_id": "867df7f22d5cef910c9c8269e8313ff8"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|2e9bc31b76b5c3a18da0ba5a0e9e9852": {
+      "query_id": "2e9bc31b76b5c3a18da0ba5a0e9e9852",
+      "references": [
+        "274102198",
+        "309232620"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Personality traits beyond neuroticism predict post-concussive symptomatology in the post-acute period after mild traumatic brain injury in premorbidly healthy adults.",
+          "citations": [
+            0
+          ],
+          "score": 0.5662207792207792,
+          "heuristic_score": 0.5662207792207792,
+          "doc_id": "274102198",
+          "timestamp": "2025-03-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Detecting axonal injury in individualpatients after traumatic brain injury.",
+          "citations": [
+            1
+          ],
+          "score": 0.4044805194805195,
+          "heuristic_score": 0.4044805194805195,
+          "doc_id": "309232620",
+          "timestamp": "2025-07-09T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Diffuse axonal injury predictsneurodegeneration after moderate-severe traumatic brain injury.",
+          "citations": [
+            1
+          ],
+          "score": 0.37448051948051947,
+          "heuristic_score": 0.37448051948051947,
+          "doc_id": "309232620",
+          "timestamp": "2025-07-09T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Definition of mild traumatic brain injury.",
+          "citations": [
+            0
+          ],
+          "score": 0.36433766233766235,
+          "heuristic_score": 0.36433766233766235,
+          "doc_id": "274102198",
+          "timestamp": "2025-03-01T00:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "What role should personality measures play alongside biochemical indicators when inferring historical brain injury?",
+        "narrative_id": "2e9bc31b76b5c3a18da0ba5a0e9e9852"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|7672296cd19afe29d4f2c838b989e65d": {
+      "query_id": "7672296cd19afe29d4f2c838b989e65d",
+      "references": [
+        "126024837",
+        "126025025",
+        "179776886",
+        "14328761"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Images frompatients complications, such as vitreous hemorrhage, asteroid hyalosis, intense cataract,and retinal photocoagulation scars, and other conditions, such as fundus diseases, wereexcluded.",
+          "citations": [
+            0
+          ],
+          "score": 0.5564285714285714,
+          "heuristic_score": 0.5564285714285714,
+          "doc_id": "126024837",
+          "timestamp": "2021-04-22T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "The levels of diabetic retinopathy weredefined from the retinal images using the EarlyTreatment Diabetic Retinopathy Study (ETDRS)severity scale [3].",
+          "citations": [
+            1
+          ],
+          "score": 0.41987012987012984,
+          "heuristic_score": 0.41987012987012984,
+          "doc_id": "126025025",
+          "timestamp": "2021-02-15T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "After that, three different methods are employed to improve the searchefficiency of the binary PSOA technique, and at the final stage, an optimal feature subsetis achieved with high accuracy and a smaller number of features.",
+          "citations": [
+            2
+          ],
+          "score": 0.37272727272727274,
+          "heuristic_score": 0.37272727272727274,
+          "doc_id": "179776886",
+          "timestamp": "2025-03-14T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "The performance notion of intelligence issimilar to our definition with the expectation that performance is measured in acomplex environment rather than across a wide range of environments.",
+          "citations": [
+            3
+          ],
+          "score": 0.3357142857142857,
+          "heuristic_score": 0.3357142857142857,
+          "doc_id": "14328761",
+          "timestamp": "2018-06-18T18:50:38",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How transferable are features learned from wide-angle retinal images across different retinal diseases?",
+        "narrative_id": "7672296cd19afe29d4f2c838b989e65d"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|44e521225789bb4e0a23bd3d8482322b": {
+      "query_id": "44e521225789bb4e0a23bd3d8482322b",
+      "references": [
+        "303527154",
+        "293123601",
+        "294180289",
+        "147701074"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Constraints in upgrading experiments: limited time for R&D and ageing studies, comply with existing infrastructure, high probability of success in the short termElectrode material unchanged, thicknesses within production limits, possible to gain mainly from the development of a new FE electronics (Rate capability -> 10kHz/cm2.",
+          "citations": [
+            0
+          ],
+          "score": 0.5113636363636362,
+          "heuristic_score": 0.5113636363636362,
+          "doc_id": "303527154",
+          "timestamp": "2025-07-03T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "This approach assumes that the magnetopause's tangent direction coincides with the curve of maximum intensity in the image [3], a hypothesis we test against simulation inputs.",
+          "citations": [
+            2
+          ],
+          "score": 0.26116883116883116,
+          "heuristic_score": 0.26116883116883116,
+          "doc_id": "294180289",
+          "timestamp": "2025-07-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "A processing pipeline is developed to fit the empirical model tangent curves to the image-derived tangent directions, and performance is benchmarked both against the intensity maxima and simulation input.",
+          "citations": [
+            2
+          ],
+          "score": 0.22759740259740263,
+          "heuristic_score": 0.22759740259740263,
+          "doc_id": "294180289",
+          "timestamp": "2025-07-01T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How can electrode material choice trade off rate capability against timing and compactness in detectors?",
+        "narrative_id": "44e521225789bb4e0a23bd3d8482322b"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|08157a20b3524f357970d74b9ba928d7": {
+      "query_id": "08157a20b3524f357970d74b9ba928d7",
+      "references": [
+        "301508456",
+        "298698450",
+        "276384958"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "The 11 absence of early conflict resolution mechanisms has resulted in policies that deviate from their 12 original design.",
+          "citations": [
+            0
+          ],
+          "score": 0.6178571428571428,
+          "heuristic_score": 0.6178571428571428,
+          "doc_id": "301508456",
+          "timestamp": "2025-09-10T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "These differences sometimes catalysed conflict and, at other 13 times, fostered synergies, underscoring the need for early and inclusive stakeholder mapping and 14 analysis.",
+          "citations": [
+            0
+          ],
+          "score": 0.5185714285714286,
+          "heuristic_score": 0.5185714285714286,
+          "doc_id": "301508456",
+          "timestamp": "2025-09-10T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Macro, meso and micro contexts and stakeholder positions Macro-level At the macro level, in all three contexts, the wording of national-level health policies and strategic plans suggests a commitment to gender-sensitive or gender-accommodating AMSRHR programmes.",
+          "citations": [
+            1
+          ],
+          "score": 0.465,
+          "heuristic_score": 0.465,
+          "doc_id": "298698450",
+          "timestamp": "2025-06-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "In Ghana, this is exemplified through the practice of transactional sex and in Burkina Faso and Niger, through the high prevalence of early/forced marriage.",
+          "citations": [
+            1
+          ],
+          "score": 0.43142857142857144,
+          "heuristic_score": 0.43142857142857144,
+          "doc_id": "298698450",
+          "timestamp": "2025-06-01T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How can early stakeholder conflict resolution improve translation of gender-sensitive policy into practice?",
+        "narrative_id": "08157a20b3524f357970d74b9ba928d7"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|0d73d8e3c29b4e9ea624a896ddf2d275": {
+      "query_id": "0d73d8e3c29b4e9ea624a896ddf2d275",
+      "references": [
+        "274997926",
+        "291521633",
+        "293016149",
+        "291521709",
+        "305709264",
+        "305703003"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "It is a wide term referring to loss of cognitive performance with memory loss, decline in thinking, mood and language.",
+          "citations": [
+            0
+          ],
+          "score": 0.4418571428571429,
+          "heuristic_score": 0.4418571428571429,
+          "doc_id": "274997926",
+          "timestamp": "2025-03-14T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "In these simulated environments, learners need to applywhat they have learned and adjust their language strategies and expressions according to thecommunication requirements and expectations in different scenarios.",
+          "citations": [
+            1
+          ],
+          "score": 0.42614285714285716,
+          "heuristic_score": 0.42614285714285716,
+          "doc_id": "291521633",
+          "timestamp": "2025-03-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Then, these analyses applied to the GGDHS using actual thermodynamic data for its performance evaluation in terms of energy and exergy efficiencies are presented.",
+          "citations": [
+            2
+          ],
+          "score": 0.3477142857142857,
+          "heuristic_score": 0.3477142857142857,
+          "doc_id": "293016149",
+          "timestamp": "2025-04-10T11:35:21",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Looking ahead, with the deepeningof globalization and informationization, the importance of aligning the content of practical Englishcourses with industry standards will become more prominent.",
+          "citations": [
+            3
+          ],
+          "score": 0.33342857142857146,
+          "heuristic_score": 0.33342857142857146,
+          "doc_id": "291521709",
+          "timestamp": "2025-03-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "In order to enhance the quality ofteaching, we should strengthen our connection with the international community, introduce advancedconcepts and methods, and enhance the international competitiveness of our courses; at the same time,we should focus on personalized teaching to meet the diversified needs of students and.",
+          "citations": [
+            3
+          ],
+          "score": 0.252,
+          "heuristic_score": 0.252,
+          "doc_id": "291521709",
+          "timestamp": "2025-03-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "In these simulated environments, learners need toapply what they have learned and adjust their communication strategies and approaches according tothe communication habits and expectations of different cultures.",
+          "citations": [
+            1
+          ],
+          "score": 0.2377142857142857,
+          "heuristic_score": 0.2377142857142857,
+          "doc_id": "291521633",
+          "timestamp": "2025-03-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Studies included will be written in English language and published between 2015 and 2025.",
+          "citations": [
+            0
+          ],
+          "score": 0.19842857142857143,
+          "heuristic_score": 0.19842857142857143,
+          "doc_id": "274997926",
+          "timestamp": "2025-03-14T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "To enhance clarity, some components of the manuscript could be further expanded.",
+          "citations": [
+            4
+          ],
+          "score": 0.19485714285714284,
+          "heuristic_score": 0.19485714285714284,
+          "doc_id": "305709264",
+          "timestamp": "2025-05-06T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "There were no restrictions on the country of origin or language.",
+          "citations": [
+            5
+          ],
+          "score": 0.19128571428571428,
+          "heuristic_score": 0.19128571428571428,
+          "doc_id": "305703003",
+          "timestamp": "2025-11-10T00:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How can aligning workplace-focused language curricula with sector expectations enhance graduates' job performance?",
+        "narrative_id": "0d73d8e3c29b4e9ea624a896ddf2d275"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|587bda4ca6b1f73cc861c7426a6db876": {
+      "query_id": "587bda4ca6b1f73cc861c7426a6db876",
+      "references": [
+        "275719204",
+        "302090079",
+        "295897656",
+        "290846191"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Conclusions The radiomics model and the fusion model, which integrate both intratumoral and peritumoral features, offer accurate prediction of recurrence risk in patients with localized ccRCC.",
+          "citations": [
+            3
+          ],
+          "score": 0.39614285714285713,
+          "heuristic_score": 0.39614285714285713,
+          "doc_id": "290846191",
+          "timestamp": "2025-05-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "The LEGACY study: aEuropean and Latin American consortium to identify risk factors andmolecular phenotypes in gastric cancer to improve prevention stra-tegies and personalized clinical decision making globally.",
+          "citations": [
+            2
+          ],
+          "score": 0.3951038961038961,
+          "heuristic_score": 0.3951038961038961,
+          "doc_id": "295897656",
+          "timestamp": "2025-03-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "(21,31) Research 193 has also focused on the associated treatment burdens and effects on patients HRQoL.",
+          "citations": [
+            0
+          ],
+          "score": 0.3291428571428571,
+          "heuristic_score": 0.3291428571428571,
+          "doc_id": "275719204",
+          "timestamp": "2025-06-01T01:00:00",
+          "sentence_rank": 1
+        },
+        {
+          "text": "A clinical model (CM) was also established using significant clinical factors.",
+          "citations": [
+            3
+          ],
+          "score": 0.18771428571428572,
+          "heuristic_score": 0.18771428571428572,
+          "doc_id": "290846191",
+          "timestamp": "2025-05-01T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Which clinical features best identify patients needing targeted dietary and psychosocial support?",
+        "narrative_id": "587bda4ca6b1f73cc861c7426a6db876"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|f10218c858ed40f612c1888bc8223d2f": {
+      "query_id": "f10218c858ed40f612c1888bc8223d2f",
+      "references": [
+        "292345425",
+        "291150308",
+        "291150201",
+        "171842989",
+        "17126306"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "The results of the study are expected to provide an objective picture of the influence of the Game-Based Learning model assisted by ROMERE teaching aids on student learning activity in elementary schools.",
+          "citations": [
+            0
+          ],
+          "score": 0.5568571428571428,
+          "heuristic_score": 0.5568571428571428,
+          "doc_id": "292345425",
+          "timestamp": "2025-05-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "The results show that improving new literacy competencies for MI teachers depends on contextual curriculum design, adaptive training and synergy between schools, communities and parents.",
+          "citations": [
+            2
+          ],
+          "score": 0.4957142857142858,
+          "heuristic_score": 0.4957142857142858,
+          "doc_id": "291150201",
+          "timestamp": "2025-06-02T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "The Influence of Inquiry Learning Models Based on Audio Visual Media on Student Learning Outcomes in Science and Technology Subjects in Class IV Elementary Schools.",
+          "citations": [
+            0
+          ],
+          "score": 0.4825714285714286,
+          "heuristic_score": 0.4825714285714286,
+          "doc_id": "292345425",
+          "timestamp": "2025-05-01T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Cyberspace: between character changes and digital literacy programs in elementary schools in the independent curriculum.",
+          "citations": [
+            1
+          ],
+          "score": 0.39672727272727276,
+          "heuristic_score": 0.39672727272727276,
+          "doc_id": "291150308",
+          "timestamp": "2025-05-28T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Therefore, effective implementation strategies include teacher training, integrated curriculum development, adaptive use of learning technology, and active involvement of parents.",
+          "citations": [
+            1
+          ],
+          "score": 0.37094805194805197,
+          "heuristic_score": 0.37094805194805197,
+          "doc_id": "291150308",
+          "timestamp": "2025-05-28T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "One strategy in strengthening new literacies is through continuous training and development for teachers.",
+          "citations": [
+            2
+          ],
+          "score": 0.328,
+          "heuristic_score": 0.328,
+          "doc_id": "291150201",
+          "timestamp": "2025-06-02T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Thesedeductions serve to narrow down the choices for the variables as yet unassigned by search,and therefore reduce the search required.",
+          "citations": [
+            3
+          ],
+          "score": 0.2162857142857143,
+          "heuristic_score": 0.2162857142857143,
+          "doc_id": "171842989",
+          "timestamp": "2025-03-30T00:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Which design choices best enable teacher development for technology-ready faith-based elementary schools?",
+        "narrative_id": "f10218c858ed40f612c1888bc8223d2f"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|5432516c146400806a7fac5fc8b2a851": {
+      "query_id": "5432516c146400806a7fac5fc8b2a851",
+      "references": [
+        "41658767",
+        "36005627",
+        "9617484",
+        "287207446",
+        "48202918",
+        "292088087"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "The students investigate gear trains in different real-world machines (commercial gearbox, RV leveler, motorcycle trans-mission, automobile HVAC baffle drive) to obtain transmission ratios and comment on design decisions (why was a spur gear chosen as opposed to a helical gear, why different materials were used.",
+          "citations": [
+            1
+          ],
+          "score": 0.4266233766233766,
+          "heuristic_score": 0.4266233766233766,
+          "doc_id": "36005627",
+          "timestamp": "2013-01-01T08:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Experiment 4: Gear Clock Design and Fabrication In this experiment (see Figure 4) the challenge is to design the gear mechanism for driving the minute and hour hands of a gear clock given a known yet arbitrary drive speed.",
+          "citations": [
+            0
+          ],
+          "score": 0.39662337662337666,
+          "heuristic_score": 0.39662337662337666,
+          "doc_id": "41658767",
+          "timestamp": "2015-06-14T08:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Both healthcare professionals and people with type 2 diabetes have expressed the need for novel tools to aid in this process.",
+          "citations": [
+            3
+          ],
+          "score": 0.2504545454545455,
+          "heuristic_score": 0.2504545454545455,
+          "doc_id": "287207446",
+          "timestamp": "2025-03-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Rainbow:Combining improvements in deep reinforcement learning.",
+          "citations": [
+            2
+          ],
+          "score": 0.24245454545454542,
+          "heuristic_score": 0.24245454545454542,
+          "doc_id": "9617484",
+          "timestamp": "2019-01-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Learning physical intuition of blocktowers by example.",
+          "citations": [
+            2
+          ],
+          "score": 0.23645454545454547,
+          "heuristic_score": 0.23645454545454547,
+          "doc_id": "9617484",
+          "timestamp": "2019-01-01T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "SmartwoodID aims at improving both identification success and speed by non-experts.",
+          "citations": [
+            5
+          ],
+          "score": 0.20110389610389612,
+          "heuristic_score": 0.20110389610389612,
+          "doc_id": "292088087",
+          "timestamp": "2025-03-05T14:24:05",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Why does combining physical inspection with measured speed data aid diagnosis of gear faults?",
+        "narrative_id": "5432516c146400806a7fac5fc8b2a851"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|ed3ef04dd26e030176c7021315e73c76": {
+      "query_id": "ed3ef04dd26e030176c7021315e73c76",
+      "references": [
+        "171863150",
+        "313565234",
+        "155848583",
+        "295914747",
+        "305689691"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Early Prediction ofICU Mortality in Patients with AcuteHypoxemic Respiratory Failure UsingMachine Learning: The MEMORIALStudy.",
+          "citations": [
+            0
+          ],
+          "score": 0.499,
+          "heuristic_score": 0.499,
+          "doc_id": "171863150",
+          "timestamp": "2025-03-04T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Noninvasive respiratory support for postextubation respiratory failure.",
+          "citations": [
+            0
+          ],
+          "score": 0.42542857142857143,
+          "heuristic_score": 0.42542857142857143,
+          "doc_id": "171863150",
+          "timestamp": "2025-03-04T00:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Pretransplantationanti-CCR4 antibody mogamulizumab against adult T-cell leukemia/lymphoma is associated with significantlyincreased risks of severe and corticosteroid-refractorygraft-versus-host disease, nonrelapse mortality, andoverall mortality.",
+          "citations": [
+            4
+          ],
+          "score": 0.2905714285714286,
+          "heuristic_score": 0.2905714285714286,
+          "doc_id": "305689691",
+          "timestamp": "2025-08-28T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "The development oftreatment strategies incorporating newly avail-able agents, such as tucidinostat [44], valemeto-stat [45], and brentuximab vedotin [46], prior totransplantation may help reduce the need for con-ventional cytotoxic agents [47].",
+          "citations": [
+            4
+          ],
+          "score": 0.252,
+          "heuristic_score": 0.252,
+          "doc_id": "305689691",
+          "timestamp": "2025-08-28T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "However, the success of treatment does not depend solely on the choice of therapy, but also on the comprehensive care that the patient receives.",
+          "citations": [
+            3
+          ],
+          "score": 0.21985714285714286,
+          "heuristic_score": 0.21985714285714286,
+          "doc_id": "295914747",
+          "timestamp": "2025-07-16T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Cobalamin related parameters and disease pat-terns in patients with increased serum cobalamin levels.",
+          "citations": [
+            2
+          ],
+          "score": 0.19485714285714284,
+          "heuristic_score": 0.19485714285714284,
+          "doc_id": "155848583",
+          "timestamp": "2022-08-09T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "Can early ventilator parameters guide choice of noninvasive oxygen support to reduce mortality?",
+        "narrative_id": "ed3ef04dd26e030176c7021315e73c76"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|67bf1399882db064d331402f451f8b26": {
+      "query_id": "67bf1399882db064d331402f451f8b26",
+      "references": [
+        "24806816",
+        "17221819",
+        "7083127",
+        "294780731",
+        "171097449"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "After that point, the quality of the translation deteriorates, with basic mistakes such as the lack of a closing quotation mark.",
+          "citations": [
+            1
+          ],
+          "score": 0.39,
+          "heuristic_score": 0.39,
+          "doc_id": "17221819",
+          "timestamp": "2016-05-19T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Each bed was equipped with a silo to enable continuous carbon feeding and operation for an order of 1 h, thus overcoming previous limitations in literature.",
+          "citations": [
+            4
+          ],
+          "score": 0.29285714285714287,
+          "heuristic_score": 0.29285714285714287,
+          "doc_id": "171097449",
+          "timestamp": "2025-07-26T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "ConclusionWe proposed the DeepRS scheme to enable high-precision, in-service SRR monitoring inBi-MDM systems.",
+          "citations": [
+            3
+          ],
+          "score": 0.2718831168831169,
+          "heuristic_score": 0.2718831168831169,
+          "doc_id": "294780731",
+          "timestamp": "2025-06-30T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "The aim is to enable open access to all the world.",
+          "citations": [
+            2
+          ],
+          "score": 0.22214285714285714,
+          "heuristic_score": 0.22214285714285714,
+          "doc_id": "7083127",
+          "timestamp": "2013-01-01T00:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How can selective per-target source summaries enable low-latency translation with quality control?",
+        "narrative_id": "67bf1399882db064d331402f451f8b26"
+      }
+    },
+    "topic_shift_current_openai_llm_v1|a3ef8674065801b4d4a581beeb5a612d": {
+      "query_id": "a3ef8674065801b4d4a581beeb5a612d",
+      "references": [
+        "284059478",
+        "174852835"
+      ],
+      "sentence_candidates": [
+        {
+          "text": "Whilst EMA research has shown that parents are more likely to use structure-based feeding practices at mealtimes and during feeding interactions with a positive mealtime atmosphere [5], there has been no examination of the momentary predictors of the use of these feeding prac-tices by parents of children with avid eating behaviour.",
+          "citations": [
+            0
+          ],
+          "score": 0.72,
+          "heuristic_score": 0.72,
+          "doc_id": "284059478",
+          "timestamp": "2025-05-28T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "Therefore, parents 472 who apply more pressure to their children to eat fruit and/or vegetable may have a positive 473 influence in the shorter-term, but over time may lead to less consumption.",
+          "citations": [
+            1
+          ],
+          "score": 0.6,
+          "heuristic_score": 0.6,
+          "doc_id": "174852835",
+          "timestamp": "2025-04-14T01:00:00",
+          "sentence_rank": 0
+        },
+        {
+          "text": "However, in contrast to our hypothesis, a negative mealtime atmosphere during eating occasions was significantly associated with monitoring the type of food children ate (SPFP4), parental use of encouragement to eat (APFP11) or negotiating with children about how much (APFP12) and what food to eat (APFP13).",
+          "citations": [
+            0
+          ],
+          "score": 0.48,
+          "heuristic_score": 0.48,
+          "doc_id": "284059478",
+          "timestamp": "2025-05-28T01:00:00",
+          "sentence_rank": 0
+        }
+      ],
+      "metadata": {
+        "team_id": "our_team",
+        "run_id": "topic_shift_current_openai_llm_v1",
+        "type": "automatic",
+        "narrative": "How might a positive mealtime atmosphere influence preschoolers' produce consumption?",
+        "narrative_id": "a3ef8674065801b4d4a581beeb5a612d"
+      }
+    }
+  }
+}

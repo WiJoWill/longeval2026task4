@@ -1,0 +1,11 @@
+model_name,n,mean_factual_correctness,mean_completeness,mean_score_avg,median_factual_correctness,median_completeness,mean_overlap_pct_gold,mean_overlap_pct_model,mean_overlap_jaccard_pct,median_overlap_jaccard_pct,mean_gold_cited_doc_count,mean_model_cited_doc_count,mean_overlap_doc_count
+rrf_no_rerank_openai_llm_v1,47,3.0,2.468,2.734,3.0,3.0,70.78,92.199,69.509,50.0,2.213,1.596,1.426
+rule_minilm_openai_llm_v1,47,2.915,2.447,2.681,3.0,2.0,81.631,96.099,78.688,100.0,2.213,1.723,1.638
+single_query_bm25_openai_llm_v1,47,2.979,2.383,2.681,3.0,2.0,76.099,93.972,74.22,100.0,2.213,1.617,1.511
+caes_rag_rrf_openai_llm_v1,47,2.936,2.362,2.649,3.0,2.0,72.589,94.681,72.021,100.0,2.213,1.574,1.489
+default_openai_llm_v1,47,2.915,2.362,2.639,3.0,2.0,74.716,93.617,73.794,100.0,2.213,1.638,1.532
+topic_shift_current_openai_llm_v1,47,2.83,2.362,2.596,3.0,2.0,77.553,90.78,74.007,100.0,2.213,1.681,1.532
+semantic_current_openai_llm_v1,47,2.787,2.404,2.595,3.0,2.0,76.312,93.759,73.475,100.0,2.213,1.681,1.532
+topic_shift_minilm_openai_llm_v1,47,2.83,2.298,2.564,3.0,2.0,75.426,91.135,71.525,66.67,2.213,1.766,1.553
+semantic_minilm_openai_llm_v1,47,2.787,2.34,2.563,3.0,2.0,79.681,90.426,72.411,66.67,2.213,1.872,1.596
+concat_baseline_openai_llm_v1,47,1.574,1.319,1.446,1.0,1.0,13.156,23.83,12.447,0.0,2.213,1.34,0.255

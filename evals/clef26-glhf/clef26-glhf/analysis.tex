@@ -1,0 +1,169 @@
+\documentclass[]{ceurart}
+\begin{document}
+
+
+\section{Overview}
+
+There is not yet an accepted standard on how to conduct RAG evaluations. For this reason, we did run many possible RAG evaluations that capture different aspects. Overall, we have 33~measures, and we selected an set of 5~measures that capture different aspects of retrieval agumented generation below. You can change the evaluation measures if you like to focus on different aspect, a short description of each of the evaluation measures is available below.
+
+\section{Structure of this Directory}
+The directory contains the following things that you could use as in your evaluation and/or paper:
+\begin{itemize}
+\item
+The script \texttt{\small build-latex-table.py} creates Table~\ref{table-evaluation}. You can modify this script if you want to focus on different evaluation measures. (Or you could start a similar script from scratch)
+\item
+The directory \texttt{\small runs} contains your submitted runs and an naive baseline.
+\item
+The directory \texttt{\small evals} contains evaluation results for your runs and the naive baseline. Please see the details below for a description of each of the evaluation methodologies.
+\end{itemize}
+
+\input{table-evaluation}
+
+
+\section{Recommended Evaluation Measures}
+
+Our primary evaluation measures in Table~\ref{table-evaluation} are:
+
+\begin{itemize}
+\item
+Rouge~\cite{lin:2004} as \texttt{rougeL\_f1} that captures the lexical similarity between the generated RAG response and the gold-standard answer using the longest overlapping phrase
+
+\item
+BertScore~\cite{zhang:2020} as \texttt{bertscore\_f1} is the $F_{1}$ score of precision and recall for the semantic similarity between the generated RAG response and the gold-standard answer
+
+\item
+Precision calculates how many of the cited documents in a response are relevant to the query~\cite{dietz:2026,farzi:2026}.
+
+\end{itemize}
+
+Additionally, we cover some selected measures, like:
+
+\begin{itemize}
+\item
+Nugget Coverage as \texttt{NUGGET\_COVERAGE} from the \texttt{trec-auto-judge-prefnugget-grounded} is the coverage of minimal information nuggets that should be answered for an information need in an response~\cite{dietz:2026,farzi:2026}. Nuggets are mined via pairwise preferences.
+
+\item
+TFC1 is a classical ir axiom that prefers responses with more query term occurrences~\cite{merker:2025,farzi:2026}.
+\end{itemize}
+
+\section{All available Evaluation Measures}
+
+The following section describes the available evaluation measures. If you like one of the evaluation measures, you can include it into your evaluations.
+
+\subsection{Evaluation Measures in \texttt{evals/gold-answer-comparison/}}
+
+A QA-style evaluation that compares the generated RAG response with the gold-standard answer manually written by the organizers. The higher the scores, the more similar a RAG response is to the gold-standard answer of the organizers. Higher scores are better. The different measures are:
+
+\begin{itemize}
+\item
+\texttt{rouge1\_f1}: The Rouge~\cite{lin:2004} score for lexical similarity between the generated RAG response and the gold-standard answer with word-1-grams.
+
+\item
+\texttt{rouge2\_f1}: The Rouge~\cite{lin:2004} score for lexical similarity between the generated RAG response and the gold-standard answer with word-bi-grams.
+
+\item
+\texttt{rougeL\_f1}: The Rouge~\cite{lin:2004} score for lexical similarity between the generated RAG response and the gold-standard answer using the longest overlapping phrase.
+
+\item
+\texttt{bertscore\_precision} The precision of the BertScore~\cite{zhang:2020} that calculates the semantic similarity between the generated RAG response and the gold-standard answer.
+
+\item
+\texttt{bertscore\_recall} The recall of the BertScore~\cite{zhang:2020} that calculates the semantic similarity between the generated RAG response and the gold-standard answer.
+
+\item
+\texttt{bertscore\_f1} The $F_{1}$ score of the BertScore~\cite{zhang:2020} that calculates the semantic similarity between the generated RAG response and the gold-standard answer.
+
+\end{itemize}
+
+\subsection{Evaluation Measures in \texttt{evals/retrieval/}}
+
+The precision of cited documents. For instance, if a RAG response only cites documents that are relevant to the query, the precision is~1. If a RAG response only cites documents that are not relevant to the query the precision is~0. Higher scores are better.
+
+\subsection{Evaluation Measures in \texttt{evals/trec-auto-judge-ir-axioms/}}
+
+Axiomatic evaluation of RAG responses via pairwise preferences. Each axiom implements a heuristic of properties that good retrieval respectively rag systems should fulfill~\cite{merker:2025}. The axioms have been collected over many years for classical retrieval and have been transferred to retrieval augmented generation~\cite{merker:2025}. The implementation of the axioms is in the TREC-AutoJudge framework that aims to unify RAG evaluation~\cite{farzi:2026}. Higher scores are better. The different measures are:
+
+\begin{itemize}
+\item
+\texttt{GEN-TFC1}: Prefer responses with more query term occurrences.
+\item
+\texttt{GEN-LNC1}: Penalize longer responses for non-relevant terms.
+\item
+\texttt{GEN-REG}: Prefer responses covering more different query aspects.
+\item
+\texttt{GEN-AND}: Prefer responses containing all query terms.
+\item
+\texttt{GEN-STMC1}: Prefer responses with terms more similar to query terms.
+\item
+\texttt{GEN-STMC2}: Do not reward similar terms more than exact matches.
+\item
+\texttt{GEN-PROX1}: Prefer responses with shorter distance between query term pairs.
+\item
+\texttt{GEN-PROX2}: Prefer responses with earlier query term occurrences.
+\item
+\texttt{GEN-PROX3}: Prefer responses where the query occurs earlier as a phrase.
+\item
+\texttt{GEN-PROX4}: Prefer responses that contain all query terms in a shorter substring.
+\item
+\texttt{GEN-PROX5}: Prefer responses where the query terms are closer together on average.
+\item
+\texttt{GEN-TF-LNC}: Reward additional query terms more than document length is penalized.
+\item
+\texttt{COH1-0.75}: Prefer responses with less variance in avg. word length across sentences.
+\item
+\texttt{COH2-0.75}: Prefer responses with subject-verb pairs closer together.
+\item
+\texttt{COV1-SE-0.5}: Prefer responses with more extracted aspects.
+\item
+\texttt{COV2-SE-0.5}: Prefer responses with less redundant extracted aspects.
+\item
+\texttt{COV3-SE-0.5}: Prefer responses with more sentences covering aspects from the query.
+\item
+\texttt{CONS1-SE-0.5}: Prefer responses with  more sentences covering aspects from the context.
+\item
+\texttt{CONS2-0.5}: Prefer responses with higher text overlap with contexts.
+\item
+\texttt{CONS3-0.5}: Penalize aspects mentioned in contradictory phrases.
+\item
+\texttt{CORR1-0.75}: Prefer responses with more sentences referencing sources.
+\item
+\texttt{CLAR1-0.5}: Prefer responses with fewer grammar errors.
+\item
+\texttt{CLAR2-0.5}: Prefer responses with better readability.
+\end{itemize}
+
+\subsection{Evaluation Measures in \texttt{evals/trec-auto-judge-prefnugget-grounded/}}
+
+A nugget based RAG evaluation that creates nugget questions(i.e., minimal information units) via differentiating nuggets from preference comparisons~\cite{dietz:2026}. First, pairwise comparisons are done, then pairwise preferences are used with explanations using explainations WHY the better response won to reduce the number of nuggets. The LLM judges then how well each response covers each nugget to derive evaluation scores from the nugget coverage. Higher scores are better. The different measures are:
+
+\begin{itemize}
+\item
+\texttt{NUGGET\_COVERAGE}: recall of nuggets covered in a response.
+\item
+\texttt{AVG\_GRADE}: The average rubric grade for the nuggets in a response.
+\item
+\texttt{MAX\_GRADE}: maximum rubric grade for the nuggets in a response.
+\item
+\texttt{COVERED\_COUNT}: number of nuggets covered in a response.
+\end{itemize}
+
+
+\subsection{Evaluation Measures in \texttt{evals/trec-auto-judge-prefnugget-queryonly/}}
+
+A rubric based RAG evaluation that creates nugget questions from the query (i.e., minimal information units) and judges how well each response covers each nugget to derive evaluation scores from the nugget coverage~\cite{dietz:2026}. The implementation of the evaluation measures is in the TREC-AutoJudge framework that aims to unify RAG evaluation~\cite{farzi:2026}. Higher scores are better. The different measures are:
+
+\begin{itemize}
+\item
+\texttt{NUGGET\_COVERAGE}: recall of nuggets covered in a response.
+\item
+\texttt{AVG\_GRADE}: The average rubric grade for the nuggets in a response.
+\item
+\texttt{MAX\_GRADE}: maximum rubric grade for the nuggets in a response.
+\item
+\texttt{COVERED\_COUNT}: number of nuggets covered in a response.
+\end{itemize}
+
+\bibliography{longeval26-lit}
+
+\end{document}
+

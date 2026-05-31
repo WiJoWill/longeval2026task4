@@ -1,0 +1,927 @@
+{
+  "summary": {
+    "queries": 47,
+    "docs": 470,
+    "fulltext_docs": 222,
+    "abstract_fallback_docs": 248,
+    "title_fallback_docs": 0,
+    "missing_text_docs": 0,
+    "missing_fulltext_docs": 248,
+    "approx_tokens_min": 9974,
+    "approx_tokens_median": 71943,
+    "approx_tokens_mean": 78623,
+    "approx_tokens_max": 181877,
+    "chars_min": 39897,
+    "chars_median": 287774,
+    "chars_mean": 314497,
+    "chars_max": 727511
+  },
+  "queries": [
+    {
+      "query_id": "aa42e210a361571ff4d1fad892b75d15",
+      "doc_count": 10,
+      "fulltext_doc_count": 5,
+      "abstract_fallback_doc_count": 5,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 5,
+      "missing_fulltext_doc_ids": [
+        "275699672",
+        "275699915",
+        "173704007",
+        "157915138",
+        "303362068"
+      ],
+      "evidence_chars": 162516,
+      "evidence_words": 23737,
+      "approx_tokens_chars_div_4": 40629
+    },
+    {
+      "query_id": "46395a3cf66a9f6a75c89354410d1493",
+      "doc_count": 10,
+      "fulltext_doc_count": 3,
+      "abstract_fallback_doc_count": 7,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 7,
+      "missing_fulltext_doc_ids": [
+        "293060390",
+        "283174876",
+        "276607117",
+        "314940773",
+        "163825760",
+        "293062882",
+        "302845152"
+      ],
+      "evidence_chars": 160364,
+      "evidence_words": 23120,
+      "approx_tokens_chars_div_4": 40091
+    },
+    {
+      "query_id": "5f07a7f0a83de807eee3213560a3467c",
+      "doc_count": 10,
+      "fulltext_doc_count": 8,
+      "abstract_fallback_doc_count": 2,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 2,
+      "missing_fulltext_doc_ids": [
+        "291415237",
+        "303189774"
+      ],
+      "evidence_chars": 292368,
+      "evidence_words": 43393,
+      "approx_tokens_chars_div_4": 73092
+    },
+    {
+      "query_id": "804711f54939af9622c3c7614da85298",
+      "doc_count": 10,
+      "fulltext_doc_count": 5,
+      "abstract_fallback_doc_count": 5,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 5,
+      "missing_fulltext_doc_ids": [
+        "299770278",
+        "308409429",
+        "292908773",
+        "302872214",
+        "276814397"
+      ],
+      "evidence_chars": 287774,
+      "evidence_words": 39736,
+      "approx_tokens_chars_div_4": 71943
+    },
+    {
+      "query_id": "c3d5d202f8ab3d130a90684fd7308f64",
+      "doc_count": 10,
+      "fulltext_doc_count": 6,
+      "abstract_fallback_doc_count": 4,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 4,
+      "missing_fulltext_doc_ids": [
+        "293025457",
+        "11741532",
+        "291593866",
+        "42898226"
+      ],
+      "evidence_chars": 362202,
+      "evidence_words": 50480,
+      "approx_tokens_chars_div_4": 90550
+    },
+    {
+      "query_id": "5ef548b174d925e873f8b5f138d6d8af",
+      "doc_count": 10,
+      "fulltext_doc_count": 4,
+      "abstract_fallback_doc_count": 6,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 6,
+      "missing_fulltext_doc_ids": [
+        "42822844",
+        "304600535",
+        "2055996",
+        "7353417",
+        "304783474",
+        "304578973"
+      ],
+      "evidence_chars": 239232,
+      "evidence_words": 35231,
+      "approx_tokens_chars_div_4": 59808
+    },
+    {
+      "query_id": "d3c2d232f0a39dae1f18c762ccdb1eab",
+      "doc_count": 10,
+      "fulltext_doc_count": 3,
+      "abstract_fallback_doc_count": 7,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 7,
+      "missing_fulltext_doc_ids": [
+        "286409073",
+        "305780079",
+        "303786266",
+        "286389061",
+        "302741917",
+        "304902806",
+        "295966810"
+      ],
+      "evidence_chars": 228207,
+      "evidence_words": 29267,
+      "approx_tokens_chars_div_4": 57051
+    },
+    {
+      "query_id": "533ebe54d99e8c5e2feea55299c0f3ef",
+      "doc_count": 10,
+      "fulltext_doc_count": 5,
+      "abstract_fallback_doc_count": 5,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 5,
+      "missing_fulltext_doc_ids": [
+        "313162270",
+        "292434535",
+        "305925380",
+        "174654360",
+        "296454980"
+      ],
+      "evidence_chars": 257299,
+      "evidence_words": 35282,
+      "approx_tokens_chars_div_4": 64324
+    },
+    {
+      "query_id": "785b9784a0ed573bc3e4c38addb767f5",
+      "doc_count": 10,
+      "fulltext_doc_count": 4,
+      "abstract_fallback_doc_count": 6,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 6,
+      "missing_fulltext_doc_ids": [
+        "290357553",
+        "276180485",
+        "309067398",
+        "304056309",
+        "310137828",
+        "295965371"
+      ],
+      "evidence_chars": 454553,
+      "evidence_words": 67853,
+      "approx_tokens_chars_div_4": 113638
+    },
+    {
+      "query_id": "3490ff75cc1d7cc958eea148ecf9f064",
+      "doc_count": 10,
+      "fulltext_doc_count": 3,
+      "abstract_fallback_doc_count": 7,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 7,
+      "missing_fulltext_doc_ids": [
+        "301000195",
+        "302909562",
+        "292898621",
+        "291422611",
+        "298859410",
+        "145190525",
+        "230082092"
+      ],
+      "evidence_chars": 146176,
+      "evidence_words": 22129,
+      "approx_tokens_chars_div_4": 36544
+    },
+    {
+      "query_id": "35ed7fb79fbf9d4499b0d47028fa39d8",
+      "doc_count": 10,
+      "fulltext_doc_count": 6,
+      "abstract_fallback_doc_count": 4,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 4,
+      "missing_fulltext_doc_ids": [
+        "311151928",
+        "310439368",
+        "303782558",
+        "290368464"
+      ],
+      "evidence_chars": 316803,
+      "evidence_words": 45920,
+      "approx_tokens_chars_div_4": 79200
+    },
+    {
+      "query_id": "5abb455852405585be851775b2889f50",
+      "doc_count": 10,
+      "fulltext_doc_count": 4,
+      "abstract_fallback_doc_count": 6,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 6,
+      "missing_fulltext_doc_ids": [
+        "301548929",
+        "312239321",
+        "304783807",
+        "42830979",
+        "305645464",
+        "313633948"
+      ],
+      "evidence_chars": 203498,
+      "evidence_words": 27834,
+      "approx_tokens_chars_div_4": 50874
+    },
+    {
+      "query_id": "5b9e5bfa057195e7f937fca05ff3ab83",
+      "doc_count": 10,
+      "fulltext_doc_count": 6,
+      "abstract_fallback_doc_count": 4,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 4,
+      "missing_fulltext_doc_ids": [
+        "305621401",
+        "290096049",
+        "296455158",
+        "301092786"
+      ],
+      "evidence_chars": 721021,
+      "evidence_words": 101337,
+      "approx_tokens_chars_div_4": 180255
+    },
+    {
+      "query_id": "644e56222501df386be4b404cb2d02b0",
+      "doc_count": 10,
+      "fulltext_doc_count": 4,
+      "abstract_fallback_doc_count": 6,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 6,
+      "missing_fulltext_doc_ids": [
+        "299292968",
+        "297186832",
+        "291306992",
+        "51424089",
+        "142055780",
+        "6442598"
+      ],
+      "evidence_chars": 273069,
+      "evidence_words": 40657,
+      "approx_tokens_chars_div_4": 68267
+    },
+    {
+      "query_id": "1c4bc3e0f4bf5add8b37a379e3910463",
+      "doc_count": 10,
+      "fulltext_doc_count": 5,
+      "abstract_fallback_doc_count": 5,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 5,
+      "missing_fulltext_doc_ids": [
+        "296454550",
+        "299729526",
+        "292469161",
+        "298329144",
+        "302836038"
+      ],
+      "evidence_chars": 246071,
+      "evidence_words": 35956,
+      "approx_tokens_chars_div_4": 61517
+    },
+    {
+      "query_id": "21659a15321024640ba3d71b9d51877f",
+      "doc_count": 10,
+      "fulltext_doc_count": 5,
+      "abstract_fallback_doc_count": 5,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 5,
+      "missing_fulltext_doc_ids": [
+        "275023551",
+        "308897341",
+        "275024484",
+        "299886758",
+        "312142406"
+      ],
+      "evidence_chars": 551280,
+      "evidence_words": 80214,
+      "approx_tokens_chars_div_4": 137820
+    },
+    {
+      "query_id": "53e7b128b38d074d94828c9a5cdd5b96",
+      "doc_count": 10,
+      "fulltext_doc_count": 5,
+      "abstract_fallback_doc_count": 5,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 5,
+      "missing_fulltext_doc_ids": [
+        "162393748",
+        "5131945",
+        "291377515",
+        "6386377",
+        "290345240"
+      ],
+      "evidence_chars": 295254,
+      "evidence_words": 46890,
+      "approx_tokens_chars_div_4": 73813
+    },
+    {
+      "query_id": "0eb2a0f2a29a2fbfc09b4e58c7743f72",
+      "doc_count": 10,
+      "fulltext_doc_count": 4,
+      "abstract_fallback_doc_count": 6,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 6,
+      "missing_fulltext_doc_ids": [
+        "291385690",
+        "305754607",
+        "297940333",
+        "301798749",
+        "274078407",
+        "290801453"
+      ],
+      "evidence_chars": 300725,
+      "evidence_words": 42776,
+      "approx_tokens_chars_div_4": 75181
+    },
+    {
+      "query_id": "9af879f2df293898cb7a6cb4de5c4a86",
+      "doc_count": 10,
+      "fulltext_doc_count": 4,
+      "abstract_fallback_doc_count": 6,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 6,
+      "missing_fulltext_doc_ids": [
+        "20006207",
+        "303124053",
+        "290092166",
+        "289768943",
+        "6608550",
+        "291717338"
+      ],
+      "evidence_chars": 294612,
+      "evidence_words": 45987,
+      "approx_tokens_chars_div_4": 73653
+    },
+    {
+      "query_id": "3fb37f11fe7ce75db465d18b9cc0705c",
+      "doc_count": 10,
+      "fulltext_doc_count": 4,
+      "abstract_fallback_doc_count": 6,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 6,
+      "missing_fulltext_doc_ids": [
+        "293194946",
+        "28949716",
+        "299891626",
+        "290454246",
+        "274843921",
+        "304370724"
+      ],
+      "evidence_chars": 221063,
+      "evidence_words": 32677,
+      "approx_tokens_chars_div_4": 55265
+    },
+    {
+      "query_id": "5fcf8eb1af05248be1503e13e8940abf",
+      "doc_count": 10,
+      "fulltext_doc_count": 3,
+      "abstract_fallback_doc_count": 7,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 7,
+      "missing_fulltext_doc_ids": [
+        "291403969",
+        "304924090",
+        "29564417",
+        "296454809",
+        "309759874",
+        "296168103",
+        "6698941"
+      ],
+      "evidence_chars": 112681,
+      "evidence_words": 16026,
+      "approx_tokens_chars_div_4": 28170
+    },
+    {
+      "query_id": "4d7b5816864a9cbbda5736d6b8811ca6",
+      "doc_count": 10,
+      "fulltext_doc_count": 7,
+      "abstract_fallback_doc_count": 3,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 3,
+      "missing_fulltext_doc_ids": [
+        "299871614",
+        "284364283",
+        "302699411"
+      ],
+      "evidence_chars": 727511,
+      "evidence_words": 100555,
+      "approx_tokens_chars_div_4": 181877
+    },
+    {
+      "query_id": "cca3dd5aa311bc7a728839dd6fa4321b",
+      "doc_count": 10,
+      "fulltext_doc_count": 6,
+      "abstract_fallback_doc_count": 4,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 4,
+      "missing_fulltext_doc_ids": [
+        "294877809",
+        "299883496",
+        "300706016",
+        "308454267"
+      ],
+      "evidence_chars": 633350,
+      "evidence_words": 86969,
+      "approx_tokens_chars_div_4": 158337
+    },
+    {
+      "query_id": "8a5dc8caebf3359906b2ccd6264982f2",
+      "doc_count": 10,
+      "fulltext_doc_count": 4,
+      "abstract_fallback_doc_count": 6,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 6,
+      "missing_fulltext_doc_ids": [
+        "301999749",
+        "308883324",
+        "294875111",
+        "305678609",
+        "308817555",
+        "308454253"
+      ],
+      "evidence_chars": 218206,
+      "evidence_words": 30016,
+      "approx_tokens_chars_div_4": 54551
+    },
+    {
+      "query_id": "5e6ebb6a62cc855b8ec6ae10827af8f1",
+      "doc_count": 10,
+      "fulltext_doc_count": 3,
+      "abstract_fallback_doc_count": 7,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 7,
+      "missing_fulltext_doc_ids": [
+        "301846879",
+        "305749693",
+        "302880869",
+        "313262893",
+        "300137649",
+        "290580337",
+        "291812601"
+      ],
+      "evidence_chars": 143809,
+      "evidence_words": 20315,
+      "approx_tokens_chars_div_4": 35952
+    },
+    {
+      "query_id": "c60f7e99a8623cad87ae6951b6854fff",
+      "doc_count": 10,
+      "fulltext_doc_count": 7,
+      "abstract_fallback_doc_count": 3,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 3,
+      "missing_fulltext_doc_ids": [
+        "276750293",
+        "293901617",
+        "291399983"
+      ],
+      "evidence_chars": 466053,
+      "evidence_words": 72340,
+      "approx_tokens_chars_div_4": 116513
+    },
+    {
+      "query_id": "cd8168171beff566fc1609c9dd080cd2",
+      "doc_count": 10,
+      "fulltext_doc_count": 4,
+      "abstract_fallback_doc_count": 6,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 6,
+      "missing_fulltext_doc_ids": [
+        "302834305",
+        "301849089",
+        "301926385",
+        "276426711",
+        "308881454",
+        "298858229"
+      ],
+      "evidence_chars": 559787,
+      "evidence_words": 79200,
+      "approx_tokens_chars_div_4": 139946
+    },
+    {
+      "query_id": "ef3ddfa96d252a408f89cc5c977464e4",
+      "doc_count": 10,
+      "fulltext_doc_count": 7,
+      "abstract_fallback_doc_count": 3,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 3,
+      "missing_fulltext_doc_ids": [
+        "7303042",
+        "299893998",
+        "301498739"
+      ],
+      "evidence_chars": 528094,
+      "evidence_words": 75197,
+      "approx_tokens_chars_div_4": 132023
+    },
+    {
+      "query_id": "f40ef0e5ac56c2ae1febd382b3ff319c",
+      "doc_count": 10,
+      "fulltext_doc_count": 3,
+      "abstract_fallback_doc_count": 7,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 7,
+      "missing_fulltext_doc_ids": [
+        "42827275",
+        "293893712",
+        "303347279",
+        "295069033",
+        "301737689",
+        "292681264",
+        "291442207"
+      ],
+      "evidence_chars": 144749,
+      "evidence_words": 20655,
+      "approx_tokens_chars_div_4": 36187
+    },
+    {
+      "query_id": "9b2923bddc4938bcb6f1cd27169ed2e1",
+      "doc_count": 10,
+      "fulltext_doc_count": 5,
+      "abstract_fallback_doc_count": 5,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 5,
+      "missing_fulltext_doc_ids": [
+        "300926948",
+        "302900391",
+        "310099395",
+        "293892786",
+        "291380688"
+      ],
+      "evidence_chars": 446900,
+      "evidence_words": 65458,
+      "approx_tokens_chars_div_4": 111725
+    },
+    {
+      "query_id": "a5c587bb204cb34e669e171074b6cf60",
+      "doc_count": 10,
+      "fulltext_doc_count": 6,
+      "abstract_fallback_doc_count": 4,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 4,
+      "missing_fulltext_doc_ids": [
+        "304001541",
+        "291417151",
+        "297834306",
+        "290342342"
+      ],
+      "evidence_chars": 482331,
+      "evidence_words": 70782,
+      "approx_tokens_chars_div_4": 120582
+    },
+    {
+      "query_id": "4adbf08885051021d6cce7a803506cb3",
+      "doc_count": 10,
+      "fulltext_doc_count": 4,
+      "abstract_fallback_doc_count": 6,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 6,
+      "missing_fulltext_doc_ids": [
+        "291416838",
+        "6871537",
+        "308891802",
+        "275044552",
+        "171127255",
+        "300706400"
+      ],
+      "evidence_chars": 212326,
+      "evidence_words": 29331,
+      "approx_tokens_chars_div_4": 53081
+    },
+    {
+      "query_id": "07de8bb1d0c7ff01414217a403530dae",
+      "doc_count": 10,
+      "fulltext_doc_count": 4,
+      "abstract_fallback_doc_count": 6,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 6,
+      "missing_fulltext_doc_ids": [
+        "285973686",
+        "308885068",
+        "310984443",
+        "302897746",
+        "300881865",
+        "302698047"
+      ],
+      "evidence_chars": 386750,
+      "evidence_words": 51616,
+      "approx_tokens_chars_div_4": 96687
+    },
+    {
+      "query_id": "ae4fa4b3e4ffa37525288e868703a668",
+      "doc_count": 10,
+      "fulltext_doc_count": 6,
+      "abstract_fallback_doc_count": 4,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 4,
+      "missing_fulltext_doc_ids": [
+        "298360577",
+        "300888808",
+        "298855870",
+        "301849478"
+      ],
+      "evidence_chars": 483931,
+      "evidence_words": 70914,
+      "approx_tokens_chars_div_4": 120982
+    },
+    {
+      "query_id": "a62f9ceb4838c5de23d0028a1ba20d97",
+      "doc_count": 10,
+      "fulltext_doc_count": 6,
+      "abstract_fallback_doc_count": 4,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 4,
+      "missing_fulltext_doc_ids": [
+        "290353287",
+        "304381782",
+        "300880589",
+        "295979663"
+      ],
+      "evidence_chars": 267592,
+      "evidence_words": 36684,
+      "approx_tokens_chars_div_4": 66898
+    },
+    {
+      "query_id": "867df7f22d5cef910c9c8269e8313ff8",
+      "doc_count": 10,
+      "fulltext_doc_count": 5,
+      "abstract_fallback_doc_count": 5,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 5,
+      "missing_fulltext_doc_ids": [
+        "274998692",
+        "305753769",
+        "274996408",
+        "291420224",
+        "46602388"
+      ],
+      "evidence_chars": 288413,
+      "evidence_words": 37756,
+      "approx_tokens_chars_div_4": 72103
+    },
+    {
+      "query_id": "2e9bc31b76b5c3a18da0ba5a0e9e9852",
+      "doc_count": 10,
+      "fulltext_doc_count": 6,
+      "abstract_fallback_doc_count": 4,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 4,
+      "missing_fulltext_doc_ids": [
+        "4273794",
+        "289557577",
+        "304522179",
+        "302643175"
+      ],
+      "evidence_chars": 348359,
+      "evidence_words": 48111,
+      "approx_tokens_chars_div_4": 87089
+    },
+    {
+      "query_id": "7672296cd19afe29d4f2c838b989e65d",
+      "doc_count": 10,
+      "fulltext_doc_count": 5,
+      "abstract_fallback_doc_count": 5,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 5,
+      "missing_fulltext_doc_ids": [
+        "290357620",
+        "300927160",
+        "298116379",
+        "290776919",
+        "313026548"
+      ],
+      "evidence_chars": 302448,
+      "evidence_words": 43391,
+      "approx_tokens_chars_div_4": 75612
+    },
+    {
+      "query_id": "44e521225789bb4e0a23bd3d8482322b",
+      "doc_count": 10,
+      "fulltext_doc_count": 3,
+      "abstract_fallback_doc_count": 7,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 7,
+      "missing_fulltext_doc_ids": [
+        "294180289",
+        "304386143",
+        "302745019",
+        "291236193",
+        "303219445",
+        "309208784",
+        "302742204"
+      ],
+      "evidence_chars": 39897,
+      "evidence_words": 5757,
+      "approx_tokens_chars_div_4": 9974
+    },
+    {
+      "query_id": "08157a20b3524f357970d74b9ba928d7",
+      "doc_count": 10,
+      "fulltext_doc_count": 4,
+      "abstract_fallback_doc_count": 6,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 6,
+      "missing_fulltext_doc_ids": [
+        "310014727",
+        "276384958",
+        "303267364",
+        "299879604",
+        "309735108",
+        "311736258"
+      ],
+      "evidence_chars": 304963,
+      "evidence_words": 43697,
+      "approx_tokens_chars_div_4": 76240
+    },
+    {
+      "query_id": "0d73d8e3c29b4e9ea624a896ddf2d275",
+      "doc_count": 10,
+      "fulltext_doc_count": 3,
+      "abstract_fallback_doc_count": 7,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 7,
+      "missing_fulltext_doc_ids": [
+        "299871848",
+        "308883419",
+        "297184378",
+        "274839574",
+        "274997926",
+        "305703003",
+        "293016149"
+      ],
+      "evidence_chars": 147456,
+      "evidence_words": 21036,
+      "approx_tokens_chars_div_4": 36864
+    },
+    {
+      "query_id": "587bda4ca6b1f73cc861c7426a6db876",
+      "doc_count": 10,
+      "fulltext_doc_count": 4,
+      "abstract_fallback_doc_count": 6,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 6,
+      "missing_fulltext_doc_ids": [
+        "305617420",
+        "299636961",
+        "308883979",
+        "290846191",
+        "294852009",
+        "42773852"
+      ],
+      "evidence_chars": 204569,
+      "evidence_words": 28267,
+      "approx_tokens_chars_div_4": 51142
+    },
+    {
+      "query_id": "f10218c858ed40f612c1888bc8223d2f",
+      "doc_count": 10,
+      "fulltext_doc_count": 8,
+      "abstract_fallback_doc_count": 2,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 2,
+      "missing_fulltext_doc_ids": [
+        "301849617",
+        "290101051"
+      ],
+      "evidence_chars": 462193,
+      "evidence_words": 72223,
+      "approx_tokens_chars_div_4": 115548
+    },
+    {
+      "query_id": "5432516c146400806a7fac5fc8b2a851",
+      "doc_count": 10,
+      "fulltext_doc_count": 5,
+      "abstract_fallback_doc_count": 5,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 5,
+      "missing_fulltext_doc_ids": [
+        "274710220",
+        "291384649",
+        "77202",
+        "292088087",
+        "6704022"
+      ],
+      "evidence_chars": 282064,
+      "evidence_words": 40447,
+      "approx_tokens_chars_div_4": 70516
+    },
+    {
+      "query_id": "ed3ef04dd26e030176c7021315e73c76",
+      "doc_count": 10,
+      "fulltext_doc_count": 4,
+      "abstract_fallback_doc_count": 6,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 6,
+      "missing_fulltext_doc_ids": [
+        "305447423",
+        "154383566",
+        "305656707",
+        "295914747",
+        "39406283",
+        "305645366"
+      ],
+      "evidence_chars": 224481,
+      "evidence_words": 30885,
+      "approx_tokens_chars_div_4": 56120
+    },
+    {
+      "query_id": "67bf1399882db064d331402f451f8b26",
+      "doc_count": 10,
+      "fulltext_doc_count": 5,
+      "abstract_fallback_doc_count": 5,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 5,
+      "missing_fulltext_doc_ids": [
+        "6504264",
+        "303718211",
+        "96720612",
+        "291505037",
+        "171097449"
+      ],
+      "evidence_chars": 176994,
+      "evidence_words": 27710,
+      "approx_tokens_chars_div_4": 44248
+    },
+    {
+      "query_id": "a3ef8674065801b4d4a581beeb5a612d",
+      "doc_count": 10,
+      "fulltext_doc_count": 2,
+      "abstract_fallback_doc_count": 8,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "missing_fulltext_doc_count": 8,
+      "missing_fulltext_doc_ids": [
+        "313872558",
+        "150959429",
+        "299805553",
+        "299873240",
+        "302935225",
+        "308455296",
+        "308455738",
+        "275711075"
+      ],
+      "evidence_chars": 171378,
+      "evidence_words": 25759,
+      "approx_tokens_chars_div_4": 42844
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"queries": {"tiny|probe": {"query_id": "probe", "references": ["doc"], "sentence_candidates": [{"text": "ok", "citations": [0], "doc_id": "doc"}], "metadata": {"team_id": "our_team", "run_id": "tiny", "type": "automatic", "narrative": "probe", "narrative_id": "probe"}}}}

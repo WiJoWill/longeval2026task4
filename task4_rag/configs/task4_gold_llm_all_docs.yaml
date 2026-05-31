@@ -1,0 +1,62 @@
+data:
+  queries_path: data/task4_longeval_rag-query_docids.jsonl
+  candidates_path:
+  documents_path: data/snapshot3/longeval_sci_test-09-11_2026_fulltext/documents
+  citation_graph_path:
+  doc_text_fields: fullText|abstract|title
+  candidate_limit:
+  max_queries:
+
+run:
+  team_id: our_team
+  run_id: gold_llm_all_docs_v1
+  type: automatic
+  mode: llm_all_docs
+
+preprocess:
+  chunk_mode: rule
+  passage_max_words: 400
+  passage_stride_sentences: 0
+  semantic_chunk_model:
+  semantic_merge_threshold: 0.72
+  topic_shift_model:
+  topic_shift_boundary_threshold: 0.18
+  min_sentences_per_chunk: 1
+  max_sentences_per_chunk:
+
+retrieval:
+  # llm_all_docs mode bypasses retrieval — these settings are unused.
+  method: bm25
+  top_k_passages: 20
+  preselect_k: 24
+  rrf_k: 60
+  enable_query_expansion: false
+  enable_prf: false
+  prf_top_passages: 4
+  query_variant_limit: 1
+  rerank_top_n: 24
+  enable_rerank: false
+  title_boost: 0.0
+  temporal_boost: 0.0
+  citation_graph_boost: 0.0
+  hybrid_alpha: 0.0
+  dense_model:
+  reranker_model:
+
+generation:
+  provider: openai
+  model:
+  temperature: 0.0
+  max_answer_sentences: 5
+  temporal_templates: false
+  sentence_rerank_model:
+  sentence_rerank_top_n: 24
+  answer_candidate_score_threshold: 0.0
+  answer_candidate_score_margin: 0.0
+  answer_candidate_min_score: -10.0
+  answer_candidate_drop_ratio: 0.35
+  answer_candidate_drop_delta: 3.0
+  max_selected_answer_candidates: 50
+  multi_doc_synthesis: true
+  max_synthesis_sentences: 2
+  prompts_dir: task4_rag/prompts

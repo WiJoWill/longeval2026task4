@@ -5,7 +5,9 @@ from __future__ import annotations
 import json
 import os
 import re
+import sys
 from dataclasses import dataclass
+from functools import lru_cache
 from pathlib import Path
 from typing import Any, Sequence
 
@@ -60,6 +62,16 @@ class GenerationConfig:
     temperature: float = 0.0
     prompts_dir: str | Path | None = None
     temporal_templates: bool = True
+    sentence_rerank_model: str = ""
+    sentence_rerank_top_n: int = 24
+    answer_candidate_score_threshold: float = 0.0
+    answer_candidate_score_margin: float = 0.35
+    answer_candidate_min_score: float = -10.0
+    answer_candidate_drop_ratio: float = 0.35
+    answer_candidate_drop_delta: float = 3.0
+    max_selected_answer_candidates: int = 10
+    multi_doc_synthesis: bool = True
+    max_synthesis_sentences: int = 2
 
 
 class AnswerGenerator:
@@ -67,6 +79,8 @@ class AnswerGenerator:
 
     def __init__(self, config: GenerationConfig) -> None:
         self.config = config
+        self._sentence_reranker: Any | None = None
+        self._sentence_reranker_failed = False
 
     def generate_from_evidence(self, query: Query, evidence: Sequence[ScoredPassage]) -> dict[str, Any]:
         """Generate a full TREC RAG record from ranked evidence passages."""
@@ -97,7 +111,10 @@ class AnswerGenerator:
         for passage in selected:
             if passage.doc_id not in references:
                 references.append(passage.doc_id)
-        answer = self._extractive_answer(query.text, references, selected, temporal_templates=False)
+        if self.config.provider == "openai" and self.config.model:
+            answer = self._generate_with_openai(query, references, selected)
+        else:
+            answer = self._extractive_answer(query.text, references, selected, temporal_templates=False)
         record = self._record(query=query, references=references, answer=answer)
         validate_record(record)
         return record
@@ -124,7 +141,9 @@ class AnswerGenerator:
         passages: Sequence[Passage],
         temporal_templates: bool = True,
     ) -> list[dict[str, Any]]:
-        sentence_candidates = self._sentence_candidates(query_text, references, passages)
+        sentence_candidates = self._select_answer_sentence_candidates(
+            self._sentence_candidates(query_text, references, passages)
+        )
         answer: list[dict[str, Any]] = []
         used_texts: set[str] = set()
         used_citation_sets: set[tuple[int, ...]] = set()
@@ -137,6 +156,18 @@ class AnswerGenerator:
                     answer.append(item)
                     used_texts.add(key)
                     used_citation_sets.add(tuple(item["citations"]))
+                if len(answer) >= self.config.max_answer_sentences:
+                    return answer
+
+        if self.config.multi_doc_synthesis:
+            for item in self._multi_doc_synthesis_candidates(query_text, sentence_candidates):
+                key = item["text"].lower()
+                citation_tuple = tuple(item["citations"])
+                if key in used_texts or citation_tuple in used_citation_sets:
+                    continue
+                answer.append(item)
+                used_texts.add(key)
+                used_citation_sets.add(citation_tuple)
                 if len(answer) >= self.config.max_answer_sentences:
                     return answer
 
@@ -185,20 +216,77 @@ class AnswerGenerator:
                 if signature in seen:
                     continue
                 seen.add(signature)
-                score = self._sentence_score(text, query_terms, title_terms, sentence_rank)
-                score += max(0.0, 0.15 - 0.03 * passage_rank)
-                score += max(0.0, 0.08 - 0.03 * sentence_rank)
+                heuristic_score = self._sentence_score(text, query_terms, title_terms, sentence_rank)
+                heuristic_score += max(0.0, 0.15 - 0.03 * passage_rank)
+                heuristic_score += max(0.0, 0.08 - 0.03 * sentence_rank)
                 scored.append(
                     {
                         "text": text,
                         "citations": [citation_index],
-                        "score": score,
+                        "score": heuristic_score,
+                        "heuristic_score": heuristic_score,
                         "doc_id": passage.doc_id,
                         "timestamp": passage.timestamp,
                         "sentence_rank": sentence_rank,
                     }
                 )
-        return sorted(scored, key=lambda item: item["score"], reverse=True)
+        scored = sorted(scored, key=lambda item: item["score"], reverse=True)
+        return self._rerank_sentence_candidates(query_text, scored)
+
+    def _select_answer_sentence_candidates(self, candidates: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        if not candidates:
+            return []
+        max_candidates = max(1, self.config.max_selected_answer_candidates)
+        return candidates[:max_candidates]
+
+    def _rerank_sentence_candidates(
+        self,
+        query_text: str,
+        candidates: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        if not candidates or not self.config.sentence_rerank_model or self._sentence_reranker_failed:
+            return candidates
+
+        top_n = self.config.sentence_rerank_top_n
+        candidates_to_score = candidates if top_n <= 0 else candidates[:top_n]
+        try:
+            scores = self._score_with_sentence_reranker(
+                query_text=query_text,
+                sentence_texts=[candidate["text"] for candidate in candidates_to_score],
+            )
+        except Exception as exc:
+            self._sentence_reranker_failed = True
+            print(f"Warning: sentence reranker unavailable; using heuristic sentence ranking: {exc}", file=sys.stderr)
+            return candidates
+        if len(scores) != len(candidates_to_score):
+            self._sentence_reranker_failed = True
+            print(
+                "Warning: sentence reranker returned an unexpected number of scores; "
+                "using heuristic sentence ranking.",
+                file=sys.stderr,
+            )
+            return candidates
+
+        reranked: list[dict[str, Any]] = []
+        for candidate, score in zip(candidates_to_score, scores):
+            updated = dict(candidate)
+            updated["cross_encoder_score"] = float(score)
+            updated["score"] = float(score)
+            reranked.append(updated)
+        reranked.sort(key=lambda item: item["score"], reverse=True)
+        return reranked + candidates[len(candidates_to_score) :]
+
+    def _score_with_sentence_reranker(self, query_text: str, sentence_texts: Sequence[str]) -> list[float]:
+        if self._sentence_reranker is None:
+            self._sentence_reranker = _cross_encoder(self.config.sentence_rerank_model)
+
+        pairs = [(query_text, sentence_text) for sentence_text in sentence_texts]
+        raw_scores = self._sentence_reranker.predict(pairs)
+        if hasattr(raw_scores, "tolist"):
+            raw_scores = raw_scores.tolist()
+        if isinstance(raw_scores, (int, float)):
+            raw_scores = [raw_scores]
+        return [float(score) for score in raw_scores]
 
     def _temporal_answer_candidates(
         self,
@@ -236,6 +324,70 @@ class AnswerGenerator:
                 "citations": late["citations"],
             },
         ]
+
+    def _multi_doc_synthesis_candidates(
+        self,
+        query_text: str,
+        sentence_candidates: Sequence[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        """Create compact answer items supported by multiple cited documents."""
+
+        if self.config.max_synthesis_sentences <= 0:
+            return []
+        query_terms = set(extract_keywords(query_text, limit=20))
+        best_by_doc: dict[str, dict[str, Any]] = {}
+        for candidate in sentence_candidates:
+            doc_id = candidate["doc_id"]
+            existing = best_by_doc.get(doc_id)
+            if existing is None or candidate["score"] > existing["score"]:
+                best_by_doc[doc_id] = candidate
+
+        ordered = sorted(
+            best_by_doc.values(),
+            key=lambda item: (
+                _term_overlap_count(query_terms, set(tokenize(item["text"]))),
+                item["score"],
+            ),
+            reverse=True,
+        )
+        outputs: list[dict[str, Any]] = []
+        used_doc_ids: set[str] = set()
+        for left_index, left in enumerate(ordered):
+            if left["doc_id"] in used_doc_ids:
+                continue
+            partner = self._synthesis_partner(left, ordered[left_index + 1 :], query_terms, used_doc_ids)
+            if partner is None:
+                continue
+            citations = _dedupe_citations(left["citations"] + partner["citations"])
+            if len(citations) < 2:
+                continue
+            text = _synthesize_sentence(query_text, left["text"], partner["text"])
+            outputs.append({"text": text, "citations": citations})
+            used_doc_ids.update({left["doc_id"], partner["doc_id"]})
+            if len(outputs) >= self.config.max_synthesis_sentences:
+                break
+        return outputs
+
+    def _synthesis_partner(
+        self,
+        anchor: dict[str, Any],
+        candidates: Sequence[dict[str, Any]],
+        query_terms: set[str],
+        used_doc_ids: set[str],
+    ) -> dict[str, Any] | None:
+        anchor_terms = set(tokenize(anchor["text"]))
+        ranked = []
+        for candidate in candidates:
+            if candidate["doc_id"] == anchor["doc_id"] or candidate["doc_id"] in used_doc_ids:
+                continue
+            candidate_terms = set(tokenize(candidate["text"]))
+            query_overlap = _term_overlap_count(query_terms, candidate_terms)
+            shared_terms = _term_overlap_count(anchor_terms, candidate_terms)
+            ranked.append((query_overlap, shared_terms, candidate["score"], candidate))
+        if not ranked:
+            return None
+        ranked.sort(key=lambda item: item[:3], reverse=True)
+        return ranked[0][3]
 
     def _ordered_answer_candidates(self, sentence_candidates: Sequence[dict[str, Any]]) -> list[dict[str, Any]]:
         """Prefer the best sentence from each document, then fill from remaining evidence."""
@@ -295,8 +447,6 @@ class AnswerGenerator:
         query_overlap = _term_overlap_count(query_terms, text_terms)
         title_overlap = len(title_terms & text_terms)
         temporal_overlap = bool(temporal_query and (TEMPORAL_SENTENCE_TERMS & text_terms))
-        if query_terms and query_overlap == 0 and not temporal_overlap:
-            return False
         return True
 
     def _sentence_score(self, text: str, query_terms: set[str], title_terms: set[str], sentence_rank: int) -> float:
@@ -319,25 +469,86 @@ class AnswerGenerator:
                     return [{"text": text, "citations": [citation_index]}]
         return [{"text": "No supported answer could be generated from the provided candidate documents.", "citations": []}]
 
+    def build_batch_request(
+        self,
+        query: Query,
+        references: list[str],
+        passages: Sequence[Passage],
+        model: str,
+        custom_id: str,
+    ) -> tuple[dict[str, Any], dict[str, Any]]:
+        """Build an OpenAI Batch API request without calling the API.
+
+        Returns (request, state):
+          request: one line for the batch input JSONL
+          state:   everything needed in phase 2 to map evidence_ids back to citations
+        """
+        if self.config.mode == "llm_all_docs":
+            # Pass every passage as-is — no sentence extraction, no scoring, no cap.
+            sentence_candidates = _passages_as_candidates(references, passages)
+        else:
+            sentence_candidates = self._select_answer_sentence_candidates(
+                self._sentence_candidates(query.text, references, passages)
+            )
+        system_prompt, user_template = self._load_prompts()
+        user_prompt = user_template.format(
+            narrative_id=query.query_id,
+            narrative=query.text,
+            max_answer_sentences=self.config.max_answer_sentences,
+            evidence_json=json.dumps(_sentence_evidence_payload(sentence_candidates), ensure_ascii=False, indent=2),
+        )
+        request = {
+            "custom_id": custom_id,
+            "method": "POST",
+            "url": "/v1/chat/completions",
+            "body": {
+                "model": model,
+                "temperature": self.config.temperature,
+                "messages": [
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt},
+                ],
+                "response_format": {"type": "json_schema", "json_schema": _answer_json_schema()},
+            },
+        }
+        state = {
+            "query_id": query.query_id,
+            "references": references,
+            "sentence_candidates": sentence_candidates,
+            "metadata": {
+                "team_id": self.config.team_id,
+                "run_id": self.config.run_id,
+                "type": self.config.run_type,
+                "narrative": query.text,
+                "narrative_id": query.query_id,
+            },
+        }
+        return request, state
+
     def _generate_with_openai(
         self,
         query: Query,
         references: list[str],
         passages: Sequence[Passage],
     ) -> list[dict[str, Any]]:
+        sentence_candidates = self._select_answer_sentence_candidates(
+            self._sentence_candidates(query.text, references, passages)
+        )
         system_prompt, user_template = self._load_prompts()
         user_prompt = user_template.format(
             narrative_id=query.query_id,
             narrative=query.text,
             max_answer_sentences=self.config.max_answer_sentences,
-            evidence_json=json.dumps(_evidence_payload(references, passages), ensure_ascii=False, indent=2),
+            evidence_json=json.dumps(_sentence_evidence_payload(sentence_candidates), ensure_ascii=False, indent=2),
         )
         try:
             raw_text = self._call_openai(system_prompt=system_prompt, user_prompt=user_prompt)
             answer = _parse_answer_json(raw_text)
-        except Exception:
+        except Exception as exc:
+            print(f"Warning: OpenAI generation failed; using extractive fallback: {exc}", file=sys.stderr)
             answer = self._extractive_answer(query.text, references, passages, temporal_templates=self.config.temporal_templates)
-        return _repair_answer(answer, references, self.config.max_answer_sentences)
+            return answer
+        return _repair_answer(answer, references, self.config.max_answer_sentences, sentence_candidates)
 
     def _load_prompts(self) -> tuple[str, str]:
         prompts_dir = Path(self.config.prompts_dir or Path(__file__).resolve().parents[1] / "prompts")
@@ -348,16 +559,34 @@ class AnswerGenerator:
     def _call_openai(self, system_prompt: str, user_prompt: str) -> str:
         from openai import OpenAI  # type: ignore
 
-        client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-        response = client.chat.completions.create(
-            model=self.config.model,
-            temperature=self.config.temperature,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_prompt},
-            ],
-            response_format={"type": "json_object"},
-        )
+        _load_local_env()
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            raise RuntimeError("OPENAI_API_KEY is not set")
+
+        client = OpenAI(api_key=api_key)
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ]
+        try:
+            response = client.chat.completions.create(
+                model=self.config.model,
+                temperature=self.config.temperature,
+                messages=messages,
+                response_format={"type": "json_schema", "json_schema": _answer_json_schema()},
+            )
+        except Exception as exc:
+            print(
+                f"Warning: OpenAI structured output failed; retrying JSON mode: {exc}",
+                file=sys.stderr,
+            )
+            response = client.chat.completions.create(
+                model=self.config.model,
+                temperature=self.config.temperature,
+                messages=messages,
+                response_format={"type": "json_object"},
+            )
         content = response.choices[0].message.content
         if not content:
             raise ValueError("OpenAI response was empty")
@@ -394,6 +623,91 @@ def _evidence_payload(references: list[str], passages: Sequence[Passage]) -> lis
     return payload
 
 
+def _passages_as_candidates(references: list[str], passages: Sequence[Passage]) -> list[dict[str, Any]]:
+    """Convert passages directly to candidate dicts for llm_all_docs mode (no sentence extraction)."""
+    candidates: list[dict[str, Any]] = []
+    for passage in passages:
+        if passage.doc_id not in references:
+            continue
+        citation_index = references.index(passage.doc_id)
+        candidates.append({
+            "text": normalize_text(passage.text),
+            "citations": [citation_index],
+            "doc_id": passage.doc_id,
+        })
+    return candidates
+
+
+def _sentence_evidence_payload(sentence_candidates: Sequence[dict[str, Any]]) -> list[dict[str, Any]]:
+    payload: list[dict[str, Any]] = []
+    for evidence_id, candidate in enumerate(sentence_candidates):
+        citations = candidate.get("citations") or []
+        if not citations:
+            continue
+        payload.append(
+            {
+                "evidence_id": evidence_id,
+                "doc_id": candidate.get("doc_id", ""),
+                "text": normalize_text(str(candidate.get("text", ""))),
+            }
+        )
+    return payload
+
+
+def _answer_json_schema() -> dict[str, Any]:
+    return {
+        "name": "task4_rag_answer",
+        "strict": True,
+        "schema": {
+            "type": "object",
+            "additionalProperties": False,
+            "required": ["answer"],
+            "properties": {
+                "answer": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": False,
+                        "required": ["text", "evidence_ids"],
+                        "properties": {
+                            "text": {"type": "string"},
+                            "evidence_ids": {
+                                "type": "array",
+                                "items": {"type": "integer"},
+                            },
+                        },
+                    },
+                }
+            },
+        },
+    }
+
+
+@lru_cache(maxsize=4)
+def _cross_encoder(model_name: str) -> Any:
+    try:
+        from sentence_transformers import CrossEncoder  # type: ignore
+    except ImportError as exc:
+        raise RuntimeError("sentence-transformers is not installed") from exc
+    return CrossEncoder(model_name)
+
+
+def _load_local_env() -> None:
+    for path in (Path(".env.local"), Path(".env")):
+        if not path.exists():
+            continue
+        for raw_line in path.read_text(encoding="utf-8").splitlines():
+            line = raw_line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, value = line.split("=", 1)
+            key = key.strip()
+            if key.startswith("export "):
+                key = key.removeprefix("export ").strip()
+            if key and key not in os.environ:
+                os.environ[key] = value.strip().strip("\"'")
+
+
 def _candidate_sentences(text: str) -> list[str]:
     """Split passage text a little more aggressively for noisy full text snippets."""
 
@@ -419,19 +733,27 @@ def _parse_answer_json(raw_text: str) -> list[dict[str, Any]]:
     raise ValueError("LLM output did not contain an answer list")
 
 
-def _repair_answer(answer: list[dict[str, Any]], references: list[str], max_sentences: int) -> list[dict[str, Any]]:
+def _repair_answer(
+    answer: list[dict[str, Any]],
+    references: list[str],
+    max_sentences: int,
+    sentence_candidates: Sequence[dict[str, Any]],
+) -> list[dict[str, Any]]:
     repaired: list[dict[str, Any]] = []
     for item in answer:
         text = normalize_text(str(item.get("text", "")))
         if not text:
             continue
-        citations = item.get("citations", [])
-        if not isinstance(citations, list):
-            citations = []
+        evidence_ids = item.get("evidence_ids", [])
+        if not isinstance(evidence_ids, list):
+            evidence_ids = []
         clean_citations: list[int] = []
-        for citation in citations:
-            if isinstance(citation, int) and 0 <= citation < len(references) and citation not in clean_citations:
-                clean_citations.append(citation)
+        for eid in evidence_ids:
+            if not isinstance(eid, int) or eid < 0 or eid >= len(sentence_candidates):
+                continue
+            for ref_idx in sentence_candidates[eid].get("citations", []):
+                if isinstance(ref_idx, int) and 0 <= ref_idx < len(references) and ref_idx not in clean_citations:
+                    clean_citations.append(ref_idx)
         if clean_citations or not repaired:
             repaired.append({"text": text, "citations": clean_citations})
         if len(repaired) >= max_sentences:
@@ -447,6 +769,32 @@ def _temporalize_sentence(prefix: str, text: str) -> str:
         claim = claim[0].lower() + claim[1:] if len(claim) > 1 else claim.lower()
     sentence = f"{prefix} {claim}.".strip()
     return sentence
+
+
+def _synthesize_sentence(query_text: str, left_text: str, right_text: str) -> str:
+    query_keywords = extract_keywords(query_text, limit=6)
+    topic = " ".join(query_keywords[:4]) if query_keywords else "the query"
+    left_claim = _compact_claim(left_text, max_words=22)
+    right_claim = _compact_claim(right_text, max_words=22)
+    return f"Across the cited evidence on {topic}, one source reports that {left_claim}, while another reports that {right_claim}."
+
+
+def _compact_claim(text: str, max_words: int = 22) -> str:
+    claim = normalize_text(text).rstrip(".!?")
+    if claim:
+        claim = claim[0].lower() + claim[1:] if len(claim) > 1 else claim.lower()
+    words = claim.split()
+    if len(words) > max_words:
+        claim = " ".join(words[:max_words]).rstrip(",;:")
+    return claim or "related evidence is available"
+
+
+def _dedupe_citations(citations: Sequence[int]) -> list[int]:
+    output: list[int] = []
+    for citation in citations:
+        if citation not in output:
+            output.append(citation)
+    return output
 
 
 def _starts_with_boilerplate_style(text: str) -> bool:

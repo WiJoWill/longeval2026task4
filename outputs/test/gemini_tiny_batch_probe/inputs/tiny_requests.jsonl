@@ -1,0 +1,1 @@
+{"key": "tiny|probe", "request": {"contents": [{"role": "user", "parts": [{"text": "Return JSON only: {\"answer\":[{\"text\":\"ok\",\"evidence_ids\":[0]}]}"}]}], "generationConfig": {"temperature": 0.0, "responseMimeType": "application/json"}}}

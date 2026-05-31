@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 from pathlib import Path
 from typing import Any
@@ -21,6 +22,7 @@ def main(argv: list[str] | None = None) -> int:
 
     config = load_config(args.config)
     config = apply_cli_overrides(config, args)
+    _load_local_env()
     mode = config["run"]["mode"]
 
     if args.validate_only:
@@ -57,7 +59,7 @@ def main(argv: list[str] | None = None) -> int:
         method=config["retrieval"]["method"],
         dense_model=config["retrieval"].get("dense_model"),
         hybrid_alpha=float(config["retrieval"].get("hybrid_alpha", 0.25)),
-        per_doc_limit=int(config["retrieval"].get("per_doc_limit", 2)),
+        per_doc_limit=_parse_per_doc_limit(config["retrieval"].get("per_doc_limit")),
         rrf_k=int(config["retrieval"].get("rrf_k", 60)),
         enable_query_expansion=bool(config["retrieval"].get("enable_query_expansion", True)),
         enable_prf=bool(config["retrieval"].get("enable_prf", True)),
@@ -79,11 +81,21 @@ def main(argv: list[str] | None = None) -> int:
             run_type=config["run"].get("type", "automatic"),
             mode=mode,
             max_answer_sentences=int(config["generation"].get("max_answer_sentences", 5)),
-            provider=config["generation"].get("provider", "none"),
-            model=config["generation"].get("model", ""),
+            provider=config["generation"].get("provider", os.getenv("OPENAI_PROVIDER", "none")),
+            model=config["generation"].get("model") or os.getenv("OPENAI_MODEL", ""),
             temperature=float(config["generation"].get("temperature", 0.0)),
             prompts_dir=config["generation"].get("prompts_dir"),
             temporal_templates=bool(config["generation"].get("temporal_templates", True)),
+            sentence_rerank_model=str(config["generation"].get("sentence_rerank_model") or ""),
+            sentence_rerank_top_n=_optional_int(config["generation"].get("sentence_rerank_top_n")) or 24,
+            answer_candidate_score_threshold=float(config["generation"].get("answer_candidate_score_threshold", 0.0)),
+            answer_candidate_score_margin=float(config["generation"].get("answer_candidate_score_margin", 0.35)),
+            answer_candidate_min_score=float(config["generation"].get("answer_candidate_min_score", -10.0)),
+            answer_candidate_drop_ratio=float(config["generation"].get("answer_candidate_drop_ratio", 0.35)),
+            answer_candidate_drop_delta=float(config["generation"].get("answer_candidate_drop_delta", 3.0)),
+            max_selected_answer_candidates=_optional_int(config["generation"].get("max_selected_answer_candidates")) or 50,
+            multi_doc_synthesis=bool(config["generation"].get("multi_doc_synthesis", True)),
+            max_synthesis_sentences=_optional_int(config["generation"].get("max_synthesis_sentences")) or 2,
         )
     )
 
@@ -93,6 +105,13 @@ def main(argv: list[str] | None = None) -> int:
             instance.documents,
             max_words=int(config["preprocess"].get("passage_max_words", 140)),
             stride_sentences=int(config["preprocess"].get("passage_stride_sentences", 1)),
+            chunk_mode=str(config["preprocess"].get("chunk_mode", "rule")),
+            semantic_chunk_model=config["preprocess"].get("semantic_chunk_model"),
+            semantic_merge_threshold=float(config["preprocess"].get("semantic_merge_threshold", 0.72)),
+            topic_shift_model=config["preprocess"].get("topic_shift_model"),
+            topic_shift_boundary_threshold=float(config["preprocess"].get("topic_shift_boundary_threshold", 0.18)),
+            min_sentences_per_chunk=int(config["preprocess"].get("min_sentences_per_chunk", 1)),
+            max_sentences_per_chunk=_optional_int(config["preprocess"].get("max_sentences_per_chunk")),
         )
         if mode == "concat_baseline":
             record = generator.generate_concat_baseline(
@@ -133,6 +152,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--mode", choices=["concat_baseline", "llm_all_docs", "hybrid_evidence_rag_v1", "extractive_evidence_only"])
     parser.add_argument("--run-id", help="Run ID written into metadata")
     parser.add_argument("--team-id", help="Team ID written into metadata")
+    parser.add_argument("--provider", choices=["none", "openai"], help="Override generation provider")
+    parser.add_argument("--model", help="Override generation model")
+    parser.add_argument("--temperature", type=float, help="Override generation temperature")
     parser.add_argument("--max-queries", type=int, help="Optional limit for the number of queries to run")
     parser.add_argument("--validate-only", action="store_true", help="Validate --output and exit")
     return parser
@@ -220,6 +242,13 @@ def apply_cli_overrides(config: dict[str, Any], args: argparse.Namespace) -> dic
         config["run"]["run_id"] = args.run_id
     if args.team_id:
         config["run"]["team_id"] = args.team_id
+    config.setdefault("generation", {})
+    if args.provider:
+        config["generation"]["provider"] = args.provider
+    if args.model:
+        config["generation"]["model"] = args.model
+    if args.temperature is not None:
+        config["generation"]["temperature"] = args.temperature
     return config
 
 
@@ -231,6 +260,35 @@ def _parse_doc_text_fields(value: Any) -> list[str] | None:
     if isinstance(value, str):
         return [part.strip() for part in value.split("|") if part.strip()]
     return [str(value)]
+
+
+def _optional_int(value: Any) -> int | None:
+    if value in (None, ""):
+        return None
+    return int(value)
+
+
+def _parse_per_doc_limit(value: Any) -> int | None:
+    """Return None (no limit) when value is absent, None, empty, or 0."""
+    if value in (None, "", 0, "0"):
+        return None
+    return int(value)
+
+
+def _load_local_env() -> None:
+    for path in (Path(".env.local"), Path(".env")):
+        if not path.exists():
+            continue
+        for raw_line in path.read_text(encoding="utf-8").splitlines():
+            line = raw_line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, value = line.split("=", 1)
+            key = key.strip()
+            if key.startswith("export "):
+                key = key.removeprefix("export ").strip()
+            if key and key not in os.environ:
+                os.environ[key] = value.strip().strip("\"'")
 
 
 if __name__ == "__main__":
