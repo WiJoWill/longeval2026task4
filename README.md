@@ -1,70 +1,58 @@
-# LongEval 2026 Task 4 RAG Methodology
+# LongEval 2026 Task 4 RAG Repository
 
-This repository contains a reproducible pipeline for CLEF LongEval 2026 Task 4, LongEval-RAG. The task setup provides a query plus a fixed set of candidate document IDs. The system must generate an answer grounded only in those candidate documents and cite references by index.
+This repository contains the code, configs, evaluation artifacts, and writing notes for CLEF LongEval 2026 Task 4.
 
-The primary run is `caes_rag_rrf_v1`: Citation-Aware Evidence Selection with reciprocal-rank fusion and deterministic extractive generation.
+The runnable package lives in [`task4_rag/`](task4_rag/). Generated runs and reports live under `outputs/`. Paper and evaluation scratch artifacts live under `paper_writing/`, `docs/`, and `evals/`.
 
-## Method Summary
+## Repository Layout
 
-For each query, the pipeline:
+- [`task4_rag/src/`](task4_rag/src/) - core pipeline, validators, evaluators, and CLIs.
+- [`task4_rag/configs/`](task4_rag/configs/) - experiment configurations.
+- [`task4_rag/scripts/`](task4_rag/scripts/) - shell and PowerShell wrappers for common workflows.
+- [`task4_rag/tests/`](task4_rag/tests/) - unit tests and fixtures.
+- [`task4_rag/examples/`](task4_rag/examples/) - legacy examples and sample inputs/outputs for older CLIs.
+- [`docs/`](docs/) - design notes and cleanup plans.
+- [`evals/`](evals/) - evaluation outputs and LaTeX scratch artifacts.
+- [`outputs/`](outputs/) - generated runs, batch inputs, reports, and smoke-test artifacts.
+- [`paper_writing/`](paper_writing/) - report drafts and judge summaries.
+- [`Final_paper/`](Final_paper/) - paper PDF deliverable.
+- `.cache/` - local dataset cache used by some scripts; not committed.
+- `data/` - expected local checkout for task inputs and snapshots; not committed.
 
-1. loads the query text and official candidate `doc_ids`;
-2. loads matching full-text or abstract records from the configured snapshot;
-3. splits candidate documents into sentence-window passages;
-4. builds deterministic query variants from the original narrative;
-5. retrieves candidate passages with BM25-style lexical scoring;
-6. fuses multi-query rankings with reciprocal-rank fusion;
-7. reranks evidence using lexical overlap, title relevance, temporal cues, and an optional citation-graph prior;
-8. selects a compact evidence set;
-9. generates citation-indexed answer sentences from selected evidence;
-10. validates the output JSONL structure and analyzes run metrics.
+## What The Main Pipeline Does
 
-The run is candidate-constrained throughout: output `references` must be a subset of the official candidate IDs for that query, and each answer citation must point to an index in that `references` list.
+The main run is `caes_rag_rrf_v1`. It loads the query text and official candidate document IDs, retrieves passages over the candidate set, reranks evidence, generates citation-indexed answers, and validates the resulting JSONL.
 
-## Current Improvements
+## Setup
 
-The latest round implements three generation improvements:
+Install dependencies with the existing virtual environment or a fresh Python 3.11 environment:
 
-- stricter sentence filtering for boilerplate, low-information phrases, OCR-like fragments, and broken full-text snippets;
-- stronger query-term overlap using light stemming, so sentences must match the narrative more directly;
-- a sentence selector that takes the best sentence per selected document before filling with extra claims, plus a cited fallback when the strict filter finds too little clean text.
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r task4_rag\requirements.txt
+```
 
-## Main Artifacts
+If you use a different virtual environment location, adjust the path accordingly.
 
-- Main run: `outputs/runs/caes_rag_rrf_v1.jsonl`
-- Main evaluation: `outputs/reports/caes_rag_rrf_v1_eval.json`
-- Summary report: `outputs/reports/real_round_task4_report.md`
-- Repaired provided baseline: `outputs/runs/generated_responses_repaired_v1.jsonl`
-- Raw baseline analysis: `outputs/reports/generated_responses_analysis.json`
+## Common Commands
 
-## Latest Main Metrics
+Run the main model:
 
-From `outputs/reports/caes_rag_rrf_v1_eval.json`:
+```powershell
+.\.venv\Scripts\python.exe -m task4_rag.src.run_task4 `
+  --config task4_rag/configs/task4_rrf_rerank.yaml `
+  --output outputs/runs/caes_rag_rrf_v1.jsonl
+```
 
-- expected queries: `47`
-- records in run: `47`
-- invalid records: `0`
-- missing queries: `0`
-- reference subset match rate: `1.0`
-- average references per record: `3.26`
-- average answer items per record: `4.34`
-- average unique cited references per record: `2.68`
-- empty citation rate: `0.0`
-- filler answer rate: `0.0147`
+Validate a run:
 
-## RAG Quality Evaluation
+```powershell
+.\.venv\Scripts\python.exe -m task4_rag.src.evaluate_run `
+  --run outputs/runs/caes_rag_rrf_v1.jsonl `
+  --queries data/task4_longeval_rag-query_docids.jsonl `
+  --output-report outputs/reports/caes_rag_rrf_v1_eval.json
+```
 
-The original evaluator is a structural compliance check. It verifies coverage, JSON validity, candidate-subset compliance, citation indices, and obvious filler. Those checks are necessary, but they do not measure RAG quality by themselves.
-
-The repo now includes a second evaluator inspired by the RAG evaluation framing in the Prompt Engineering Guide, RGB, RECALL, and RAGAS:
-
-- context relevance: whether selected references overlap with the query;
-- answer faithfulness: whether answer sentences are supported by their cited documents;
-- answer relevance: whether generated answers address the query;
-- RGB-like robustness: noise robustness, negative rejection, and information integration proxies;
-- RECALL-like counterfactual risk: whether numeric claims in answers are supported by cited context.
-
-Run it with:
+Run the RAG quality diagnostics:
 
 ```powershell
 .\.venv\Scripts\python.exe -m task4_rag.src.evaluate_rag_quality `
@@ -75,131 +63,7 @@ Run it with:
   --output-report outputs/reports/caes_rag_rrf_v1_rag_quality_eval.json
 ```
 
-Current main quality report:
-
-- `outputs/reports/caes_rag_rrf_v1_rag_quality_eval.json`
-
-Current proxy scores:
-
-- context relevance: `0.558`
-- context precision proxy: `0.970`
-- answer faithfulness proxy: `0.942`
-- answer relevance proxy: `0.392`
-- unsupported answer item rate: `0.0`
-- RGB-like noise robustness proxy: `0.963`
-- RGB-like information integration coverage: `0.255`
-- RECALL-like numeric claim support rate: `0.879`
-
-These are diagnostic proxies, not official labels. They are most useful for comparing runs and surfacing suspicious records. In particular, lexical context relevance can overestimate semantic relevance when noisy full-text documents share generic terms with the query.
-
-## Optional LLM Judge
-
-For a human-like qualitative layer, the repo includes an optional LLM-as-judge evaluator:
-
-```powershell
-$env:OPENAI_API_KEY = "<your key>"
-
-.\.venv\Scripts\python.exe -m task4_rag.src.evaluate_llm_quality `
-  --run outputs/runs/caes_rag_rrf_v1.jsonl `
-  --queries data/task4_longeval_rag-query_docids.jsonl `
-  --documents data/snapshot3/longeval_sci_test-09-11_2026_fulltext/documents `
-  --doc-text-fields "fullText|abstract|title" `
-  --provider openai `
-  --model gpt-4o-mini `
-  --max-records 3 `
-  --output-report outputs/reports/caes_rag_rrf_v1_llm_judge_smoke.json
-```
-
-It scores each query on 1-5 dimensions: context relevance, answer relevance, faithfulness, completeness, citation quality, noise robustness, information integration, numeric factuality, and overall quality. It also writes qualitative strengths, weaknesses, failure modes, and a recommended fix per query.
-
-No LLM judge report is currently generated in this workspace because the API keys are not set.
-
-## Optional OpenAI Answer Generation
-
-Store the API key in an untracked repo-local file:
-
-```powershell
-Copy-Item .env.example .env.local
-# edit .env.local and set OPENAI_API_KEY
-```
-
-The OpenAI generator uses the same retrieval/chunking/sentence-rerank pipeline as each config, then sends only the selected sentence-level evidence to the model. It does not send full documents. Run the 10 configured retrieval variants with OpenAI generation:
-
-```powershell
-.\task4_rag\scripts\run_openai_llm_experiments.ps1
-```
-
-For a smoke test:
-
-```powershell
-.\task4_rag\scripts\run_openai_llm_experiments.ps1 -MaxQueries 1
-```
-
-For lower-cost asynchronous generation, prepare OpenAI Batch input without submitting it:
-
-```powershell
-.\task4_rag\scripts\prepare_openai_llm_batch.ps1
-```
-
-This writes `outputs/batch_inputs/all_experiments_requests.jsonl` plus one `*_state.json` file per experiment. The request file contains only selected sentence-level evidence with `evidence_id` values; timestamps and full documents are not sent to the LLM. Inspect these files before submitting:
-
-```powershell
-Get-Content outputs/batch_inputs/all_experiments_requests.jsonl -First 1
-```
-
-When ready to submit and reconstruct final run JSONL files:
-
-```powershell
-python -m task4_rag.src.apply_batch `
-  --requests-file outputs/batch_inputs/all_experiments_requests.jsonl `
-  --state-dir outputs/batch_inputs `
-  --output-dir outputs/openai_batch_runs
-```
-
-## Repository Layout
-
-- `data/`: task inputs, candidate mappings, baseline files, and document snapshots.
-- `task4_rag/src/`: loader, preprocessing, retrieval, reranking, generation, validation, and evaluation code.
-- `task4_rag/configs/`: experiment configs for the main method and ablations.
-- `task4_rag/tests/`: unit tests for schema loading, generation, validation, and evaluation behavior.
-- `outputs/runs/`: generated Task 4 JSONL runs.
-- `outputs/reports/`: evaluation JSON files and Markdown reports.
-
-## Setup
-
-Use the existing virtual environment or create a new one with Python 3.11.
-
-```powershell
-.\.venv\Scripts\python.exe -m pip install -r task4_rag\requirements.txt
-```
-
-## Run The Main Model
-
-```powershell
-.\.venv\Scripts\python.exe -m task4_rag.src.run_task4 `
-  --config task4_rag/configs/task4_rrf_rerank.yaml `
-  --output outputs/runs/caes_rag_rrf_v1.jsonl
-```
-
-## Run All Ablations
-
-```powershell
-.\.venv\Scripts\python.exe -m task4_rag.src.run_task4 --config task4_rag/configs/task4_concat_baseline.yaml --output outputs/runs/concat_baseline.jsonl
-.\.venv\Scripts\python.exe -m task4_rag.src.run_task4 --config task4_rag/configs/task4_single_query_bm25.yaml --output outputs/runs/single_query_bm25_v1.jsonl
-.\.venv\Scripts\python.exe -m task4_rag.src.run_task4 --config task4_rag/configs/task4_rrf_no_rerank.yaml --output outputs/runs/rrf_no_rerank_v1.jsonl
-.\.venv\Scripts\python.exe -m task4_rag.src.run_task4 --config task4_rag/configs/task4_rrf_rerank.yaml --output outputs/runs/caes_rag_rrf_v1.jsonl
-```
-
-## Evaluate A Run
-
-```powershell
-.\.venv\Scripts\python.exe -m task4_rag.src.evaluate_run `
-  --run outputs/runs/caes_rag_rrf_v1.jsonl `
-  --queries data/task4_longeval_rag-query_docids.jsonl `
-  --output-report outputs/reports/caes_rag_rrf_v1_eval.json
-```
-
-## Repair And Evaluate The Provided Baseline
+Repair the provided baseline run:
 
 ```powershell
 .\.venv\Scripts\python.exe -m task4_rag.src.repair_baseline_run `
@@ -208,28 +72,19 @@ Use the existing virtual environment or create a new one with Python 3.11.
   --output outputs/runs/generated_responses_repaired_v1.jsonl
 ```
 
-## Test
+Run tests:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest task4_rag/tests
 ```
 
-Current result: `12 passed`.
+## Inputs And Outputs
 
-## Notes And Limitations
+- Expected inputs: query/doc mapping files and document snapshots under `data/` or `.cache/`, depending on the workflow.
+- Main outputs: JSONL runs under `outputs/runs/` and evaluation JSON/Markdown under `outputs/reports/`.
+- Batch workflows: request payloads and state files under `outputs/batch_inputs/` and `outputs/test/`.
 
-The pipeline is structurally valid and candidate-compliant, but semantic quality is still retrieval-limited. Some broad query terms can pull unrelated candidate documents, so the next high-value work is document-level reranking and a small qualitative review set.
+## Notes
 
-The evaluation workflow should now be:
-
-1. validate structure and candidate compliance;
-2. run RAG quality diagnostics;
-3. inspect records with low answer relevance, low noise robustness, or high counterfactual risk;
-4. use a small judged subset to calibrate whether the proxy metrics match human relevance judgments.
-
-Useful references:
-
-- Prompt Engineering Guide RAG evaluation overview: https://www.promptingguide.ai/research/rag#rag-evaluation
-- RGB benchmark: https://arxiv.org/abs/2309.01431
-- RECALL benchmark: https://arxiv.org/abs/2311.08147
-- RAGAS: https://arxiv.org/abs/2309.15217
+- The repo keeps a few legacy or auxiliary utilities in `task4_rag/src/` and `task4_rag/examples/` for historical workflows. They are not part of the default `run_task4` path.
+- If you are looking for implementation details, the package README in [`task4_rag/README.md`](task4_rag/README.md) is the deeper reference.

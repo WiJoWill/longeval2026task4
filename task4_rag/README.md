@@ -34,11 +34,11 @@ For each query, the pipeline:
 
 ## Data Inputs
 
-The current default config expects:
+The current default config expects local, non-committed inputs:
 
-- queries: [data/task4_longeval_rag-query_docids.jsonl](C:/Users/Will/Documents/longEval2026task4/data/task4_longeval_rag-query_docids.jsonl)
+- queries: `data/task4_longeval_rag-query_docids.jsonl`
 - documents: `data/snapshot3/longeval_sci_test-09-11_2026_fulltext/documents`
-- citation graph prior: [data/longeval-sci-2026-citation-network.csv](C:/Users/Will/Documents/longEval2026task4/data/longeval-sci-2026-citation-network.csv)
+- citation graph prior: `data/longeval-sci-2026-citation-network.csv`
 
 The query file can already contain both query text and candidate doc IDs, for example:
 
@@ -111,7 +111,7 @@ The generator is citation-aware by construction:
 
 ## Configuration
 
-Default config: [task4_default.yaml](C:/Users/Will/Documents/longEval2026task4/task4_rag/configs/task4_default.yaml)
+Default config: `task4_rag/configs/task4_default.yaml`
 
 Key knobs:
 
@@ -169,7 +169,7 @@ python -m task4_rag.src.run_task4 \
   --output runs/caes_rag_rrf_v1.jsonl
 ```
 
-Shell wrappers are in [task4_rag/scripts](C:/Users/Will/Documents/longEval2026task4/task4_rag/scripts).
+Shell wrappers are in `task4_rag/scripts/`.
 
 ## Baseline Analysis
 
@@ -190,16 +190,16 @@ This reports:
 - filler-answer rate;
 - answer/reference length statistics.
 
-The provided [data/generated-responses.jsonl](C:/Users/Will/Documents/longEval2026task4/data/generated-responses.jsonl) is useful as a baseline floor because it matches the candidate reference lists but still fails important Task 4 requirements such as complete metadata and citation-grounded answer writing.
+The provided `data/generated-responses.jsonl` is useful as a baseline floor because it matches the candidate reference lists but still fails important Task 4 requirements such as complete metadata and citation-grounded answer writing.
 
 ## Ablation Matrix
 
 The repo now includes these experiment configs:
 
-- [task4_concat_baseline.yaml](C:/Users/Will/Documents/longEval2026task4/task4_rag/configs/task4_concat_baseline.yaml)
-- [task4_single_query_bm25.yaml](C:/Users/Will/Documents/longEval2026task4/task4_rag/configs/task4_single_query_bm25.yaml)
-- [task4_rrf_no_rerank.yaml](C:/Users/Will/Documents/longEval2026task4/task4_rag/configs/task4_rrf_no_rerank.yaml)
-- [task4_rrf_rerank.yaml](C:/Users/Will/Documents/longEval2026task4/task4_rag/configs/task4_rrf_rerank.yaml)
+- `task4_rag/configs/task4_concat_baseline.yaml`
+- `task4_rag/configs/task4_single_query_bm25.yaml`
+- `task4_rag/configs/task4_rrf_no_rerank.yaml`
+- `task4_rag/configs/task4_rrf_rerank.yaml`
 
 These let you isolate the impact of:
 
@@ -214,7 +214,7 @@ The runner now raises an error if none of the candidate document IDs can be foun
 
 ## Relationship To RAG Guidance
 
-The Prompt Engineering Guide’s RAG overview emphasizes using external retrieved knowledge instead of relying on static parametric memory and treating retrieved documents as the grounding context for generation. It frames RAG as a way to improve factual consistency and reliability on knowledge-intensive tasks by retrieving supporting documents and using them as generation context. That is the basic shape here, but this package goes further for LongEval Task 4 by adding multi-query retrieval, fusion, reranking, citation discipline, and temporal-aware evidence selection. Source: https://www.promptingguide.ai/techniques/rag
+The Prompt Engineering Guide's RAG overview emphasizes using external retrieved knowledge instead of relying on static parametric memory and treating retrieved documents as the grounding context for generation. It frames RAG as a way to improve factual consistency and reliability on knowledge-intensive tasks by retrieving supporting documents and using them as generation context. That is the basic shape here, but this package goes further for LongEval Task 4 by adding multi-query retrieval, fusion, reranking, citation discipline, and temporal-aware evidence selection. Source: https://www.promptingguide.ai/techniques/rag
 
 For evaluation, the RAG guide itself does not require ChatGPT or Claude as judges. In this repo, the recommended order is:
 
