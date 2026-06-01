@@ -1,0 +1,30 @@
+{
+  "summary": {
+    "queries": 1,
+    "docs": 10,
+    "fulltext_docs": 5,
+    "abstract_fallback_docs": 5,
+    "title_fallback_docs": 0,
+    "missing_text_docs": 0,
+    "approx_tokens_min": 40629,
+    "approx_tokens_median": 40629,
+    "approx_tokens_mean": 40629,
+    "approx_tokens_max": 40629,
+    "chars_min": 162516,
+    "chars_median": 162516,
+    "chars_mean": 162516,
+    "chars_max": 162516
+  },
+  "queries": [
+    {
+      "query_id": "aa42e210a361571ff4d1fad892b75d15",
+      "doc_count": 10,
+      "fulltext_doc_count": 5,
+      "abstract_fallback_doc_count": 5,
+      "title_fallback_doc_count": 0,
+      "missing_text_doc_count": 0,
+      "evidence_chars": 162516,
+      "approx_tokens_chars_div_4": 40629
+    }
+  ]
+}

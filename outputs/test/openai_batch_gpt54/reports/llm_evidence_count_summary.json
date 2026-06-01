@@ -1,0 +1,134 @@
+{
+  "summary": [
+    {
+      "model": "single_query_bm25_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 7.4,
+      "median": 7.0,
+      "min": 2,
+      "max": 16,
+      "zero": 0,
+      "one": 0,
+      "lt3": 3,
+      "ge10": 13
+    },
+    {
+      "model": "caes_rag_rrf_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 6.7,
+      "median": 7.0,
+      "min": 0,
+      "max": 16,
+      "zero": 1,
+      "one": 0,
+      "lt3": 3,
+      "ge10": 9
+    },
+    {
+      "model": "default_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 6.7,
+      "median": 7.0,
+      "min": 0,
+      "max": 16,
+      "zero": 1,
+      "one": 0,
+      "lt3": 3,
+      "ge10": 9
+    },
+    {
+      "model": "rrf_no_rerank_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 6.66,
+      "median": 6.0,
+      "min": 0,
+      "max": 16,
+      "zero": 1,
+      "one": 1,
+      "lt3": 4,
+      "ge10": 10
+    },
+    {
+      "model": "semantic_current_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 4.45,
+      "median": 4.0,
+      "min": 1,
+      "max": 9,
+      "zero": 0,
+      "one": 1,
+      "lt3": 5,
+      "ge10": 0
+    },
+    {
+      "model": "topic_shift_current_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 4.15,
+      "median": 4.0,
+      "min": 1,
+      "max": 9,
+      "zero": 0,
+      "one": 3,
+      "lt3": 6,
+      "ge10": 0
+    },
+    {
+      "model": "concat_baseline_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 2.13,
+      "median": 1.0,
+      "min": 0,
+      "max": 11,
+      "zero": 13,
+      "one": 13,
+      "lt3": 32,
+      "ge10": 1
+    },
+    {
+      "model": "semantic_minilm_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 1.17,
+      "median": 1.0,
+      "min": 1,
+      "max": 3,
+      "zero": 0,
+      "one": 40,
+      "lt3": 46,
+      "ge10": 0
+    },
+    {
+      "model": "topic_shift_minilm_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 1.15,
+      "median": 1.0,
+      "min": 1,
+      "max": 3,
+      "zero": 0,
+      "one": 41,
+      "lt3": 46,
+      "ge10": 0
+    },
+    {
+      "model": "rule_minilm_openai_llm_v1",
+      "queries": 47,
+      "avg_evidence": 1.06,
+      "median": 1.0,
+      "min": 0,
+      "max": 2,
+      "zero": 1,
+      "one": 42,
+      "lt3": 47,
+      "ge10": 0
+    }
+  ],
+  "notes": {
+    "concat_baseline_zero_evidence": {
+      "cause": "concat_baseline takes first rule chunks without query-aware retrieval; sentence-level hard filtering can remove every sentence if selected chunks have no query overlap or are headers/boilerplate/unrelated text.",
+      "example_query_id": "46395a3cf66a9f6a75c89354410d1493",
+      "example_query": "How should pesticide class-specific findings shape prevention priorities for farm households?",
+      "example_selected_doc_id": "290464296",
+      "example_selected_doc_title": "Burden of End-Stage Kidney Disease by Type 2 Diabetes Mellitus Status in South Korea",
+      "result": "sentence_candidates = 0 after hard filtering"
+    }
+  }
+}

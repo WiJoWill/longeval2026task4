@@ -1,0 +1,124 @@
+{
+  "run_path": "outputs/runs/topic_shift_current_rerank_v1.jsonl",
+  "query_path": ".cache/longeval-sci-2026/task4_longeval_rag-query_docids.jsonl",
+  "expected_queries": 47,
+  "records_in_run": 47,
+  "missing_queries": 0,
+  "extra_queries": 0,
+  "missing_query_ids_sample": [],
+  "extra_query_ids_sample": [],
+  "invalid_records": 0,
+  "validation_errors_sample": [],
+  "reference_exact_match_rate": 0.0,
+  "reference_set_match_rate": 0.0,
+  "reference_subset_match_rate": 1.0,
+  "avg_references_per_record": 3.7872340425531914,
+  "avg_answer_items_per_record": 3.9148936170212765,
+  "avg_unique_cited_references_per_record": 3.021276595744681,
+  "answer_items_without_citations": 0,
+  "answer_item_empty_citation_rate": 0.0,
+  "filler_answer_items": 1,
+  "filler_answer_item_rate": 0.005434782608695652,
+  "per_record_sample": [
+    {
+      "query_id": "aa42e210a361571ff4d1fad892b75d15",
+      "num_references": 5,
+      "num_answer_items": 4,
+      "num_items_without_citations": 0,
+      "num_unique_cited_references": 3,
+      "reference_exact_match": false,
+      "reference_set_match": false,
+      "reference_subset_match": true
+    },
+    {
+      "query_id": "46395a3cf66a9f6a75c89354410d1493",
+      "num_references": 4,
+      "num_answer_items": 3,
+      "num_items_without_citations": 0,
+      "num_unique_cited_references": 3,
+      "reference_exact_match": false,
+      "reference_set_match": false,
+      "reference_subset_match": true
+    },
+    {
+      "query_id": "5f07a7f0a83de807eee3213560a3467c",
+      "num_references": 4,
+      "num_answer_items": 4,
+      "num_items_without_citations": 0,
+      "num_unique_cited_references": 3,
+      "reference_exact_match": false,
+      "reference_set_match": false,
+      "reference_subset_match": true
+    },
+    {
+      "query_id": "804711f54939af9622c3c7614da85298",
+      "num_references": 4,
+      "num_answer_items": 4,
+      "num_items_without_citations": 0,
+      "num_unique_cited_references": 3,
+      "reference_exact_match": false,
+      "reference_set_match": false,
+      "reference_subset_match": true
+    },
+    {
+      "query_id": "c3d5d202f8ab3d130a90684fd7308f64",
+      "num_references": 2,
+      "num_answer_items": 4,
+      "num_items_without_citations": 0,
+      "num_unique_cited_references": 2,
+      "reference_exact_match": false,
+      "reference_set_match": false,
+      "reference_subset_match": true
+    },
+    {
+      "query_id": "5ef548b174d925e873f8b5f138d6d8af",
+      "num_references": 4,
+      "num_answer_items": 5,
+      "num_items_without_citations": 0,
+      "num_unique_cited_references": 4,
+      "reference_exact_match": false,
+      "reference_set_match": false,
+      "reference_subset_match": true
+    },
+    {
+      "query_id": "d3c2d232f0a39dae1f18c762ccdb1eab",
+      "num_references": 2,
+      "num_answer_items": 2,
+      "num_items_without_citations": 0,
+      "num_unique_cited_references": 2,
+      "reference_exact_match": false,
+      "reference_set_match": false,
+      "reference_subset_match": true
+    },
+    {
+      "query_id": "533ebe54d99e8c5e2feea55299c0f3ef",
+      "num_references": 5,
+      "num_answer_items": 5,
+      "num_items_without_citations": 0,
+      "num_unique_cited_references": 4,
+      "reference_exact_match": false,
+      "reference_set_match": false,
+      "reference_subset_match": true
+    },
+    {
+      "query_id": "785b9784a0ed573bc3e4c38addb767f5",
+      "num_references": 2,
+      "num_answer_items": 4,
+      "num_items_without_citations": 0,
+      "num_unique_cited_references": 2,
+      "reference_exact_match": false,
+      "reference_set_match": false,
+      "reference_subset_match": true
+    },
+    {
+      "query_id": "3490ff75cc1d7cc958eea148ecf9f064",
+      "num_references": 3,
+      "num_answer_items": 5,
+      "num_items_without_citations": 0,
+      "num_unique_cited_references": 3,
+      "reference_exact_match": false,
+      "reference_set_match": false,
+      "reference_subset_match": true
+    }
+  ]
+}

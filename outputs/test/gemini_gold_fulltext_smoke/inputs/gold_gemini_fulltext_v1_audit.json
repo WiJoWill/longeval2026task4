@@ -1,0 +1,59 @@
+{
+  "run_id": "gold_gemini_fulltext_v1",
+  "model": "gemini-2.5-flash",
+  "queries": 1,
+  "requests_path": "outputs\\test\\gemini_gold_fulltext_smoke\\inputs\\gold_gemini_fulltext_v1_requests.jsonl",
+  "state_path": "outputs\\test\\gemini_gold_fulltext_smoke\\inputs\\gold_gemini_fulltext_v1_state.json",
+  "total_evidence_docs": 5,
+  "missing_fulltext_refs": 5,
+  "summary": {
+    "fulltext_evidence_docs": {
+      "min": 5,
+      "median": 5,
+      "mean": 5,
+      "max": 5
+    },
+    "missing_fulltext_docs": {
+      "min": 5,
+      "median": 5,
+      "mean": 5,
+      "max": 5
+    },
+    "chars": {
+      "min": 155028,
+      "median": 155028,
+      "mean": 155028,
+      "max": 155028
+    },
+    "words": {
+      "min": 22701,
+      "median": 22701,
+      "mean": 22701,
+      "max": 22701
+    },
+    "approx_tokens_chars_div_4": {
+      "min": 38757,
+      "median": 38757,
+      "mean": 38757,
+      "max": 38757
+    },
+    "request_bytes_utf8": {
+      "min": 162274,
+      "median": 162274,
+      "mean": 162274,
+      "max": 162274
+    }
+  },
+  "queries_detail": [
+    {
+      "query_id": "aa42e210a361571ff4d1fad892b75d15",
+      "doc_refs": 10,
+      "fulltext_evidence_docs": 5,
+      "missing_fulltext_docs": 5,
+      "chars": 155028,
+      "words": 22701,
+      "approx_tokens_chars_div_4": 38757,
+      "request_bytes_utf8": 162274
+    }
+  ]
+}
